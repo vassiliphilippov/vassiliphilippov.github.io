@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glite Software QA First Interview</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <!-- Landing Page -->
+  <div id="landingPage" class="container py-5">
+    <div class="card mx-auto" style="max-width: 600px;">
+      <div class="card-body text-center">
+        <h1 class="mb-4">Glite Software QA First Interview</h1>
+        <p class="mb-4">Please enter your one-time-use code to start the test.</p>
+        <div class="mb-3">
+          <input type="text" id="oneTimeCode" class="form-control" placeholder="Enter your code here" autofocus>
+        </div>
+        <p class="text-danger mb-4" id="codeError" style="display: none;"></p>
+        <p class="mb-4"><strong>Warning:</strong> Once the test is started, it cannot be restarted with the same code.</p>
+        <button class="btn btn-primary btn-lg" onclick="startTest()">Start Test</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Test Content -->
+  <div id="testContent" class="container py-5 d-none">
+    <div class="d-flex justify-content-between mb-3">
+      <button class="btn btn-sm btn-secondary" onclick="decreaseTime()">Debug: Reduce Time by 1 Minute</button>
+      <div class="d-flex align-items-center">
+        <span class="me-2">Time left:</span>
+        <div id="timer" class="h3 text-danger mb-0">20:00</div>
+      </div>
+    </div>
+    
+    <h1 class="mb-5">Glite Software QA First Interview</h1>
+
+    <!-- Task 1: Price Category Assignment -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 1: Price Category Assignment</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>You are given a function for categorizing order values into price categories. The <code>getPriceCategory</code> function takes an order value and returns either "success" or "fail".</p>
+          <p>Your task is to understand for which values the function fail.</p>
+          <p>Here are some example results from existing orders:</p>
+          <ul class="mb-3">
+            <li><code>getPriceCategory(3)</code> → success</li>
+            <li><code>getPriceCategory(10)</code> → fail</li>
+            <li><code>getPriceCategory(17)</code> → success</li>
+            <li><code>getPriceCategory(20)</code> → fail</li>
+            <li><code>getPriceCategory(51)</code> → success</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label"><strong>Test the getPriceCategory function:</strong></label>
+            <div class="mb-3 col-md-4">
+              <div class="input-group">
+                <input type="number" id="patternInput" class="form-control" placeholder="Enter a number to test">
+                <button class="btn btn-primary" onclick="PatternTask.testNumber()">Test</button>
+              </div>
+            </div>
+            <div id="patternResult" class="alert d-none col-md-4 mb-4"></div>
+            <label class="form-label"><strong>Your answer:</strong></label>
+            <div class="col-12">
+              <textarea id="task1Answer" class="form-control" rows="4" placeholder="Describe the pattern you've discovered here..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 2: Incident Detection in Mobile Network Logs -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 2: Incident Detection in Mobile Network Logs</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>Following a major service disruption last week, our Network Operations team has implemented new criteria for identifying critical events that require immediate attention. You are part of the QA team validating the new incident detection system.</p>
+          <p>Review the following system logs and identify all critical events based on the new criteria:</p>
+          <p><strong>An event is considered critical if it matches EITHER:</strong></p>
+          <ul>
+            <li>Involves our premium partner carriers (Vodafone [VOD-] or O2 [O2-] customers) AND occurs in our French data center</li>
+            <li>OR any event using build 2.1.457</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="border p-3 bg-light mb-3" style="height: 200px; overflow-y: auto;">
+              <pre id="logContent" style="font-size: 0.8em;"></pre>
+            </div>
+            <div class="mb-3">
+              <textarea id="task2Answer" class="form-control" rows="6" placeholder="List all critical events..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 3: Hour Difference Calculator -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 3: Hour Difference Calculator</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>Our system includes a function that should calculate the number of whole hours between two given dates.</p>
+          <p>Test the function with different inputs and identify all potential issues and bugs in its implementation.</p>
+          <div class="mb-4">
+            <div class="mb-3">
+              <label class="form-label"><strong>First Date/Time</strong><br><small>(MM/DD/YYYY HH:mm):</small></label>
+              <input type="text" id="date1Input" class="form-control" value="02/14/2024 05:00">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><strong>Second Date/Time</strong><br><small>(MM/DD/YYYY HH:mm):</small></label>
+              <input type="text" id="date2Input" class="form-control" value="02/15/2024 07:00">
+            </div>
+            <button class="btn btn-primary" onclick="DateTask.testDates()">Calculate Hours Between</button>
+          </div>
+          <div id="dateResult" class="alert d-none mb-4"></div>
+          <label class="form-label"><strong>Your findings:</strong></label>
+          <textarea id="task3Answer" class="form-control" rows="6" placeholder="List all bugs and potential issues you can find in this implementation..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 4: Security Testing - Protocol and Payload Analysis -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 4: Security Testing - Protocol and Payload Analysis</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>You are testing the security of requests based on their transport protocol and payload status. The rule is: "If using HTTP, the payload must be encrypted." You have the following information about four requests:</p>
+          <ul>
+            <li>Request 1: Uses HTTPS</li>
+            <li>Request 2: Uses HTTP</li>
+            <li>Request 3: Has an encrypted payload</li>
+            <li>Request 4: Has a plaintext payload</li>
+          </ul>
+          <p>Which requests need further verification to ensure they comply with the security rule?</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task4Answer" class="form-control" rows="4" placeholder="Write your answer here (e.g., which request need verification)"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 5: Scheduling Test Cases with Dependencies -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 5: Scheduling Test Cases with Dependencies</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>You have five test cases with execution times and dependencies:</p>
+          <ul>
+            <li>T1: 10 minutes</li>
+            <li>T2: 15 minutes</li>
+            <li>T3: 20 minutes, cannot start until T1 and T2 are completed</li>
+            <li>T4: 25 minutes, cannot start until T2 is completed</li>
+            <li>T5: 30 minutes, cannot start until T3 and T4 are completed</li>
+          </ul>
+          <p>You have two testing machines that run tests in parallel. What is the minimum total time to complete all test cases?</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task5Answer" class="form-control" rows="4" placeholder="Provide the answer..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 6: Probability of Module Failures -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 6: Probability of Module Failures</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>In a system, three independent modules have failure probabilities:</p>
+          <ul>
+            <li>Module A: 5%</li>
+            <li>Module B: 10%</li>
+            <li>Module C: 2%</li>
+          </ul>
+          <p>What is the probability that exactly one module fails during a test run? Provide your answer (you can provide it as a formula).</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task6Answer" class="form-control" rows="4" placeholder="Probability as a number or a formula..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 7: Test Environment Deployment Scheduling -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 7: Test Environment Deployment Scheduling</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>You have 3 test environments: Dev, Stage, and Prod. Each build takes 2 hours to deploy and must be deployed in sequence. If a build fails, you must wait 1 hour before retrying. You need all environments updated by 5 PM. What's the latest time you can start the first deployment if you want to have one retry attempt available for each environment?</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task7Answer" class="form-control" rows="4" placeholder="Provide the schedule and explain your approach..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 8: Defect Probability in Batches -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 8: Defect Probability in Batches</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>A module has a 2% defect rate. If you test 50 randomly selected modules, what's the probability of finding at least one defective module? Provide the answer either as a formula or a number.</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task8Answer" class="form-control" rows="4" placeholder="The probabilities as a formula or a number..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 9: Bug Environment Deduction -->
+    <div class="card mb-5">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Task 9: Bug Environment Deduction</h2>
+      </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <h3 class="h6">Description:</h3>
+          <p>A bug occurs only when both of the following conditions are met:</p>
+          <ul>
+            <li>The OS is Linux <strong>or</strong> the browser is Firefox.</li>
+            <li>The screen resolution is 1080p <strong>and</strong> the browser is <strong>not</strong> Chrome.</li>
+          </ul>
+          <p>Consider the following environments:</p>
+          <ol>
+            <li>OS: Linux, Browser: Firefox, Resolution: 1080p</li>
+            <li>OS: Windows, Browser: Firefox, Resolution: 1080p</li>
+            <li>OS: Linux, Browser: Chrome, Resolution: 1080p</li>
+            <li>OS: Windows, Browser: Edge, Resolution: 1080p</li>
+            <li>OS: Linux, Browser: Firefox, Resolution: 720p</li>
+          </ol>
+          <p>Which of these environments will definitely reproduce the bug? List the numbers and explain your reasoning.</p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <textarea id="task9Answer" class="form-control" rows="4" placeholder="Identify the environments and explain your reasoning..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button id="submitBtn" class="btn btn-success btn-lg" onclick="endTest()">Submit Results</button>
+    </div>
+  </div>
+
+  <!-- Submission Screen -->
+  <div id="submissionScreen" class="position-fixed top-0 start-0 w-100 h-100 bg-light d-none" style="z-index: 2000;">
+    <div class="container py-5">
+      <h2 class="mb-4">Test Completed</h2>
+      <p id="timeoutMessage" class="text-danger mb-4" style="display: none;">Your test was ended due to timeout.</p>
+      <form id="submissionForm" class="mb-4">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" id="candidateName" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="candidateEmail" required>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" onclick="generateFinalSubmission()">Submit Test Results</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="resultsScreen" class="position-fixed top-0 start-0 w-100 h-100 bg-light d-none" style="z-index: 2000;">
+    <div class="container py-5">
+      <h2 class="mb-4">Test Results</h2>
+      <div class="alert alert-info mb-4">
+        <p class="mb-2">Please:</p>
+        <ol class="mb-0">
+          <li>Copy the XML below</li>
+          <li>Send it to <strong>jobs@glite.ai</strong></li>
+          <li>Use subject: <strong>"QA Test Results"</strong></li>
+        </ol>
+      </div>
+      <div class="mb-4">
+        <textarea id="finalResultsXml" class="form-control font-monospace" style="height: 400px" readonly></textarea>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg" onclick="copyXmlToClipboard()">Copy XML to Clipboard</button>
+      <div id="copyConfirmation" class="alert alert-success mt-3 d-none">XML copied to clipboard!</div>
+    </div>
+  </div>
+
+  <script>
+    // Global variables
+    let testStarted = false;
+    let timerInterval;
+    let timeLeft = 20 * 60; // 20 minutes in seconds
+    let oneTimeCode = '';
+    let endedByTimeout = false;
+    let alertShown = false; // Global flag for the 1-minute warning
+
+    // Utility: Custom date parsing for "MM/DD/YYYY HH:mm"
+    function parseDateTime(dateTimeStr) {
+      const [datePart, timePart] = dateTimeStr.split(" ");
+      if (!datePart || !timePart) return new Date(dateTimeStr); // fallback
+      const [month, day, year] = datePart.split("/");
+      const [hour, minute] = timePart.split(":");
+      return new Date(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), parseInt(hour, 10), parseInt(minute, 10));
+    }
+
+    // Task 1: Price Category Assignment
+    const PatternTask = {
+      testFunction: function(x) {
+        if (!Number.isInteger(x)) return "fail";
+        if (x < 0) return "fail";
+        if (x % 7 === 0 || x % 10 === 0 || x % 31 === 0) return "fail";
+        return "success";
+      },
+      testNumber: function() {
+        if (!testStarted) return;
+        const input = document.getElementById('patternInput');
+        const result = document.getElementById('patternResult');
+        const number = parseFloat(input.value);
+        const response = this.testFunction(number);
+        result.textContent = `Result: ${response}`;
+        result.className = `alert ${response === 'success' ? 'alert-success' : 'alert-danger'}`;
+        result.classList.remove('d-none');
+        input.value = '';
+        input.focus();
+      },
+      setupEnterKey: function() {
+        const input = document.getElementById('patternInput');
+        input.addEventListener('keypress', function(event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            PatternTask.testNumber();
+          }
+        });
+      }
+    };
+
+    // Task 2: Incident Detection in Mobile Network Logs
+    const LogAnalysisTask = {
+      logData: `2024-02-23 09:14:22.345 INFO [pool-3-thread-15] CustomerService - Customer session started {customerId: VOD-55123, location: "UK", build: "2.1.456", device: "iPhone 15", carrier: "Vodafone", sessionId: "f45dd-4521-9088"}
+2024-02-23 09:14:23.126 ERROR [pool-2-thread-8] PaymentProcessor - Transaction failed {transactionId: "tx-78901", amount: "€45.99", customerId: "EE-72812", location: "Germany", build: "2.1.457", error: "Insufficient funds"}
+2024-02-23 09:14:23.347 WARN [pool-5-thread-3] SecurityService - Failed login attempt {customerId: "VOD-12890", location: "France", build: "2.1.457", ipAddress: "192.168.1.123", attempt: 3}
+2024-02-23 09:14:24.891 INFO [pool-1-thread-1] NotificationService - Push notification sent {recipientId: "TM-44123", type: "PROMOTION", status: "delivered", build: "2.1.456"}
+2024-02-23 09:14:25.002 ERROR [pool-4-thread-12] DatabaseService - Connection timeout {dbNode: "EU-WEST-2", customerId: "O2-91234", build: "2.1.457", operation: "UPDATE", table: "accounts"}
+2024-02-23 09:14:25.347 INFO [pool-3-thread-7] CustomerService - Profile updated {customerId: "TIM-77123", location: "Italy", build: "2.1.457", changes: ["address", "phone"]}
+2024-02-23 09:14:26.012 ERROR [pool-2-thread-9] PaymentService - Payment gateway timeout {providerId: "STRIPE", customerId: "VOD-34567", location: "France", build: "2.1.457", amount: "£23.45"}
+2024-02-23 09:14:26.891 WARN [pool-1-thread-4] SecurityService - Suspicious activity detected {customerId: "O2-44789", location: "UK", build: "2.1.456", activityType: "multiple_device_login"}
+2024-02-23 09:14:27.123 ERROR [pool-5-thread-11] ApiGateway - Rate limit exceeded {customerId: "VOD-88123", location: "France", build: "2.1.456", endpoint: "/api/v2/orders"}
+2024-02-23 09:14:27.445 INFO [pool-2-thread-6] OrderService - Order processed {orderId: "ord-12345", customerId: "O2-65432", location: "Germany", build: "2.1.457", amount: "€78.90"}
+2024-02-23 09:14:28.012 ERROR [pool-3-thread-10] AuthenticationService - Token validation failed {customerId: "VOD-23456", location: "UK", build: "2.1.457", tokenId: "tk-789123"}
+2024-02-23 09:14:28.347 WARN [pool-4-thread-2] NetworkService - High latency detected {region: "EU-CENTRAL", customerId: "O2-87654", location: "France", build: "2.1.457", latency: "1500ms"}
+2024-02-23 09:14:29.821 WARN [pool-4-thread-2] NetworkService - High latency detected {region: "EU-CENTRAL", customerId: "EE-71282", location: "France", build: "2.1.457", latency: "1500ms"}`,
+      initialize: function() {
+        document.getElementById('logContent').textContent = this.logData;
+      }
+    };
+
+    // Task 3: Hour Difference Calculator (using custom date parsing)
+const DateTask = {
+  testDates: function() {
+    if (!testStarted) return;
+    const date1 = document.getElementById('date1Input').value;
+    const date2 = document.getElementById('date2Input').value;
+    const result = document.getElementById('dateResult');
+
+    // Parse dates
+    const d1 = parseDateTime(date1);
+    const d2 = parseDateTime(date2);
+
+    // Extract hours (0-23)
+    const hour1 = d1.getHours();
+    const hour2 = d2.getHours();
+
+    // Calculate hour difference (ignoring minutes)
+    let hourDiff = hour2 - hour1;
+
+    // Extract month (1-12) and day (1-31)
+    const month1 = d1.getMonth() + 1; // getMonth() returns 0-11
+    const day1 = d1.getDate();
+    const year1 = d1.getFullYear();
+
+    const month2 = d2.getMonth() + 1;
+    const day2 = d2.getDate();
+    const year2 = d2.getFullYear();
+
+    // Fixed days per month (no leap year adjustment)
+    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Calculate days since year beginning for each date
+    let daysSinceYearStart1 = 0;
+    for (let m = 1; m < month1; m++) {
+      daysSinceYearStart1 += daysInMonth[m - 1];
+    }
+    daysSinceYearStart1 += day1;
+
+    let daysSinceYearStart2 = 0;
+    for (let m = 1; m < month2; m++) {
+      daysSinceYearStart2 += daysInMonth[m - 1];
+    }
+    daysSinceYearStart2 += day2;
+
+    // Calculate day difference
+    let dayDiff = (year2 - year1) * 365 + (daysSinceYearStart2 - daysSinceYearStart1);
+
+    // Calculate total hours
+    let totalHours = dayDiff * 24 + hourDiff;
+
+    // Display result
+    result.textContent = `Hours between: ${totalHours.toFixed(2)}`;
+    result.className = 'alert alert-info';
+    result.classList.remove('d-none');
+  }
+};
+
+    // Initialize page
+    window.onload = function() {
+      LogAnalysisTask.initialize();
+      PatternTask.setupEnterKey();
+      
+      // Setup enter key for code validation
+      document.getElementById('oneTimeCode').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          startTest();
+        }
+      });
+
+      // Focus the code input field by default
+      document.getElementById('oneTimeCode').focus();
+    };
+
+    // Validate the code format
+    function validateCode(code) {
+      // Check if it starts with "GQT" followed by 10 digits
+      const regex = /^GQT\d{10}$/;
+      if (!regex.test(code)) {
+        return false;
+      }
+      
+      // Extract the 10 digits and check if divisible by 239
+      const digits = code.substring(3);
+      return parseInt(digits) % 239 === 0;
+    }
+
+    // Start or resume the test
+    function startTest() {
+      const code = document.getElementById('oneTimeCode').value.trim();
+      if (!code) {
+        document.getElementById('codeError').textContent = 'Please enter a valid code';
+        document.getElementById('codeError').style.display = 'block';
+        return;
+      }
+
+      // Validate the code format
+      if (!validateCode(code)) {
+        document.getElementById('codeError').textContent = 'Invalid code';
+        document.getElementById('codeError').style.display = 'block';
+        return;
+      }
+
+      const stateKey = `testState_${code}`;
+      const endTimeKey = `endTime_${code}`;
+      const state = localStorage.getItem(stateKey);
+
+      // If test is already completed, do not allow restart.
+      if (state === 'completed') {
+        document.getElementById('codeError').textContent = 'This test has already been completed with this code.';
+        document.getElementById('codeError').style.display = 'block';
+        return;
+      }
+
+      oneTimeCode = code;
+      testStarted = true;
+      document.getElementById('landingPage').classList.add('d-none');
+      document.getElementById('testContent').classList.remove('d-none');
+
+      // If this is a new test, initialize the end time and state.
+      if (!state) {
+        const endTime = Date.now() + 20 * 60 * 1000;
+        localStorage.setItem(stateKey, 'in_progress');
+        localStorage.setItem(endTimeKey, endTime);
+      }
+
+      // Reset global flags for a fresh/resumed session.
+      endedByTimeout = false;
+      alertShown = false;
+
+      populateAnswers(code);
+      startTimer(code);
+    }
+
+    // Load saved answers for each task and save on change.
+    function populateAnswers(code) {
+      for (let i = 1; i <= 9; i++) {
+        const taskId = `task${i}Answer`;
+        const savedValue = localStorage.getItem(`${taskId}_${code}`);
+        if (savedValue !== null) {
+          document.getElementById(taskId).value = savedValue;
+        }
+        document.getElementById(taskId).oninput = function() {
+          localStorage.setItem(`${taskId}_${code}`, this.value);
+        };
+      }
+    }
+
+    // Start the countdown timer
+    function startTimer(code) {
+      const endTimeKey = `endTime_${code}`;
+      // Immediately update the timer using the saved end time
+      const endTime = parseInt(localStorage.getItem(endTimeKey));
+      timeLeft = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      updateTimer(); // Immediately update the timer display
+
+      timerInterval = setInterval(() => {
+        const endTime = parseInt(localStorage.getItem(endTimeKey));
+        timeLeft = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+        updateTimer();
+
+        if (timeLeft <= 60 && timeLeft > 0 && !alertShown) {
+          alert('Warning: 1 minute left!');
+          alertShown = true;
+        }
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          endedByTimeout = true;
+          endTest();
+        }
+      }, 1000);
+    }
+
+    // Decrease remaining time by 1 minute
+    function decreaseTime() {
+      if (!testStarted) return;
+
+      const endTimeKey = `endTime_${oneTimeCode}`;
+      let endTime = parseInt(localStorage.getItem(endTimeKey));
+
+      // Subtract 60 seconds (60,000 milliseconds)
+      endTime -= 60 * 1000;
+      localStorage.setItem(endTimeKey, endTime);
+
+      timeLeft = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      updateTimer();
+
+      if (timeLeft <= 60 && timeLeft > 0 && !alertShown) {
+        alert('Warning: 1 minute left!');
+        alertShown = true;
+      }
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endedByTimeout = true;
+        endTest();
+      }
+    }
+
+    // Update the timer display
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById('timer').textContent =
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // End the test and disable all inputs
+    function endTest() {
+      testStarted = false;
+      clearInterval(timerInterval);
+      localStorage.setItem(`testState_${oneTimeCode}`, 'completed');
+      document.querySelectorAll('#testContent input, #testContent textarea').forEach(el => {
+        el.readOnly = true;
+      });
+      document.querySelectorAll('#testContent button').forEach(btn => {
+        btn.disabled = true;
+      });
+      document.getElementById('testContent').classList.add('d-none');
+      document.getElementById('submissionScreen').classList.remove('d-none');
+      if (endedByTimeout) {
+        document.getElementById('timeoutMessage').style.display = 'block';
+      }
+    }
+
+    // Generate the final XML submission
+    function generateFinalSubmission() {
+      const name = document.getElementById('candidateName').value.trim();
+      const email = document.getElementById('candidateEmail').value.trim();
+      if (!name || !email) {
+        alert('Please fill in both name and email');
+        return;
+      }
+      document.getElementById('submissionScreen').classList.add('d-none');
+      document.getElementById('resultsScreen').classList.remove('d-none');
+      document.getElementById('finalResultsXml').value = generateXml();
+    }
+
+    // Create XML output with escaped content
+    function generateXml() {
+      const name = document.getElementById('candidateName').value;
+      const email = document.getElementById('candidateEmail').value;
+      const answers = {};
+      for (let i = 1; i <= 9; i++) {
+        answers[`task${i}`] = document.getElementById(`task${i}Answer`).value;
+      }
+      const timeSpent = formatTimeSpent();
+      return `<?xml version="1.0" encoding="UTF-8"?>
+<testResults>
+  <candidate>
+    <name>${escapeXml(name)}</name>
+    <email>${escapeXml(email)}</email>
+    <code>${escapeXml(oneTimeCode)}</code>
+    <timeSpent>${timeSpent}</timeSpent>
+  </candidate>
+  <answers>
+    ${Object.entries(answers).map(([task, answer]) => `<${task}>${escapeXml(answer)}</${task}>`).join('\n')}
+  </answers>
+</testResults>`;
+    }
+
+    // Escape XML special characters
+    function escapeXml(unsafe) {
+      return unsafe.replace(/[<>&'"]/g, c => {
+        switch (c) {
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '&': return '&amp;';
+          case '\'': return '&apos;';
+          case '"': return '&quot;';
+        }
+      });
+    }
+
+    // Format the time spent in minutes and seconds
+    function formatTimeSpent() {
+      const timeSpentSeconds = 20 * 60 - timeLeft;
+      const minutes = Math.floor(timeSpentSeconds / 60);
+      const seconds = timeSpentSeconds % 60;
+      return `${minutes}m ${seconds}s`;
+    }
+
+    // Copy XML to clipboard using the modern Clipboard API
+    function copyXmlToClipboard() {
+      const xmlText = document.getElementById('finalResultsXml').value;
+      navigator.clipboard.writeText(xmlText).then(() => {
+        document.getElementById('copyConfirmation').classList.remove('d-none');
+        setTimeout(() => {
+          document.getElementById('copyConfirmation').classList.add('d-none');
+        }, 2000);
+      }).catch(err => {
+        console.error('Error copying text: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
