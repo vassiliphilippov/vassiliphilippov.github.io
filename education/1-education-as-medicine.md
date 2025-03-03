@@ -85,7 +85,7 @@ By the early 1900s, phonics had been replaced in most American schools by a look
  
 By the 1950s, the results were clear. 
 Kids weren’t learning to read. 
-In 1955, Rudolf Flesch, a literacy expert, published Why Johnny Can’t Read, a critique of the American education system.
+In 1955, Rudolf Flesch, a literacy expert, published Why Johnny Can’t Read[^johny1955], a critique of the American education system.
  
 His argument was simple:
 * Children weren’t being taught phonics.
@@ -173,3 +173,8 @@ The phonics case is just one of many.
 
 In 10-15 years, we’ll look back with astonishment. 
 How did we ever trust intuition over proof?
+
+## References
+
+[^slavin2002]: Slavin (2002) [Evidence-Based Education Policies: Transforming Educational Practice and Research](https://journals.sagepub.com/doi/abs/10.3102/0013189X031007015)
+[^johny1955]: [Why Johnny Can't Read—And What You Can Do About It by Rudolf Flesch](https://en.wikipedia.org/wiki/Why_Johnny_Can%27t_Read#:~:text=Why%20Johnny%20Can't%20Read%E2%80%94And%20What%20You%20Can%20Do,became%20an%20educational%20cause%20c%C3%A9l%C3%A8bre.)
