@@ -21,7 +21,7 @@ A headache? Leeches.
 A cough? Mercury.
  
 There’s no controlled testing, large-scale studies, or standard for proof. 
-Medicine is built on anecdotes, authority, and outdated beliefs.
+Medicine is built on anecdotes, authority, and outdated beliefs[^porter1997].
  
 Now, imagine walking into a school today. 
 Any similarities? 
@@ -75,13 +75,13 @@ Now, imagine you’re designing a national education system.
 Which method would you choose?
  
 For centuries, the answer was clear. 
-Phonics—teaching children to connect letters with sounds—has been around since at least the 1600s, and it worked. 
+Phonics—teaching children to connect letters with sounds—has been around since at least the 1600s[^keeleguide1667], and it worked. 
 Generations of children learned to read by breaking down words into their building blocks.
  
-Then came the 1800s, and with it, Horace Mann. 
+Then came the 1800s, and with it, Horace Mann[^mann1848]. 
 Mann—widely regarded as the father of American education—believed sounding out words distracted children from their meaning. 
 Instead, he argued, children should learn to recognize words as whole units, just as they recognize faces. 
-By the early 1900s, phonics had been replaced in most American schools by a look-say method, later known as whole language.
+By the early 1900s, phonics had been replaced in most American schools by a look-say method, later known as whole language[^parker2021].
  
 By the 1950s, the results were clear. 
 Kids weren’t learning to read. 
@@ -93,7 +93,7 @@ His argument was simple:
 * Without decoding, they weren’t actually reading.
 
 Flesch was backed up with research. 
-Third graders couldn’t even recognize 90% of the words they spoke daily because they had never been taught to sound them out. 
+Third graders couldn’t even recognize 90% of the words they spoke daily because they had never been taught to sound them out[^time1955]. 
 His book became a bestseller. 
 The debate exploded into what we now call the “reading wars.”
  
@@ -107,9 +107,9 @@ It treated children as natural learners.
 It made classrooms feel less rigid and more creative. 
 Teachers embraced it. 
 Textbook publishers profited from it.
-* In 1980, 44% of U.S. students performed below basic literacy levels.
+* In 1980, 44% of U.S. students performed below basic literacy levels[^naep1995].
 * By 2000, the National Reading Panel confirmed that explicit phonics instruction was essential for strong literacy skills.
-* By 2022, despite decades of evidence, only 35% of American students read proficiently.
+* By 2022, despite decades of evidence, only 35% of American students read proficiently[^nationsreportcard2022].
  
 While some districts have embraced phonics, national adoption remains inconsistent.
 
@@ -127,10 +127,10 @@ Bloodletting was standard practice for centuries. Doctors swore by it. Patients 
 The problem? It didn’t work.
  
 In education, we have our own “bloodletting” practices—methods that are widely used but have little to no evidence:
-Learning styles – No scientific basis, yet schools still test students for their “learning type.”
-Brain training games – Marketed as IQ boosters, but studies show minimal impact.
-Right-brain vs. left-brain learning – A complete myth, yet still in teaching materials.
-Discovery learning (where students explore concepts with minimal guidance) over direct instruction – Sounds appealing, but research favors structured teaching.
+* Learning styles – No scientific basis, yet schools still test students for their “learning type”[^pashler2008].
+* Brain training games – Marketed as IQ boosters, but studies show minimal impact[^simons2016].
+* Right-brain vs. left-brain learning – A complete myth, yet still in teaching materials[^nielsen2013].
+* Discovery learning (where students explore concepts with minimal guidance) over direct instruction – sounds appealing, but research favors structured teaching[^alfieri2011].
  
 So why do they persist?
  
@@ -167,7 +167,7 @@ But it needs:
  
 Education now is where medicine was in 1960-1970. 
 And the science-based progress is inevitable. 
-The number of RCT studies is growing across the world. 
+The number of RCT studies is growing across the world[^connolly2018]. 
 However, a crucial gap exists between clear scientific evidence and policy change. 
 The phonics case is just one of many.
 
@@ -176,5 +176,17 @@ How did we ever trust intuition over proof?
 
 ## References
 
+[^porter1997]: Porter, R. (1997) [The Greatest Benefit to Mankind: A Medical History of Humanity from Antiquity to the Present](https://pmc.ncbi.nlm.nih.gov/articles/PMC1112708/)
 [^slavin2002]: Slavin (2002) [Evidence-Based Education Policies: Transforming Educational Practice and Research](https://journals.sagepub.com/doi/abs/10.3102/0013189X031007015)
 [^johny1955]: [Why Johnny Can't Read—And What You Can Do About It by Rudolf Flesch](https://en.wikipedia.org/wiki/Why_Johnny_Can%27t_Read#:~:text=Why%20Johnny%20Can't%20Read%E2%80%94And%20What%20You%20Can%20Do,became%20an%20educational%20cause%20c%C3%A9l%C3%A8bre.)
+[^keeleguide1667]: Keele University (n.d.) [A Guide for the Childe and Youth - Special Collections Showcase](https://www.keele.ac.uk/library/specialcollections/showcase/aguideforthechildeandyouth/)
+[^mann1848]: Mann (1848) [Twelfth Annual Report of the Secretary of the Board of Education](https://babel.hathitrust.org/cgi/pt?id=njp.32101068983400&seq=1)
+[^parker2021]: Stephen Parker (2021) [A Brief History of Reading Instruction](https://www.parkerphonics.com/post/a-brief-history-of-reading-instruction)
+[^time1955]: Time 1955 [Education: Why Johnny Can’t Read](https://time.com/archive/6609444/education-why-johnny-cant-read/)
+[^naep1995]: [Digest of Education Statistics 1995, Table 106](https://nces.ed.gov/programs/digest/d95/dtab106.asp)
+[^nationsreportcard2022]: National Center for Education Statistics (2022) [NAEP Reading: Reading Results](https://www.nationsreportcard.gov/reading)
+[^pashler2008]: Pashler et al. (2008) [Learning styles: Concepts and evidence](https://journals.sagepub.com/doi/abs/10.1111/j.1539-6053.2009.01038.x)
+[^simons2016]: Simons et al. (2016) [Do "Brain-Training" Programs Work?](https://journals.sagepub.com/doi/10.1177/1529100616661983)
+[^nielsen2013]: Nielsen et al. (2013) [An Evaluation of the Left-Brain vs. Right-Brain Hypothesis with Resting State Functional Connectivity Magnetic Resonance Imaging](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071275)
+[^alfieri2011]: Alfieri et al. (2011) [Does discovery-based instruction enhance learning?](https://doi.org/10.1037/a0021017)
+[^connolly2018]: Connolly et al. (2018) [Randomised controlled trials (RCTs) in education research – methodological debates, questions, challenges](https://www.tandfonline.com/doi/full/10.1080/00131881.2018.1493353)
