@@ -28,7 +28,7 @@
     <div class="d-flex justify-content-between mb-3">
       <div class="d-flex align-items-center">
         <span class="me-2">Time left:</span>
-        <div id="timer" class="h3 text-danger mb-0">30:00</div>
+        <div id="timer" class="h3 text-danger mb-0">45:00</div>
       </div>
     </div>
     
@@ -319,7 +319,7 @@
     // Global variables
     let testStarted = false;
     let timerInterval;
-    let timeLeft = 30 * 60; // 30 minutes in seconds
+    let timeLeft = 45 * 60; // 45 minutes in seconds
     let oneTimeCode = '';
     let endedByTimeout = false;
     let alertShown = false; // Global flag for the 1-minute warning
@@ -505,7 +505,7 @@ const DateTask = {
 
       // If this is a new test, initialize the end time and state.
       if (!state) {
-        const endTime = Date.now() + 30 * 60 * 1000;
+        const endTime = Date.now() + 45 * 60 * 1000;
         localStorage.setItem(stateKey, 'in_progress');
         localStorage.setItem(endTimeKey, endTime);
       }
@@ -661,7 +661,7 @@ const DateTask = {
 
     // Format the time spent in minutes and seconds
     function formatTimeSpent() {
-      const timeSpentSeconds = 30 * 60 - timeLeft;
+      const timeSpentSeconds = 45 * 60 - timeLeft;
       const minutes = Math.floor(timeSpentSeconds / 60);
       const seconds = timeSpentSeconds % 60;
       return `${minutes}m ${seconds}s`;
