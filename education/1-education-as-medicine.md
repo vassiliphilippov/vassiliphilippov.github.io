@@ -143,10 +143,10 @@ In medicine, we don’t accept treatments without proof. Why do we accept it in 
 ## But studying education is harder than studying medicine
  
 If medicine solved this problem, why didn’t education? Because education is much harder to study.
-No Placebo – we can test a drug against a fake pill in medicine. In education, there’s no “fake lesson.”
-Ethics – You can’t randomly assign some kids to a bad teaching method for the sake of research.
-Long-Term Effects – Learning impacts years of life. Measuring short-term results is easy. Measuring lifelong outcomes is hard.
-Classroom Complexity – Every student, every school and every teacher are different. No two classrooms are the same.
+1. No Placebo – we can test a drug against a fake pill in medicine. In education, there’s no “fake lesson.”
+2. Ethics – You can’t randomly assign some kids to a bad teaching method for the sake of research.
+3. Long-Term Effects – Learning impacts years of life. Measuring short-term results is easy. Measuring lifelong outcomes is hard.
+4. Classroom Complexity – Every student, every school and every teacher are different. No two classrooms are the same.
  
 ## Although Progress Is unavoidable
  
