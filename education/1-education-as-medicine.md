@@ -82,6 +82,8 @@ Then came the 1800s, and with it, Horace Mann[^mann1848].
 Mann—widely regarded as the father of American education—believed sounding out words distracted children from their meaning. 
 Instead, he argued, children should learn to recognize words as whole units, just as they recognize faces. 
 By the early 1900s, phonics had been replaced in most American schools by a look-say method, later known as whole language[^parker2021].
+
+![Phonics illustration](images/phonics.png)
  
 By the 1950s, the results were clear. 
 Kids weren’t learning to read. 
@@ -126,6 +128,8 @@ context clues, and memorization instead of teaching students to decode words sys
 Bloodletting was standard practice for centuries. Doctors swore by it. Patients believed in it.
 The problem? It didn’t work.
  
+![Bloodletting illustration](images/bloodletting.png)
+
 In education, we have our own “bloodletting” practices—methods that are widely used but have little to no evidence:
 * Learning styles – No scientific basis, yet schools still test students for their “learning type”[^pashler2008].
 * Brain training games – Marketed as IQ boosters, but studies show minimal impact[^simons2016].
