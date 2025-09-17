@@ -1,0 +1,426 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Statistics - Dictionary</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background: #fbfcfd;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3em;
+            margin-bottom: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Dictionary Statistics</h1>
+                <p>Comprehensive statistics about the dictionary content.</p>
+            </header>
+
+            <main>
+                <section class="section">
+                    <h2>Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">12,601</div>
+                            <div class="stat-label">Total Senses</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3,800</div>
+                            <div class="stat-label">Total Entries</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.32</div>
+                            <div class="stat-label">Average Senses per Entry</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Entry Types</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Entries by Type</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Count</th>
+                                <th>Percentage</th>
+                                <th>Avg Senses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Compound</td>
+            <td>768</td>
+            <td>20.2%</td>
+            <td>2.07</td>
+        </tr>
+        
+        <tr>
+            <td>Idiom</td>
+            <td>42</td>
+            <td>1.1%</td>
+            <td>1.81</td>
+        </tr>
+        
+        <tr>
+            <td>Phrasal Verb</td>
+            <td>128</td>
+            <td>3.4%</td>
+            <td>2.59</td>
+        </tr>
+        
+        <tr>
+            <td>Word</td>
+            <td>2,862</td>
+            <td>75.3%</td>
+            <td>3.71</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="section">
+                    <h2>Distribution by Number of Senses</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Number of Senses</th>
+                                <th>Entries</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>1</td>
+            <td>87</td>
+            <td>2.3%</td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>2,145</td>
+            <td>56.4%</td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>657</td>
+            <td>17.3%</td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>314</td>
+            <td>8.3%</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>179</td>
+            <td>4.7%</td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>110</td>
+            <td>2.9%</td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>64</td>
+            <td>1.7%</td>
+        </tr>
+        
+        <tr>
+            <td>8</td>
+            <td>57</td>
+            <td>1.5%</td>
+        </tr>
+        
+        <tr>
+            <td>9</td>
+            <td>30</td>
+            <td>0.8%</td>
+        </tr>
+        
+        <tr>
+            <td>10</td>
+            <td>21</td>
+            <td>0.6%</td>
+        </tr>
+        
+        <tr>
+            <td>11</td>
+            <td>32</td>
+            <td>0.8%</td>
+        </tr>
+        
+        <tr>
+            <td>12</td>
+            <td>21</td>
+            <td>0.6%</td>
+        </tr>
+        
+        <tr>
+            <td>13</td>
+            <td>17</td>
+            <td>0.4%</td>
+        </tr>
+        
+        <tr>
+            <td>14</td>
+            <td>13</td>
+            <td>0.3%</td>
+        </tr>
+        
+        <tr>
+            <td>15</td>
+            <td>8</td>
+            <td>0.2%</td>
+        </tr>
+        
+        <tr>
+            <td>16</td>
+            <td>6</td>
+            <td>0.2%</td>
+        </tr>
+        
+        <tr>
+            <td>17</td>
+            <td>6</td>
+            <td>0.2%</td>
+        </tr>
+        
+        <tr>
+            <td>18</td>
+            <td>6</td>
+            <td>0.2%</td>
+        </tr>
+        
+        <tr>
+            <td>19</td>
+            <td>8</td>
+            <td>0.2%</td>
+        </tr>
+        
+        <tr>
+            <td>20</td>
+            <td>3</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>5</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>22</td>
+            <td>2</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>24</td>
+            <td>3</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>25</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>27</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>28</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>30</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>40</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>42</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="section">
+                    <h2>Distribution by Part of Speech</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Part of Speech</th>
+                                <th>Senses</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>ADJ</td>
+            <td>1,253</td>
+            <td>9.9%</td>
+        </tr>
+        
+        <tr>
+            <td>ADP</td>
+            <td>4</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>ADV</td>
+            <td>97</td>
+            <td>0.8%</td>
+        </tr>
+        
+        <tr>
+            <td>DET</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>INTJ</td>
+            <td>15</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>NOUN</td>
+            <td>8,197</td>
+            <td>65.1%</td>
+        </tr>
+        
+        <tr>
+            <td>NUM</td>
+            <td>9</td>
+            <td>0.1%</td>
+        </tr>
+        
+        <tr>
+            <td>PART</td>
+            <td>3</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>PRON</td>
+            <td>1</td>
+            <td>0.0%</td>
+        </tr>
+        
+        <tr>
+            <td>PROPN</td>
+            <td>358</td>
+            <td>2.8%</td>
+        </tr>
+        
+        <tr>
+            <td>VERB</td>
+            <td>2,660</td>
+            <td>21.1%</td>
+        </tr>
+        
+        <tr>
+            <td>X</td>
+            <td>3</td>
+            <td>0.0%</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+
+            <footer><p><a href="index.html">Back to Home</a></p></footer>
+        </div>
+    </body>
+    </html>
+    
