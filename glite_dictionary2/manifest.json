@@ -1,6 +1,6 @@
 {
   "name": "dict_cluster_assets_site",
-  "code_version": 5,
+  "code_version": 6,
   "inputs": {
     "senses": {
       "name": "dict_senses",
@@ -193,6 +193,6 @@
     "senses": "28444ba6ce08697e25d1fe63dd7fdd72e49a1a86",
     "new": "256a1ac7bab6893d7bd86a6d29f924ce92ad9f54",
     "clusters": "1f40a960882ee73d13488da7d207c1a64c0b1ad0",
-    "assets": "b0765581c3f4c7c2352cbb50ed486b25d7033f03"
+    "assets": "dea984840e79e1cc3aee1ac54e254a1a185482c0"
   }
 }
