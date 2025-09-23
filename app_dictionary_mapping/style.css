@@ -1,0 +1,31 @@
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                     'Helvetica Neue', Arial, sans-serif;
+        margin: 0; padding: 20px; color: #333;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1, h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #eaeaea; text-align: left; }
+    th { background: #f8f9fa; }
+    tr:nth-child(even) { background: #fbfcfd; }
+    .icon-col { width: 32px; }
+    .status-icon { font-size: 16px; line-height: 1; }
+    .status-icon.status-removed { color: #c92a2a; }
+    .status-icon.status-existing { color: #2b8a3e; }
+    .status-icon.status-new { color: #5f3dc4; }
+    .status-icon.status-included { color: #0b7285; }
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+    }
+    .stat-card {
+        background: #f8f9fa; border: 1px solid #eaeaea; border-radius: 8px;
+        padding: 12px;
+    }
+    .stat-num { font-size: 1.6em; font-weight: bold; color: #0366d6; }
+    .stat-label { color: #6c757d; }
+    a { color: #0366d6; }
+    
