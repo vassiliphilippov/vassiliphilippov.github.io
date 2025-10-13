@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>poll, polls, to poll, to polls · Surface Form</title>
+  <title>polls (poll, to poll) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">poll, polls, to poll, to polls</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">polls (poll, to poll)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🗳️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/polls--pollscluster184103.html">
             <span class="summary-title">Voting places</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Go to the polls</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187392.html">
             <span class="summary-title">Opinion survey</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A poll result</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🗳️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187393.html">
             <span class="summary-title">Vote counting</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Election poll</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📝</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187394.html">
             <span class="summary-title">To survey</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To poll people</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -88,7 +102,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐴</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187391.html">
@@ -97,32 +111,32 @@
               <span class="badge-domain">animals</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Horse poll</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🗳️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187395.html">
             <span class="summary-title">To vote</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To poll at elections</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">✂️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/poll--pollcluster187396.html">
@@ -131,10 +145,10 @@
               <span class="badge-domain">plants</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To poll a tree</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -143,8 +157,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>suck, sucks, to suck · Surface Form</title>
+  <title>sucks (suck, to suck) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">suck, sucks, to suck</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">sucks (suck, to suck)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,55 +32,55 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧃</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169417.html">
             <span class="summary-title">To draw in</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To suck out poison</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169418.html">
             <span class="summary-title">An act of drawing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A suck on candy</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🍼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169419.html">
             <span class="summary-title">To breastfeed</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To suck milk</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">👎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169421.html">
@@ -75,10 +89,10 @@
               <span class="badge-domain">informal</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">This movie sucks</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -90,7 +104,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🍆</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169420.html">
@@ -99,26 +113,26 @@
               <span class="badge-domain">vulgar</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To suck him</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧲</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/suck--suckcluster169422.html">
             <span class="summary-title">To attract strongly</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To suck you in</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -127,8 +141,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>knot, to knot · Surface Form</title>
+  <title>knot (to knot) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">knot, to knot</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">knot (to knot)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,55 +32,55 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🪢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166491.html">
             <span class="summary-title">A rope fastening</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Tie a knot</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🪢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166492.html">
             <span class="summary-title">To tie together</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To knot a rope</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🪵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166493.html">
             <span class="summary-title">A hard lump</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A knot in wood</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166495.html">
@@ -75,10 +89,10 @@
               <span class="badge-domain">navigation</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Speed in knots</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -90,39 +104,39 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166494.html">
             <span class="summary-title">To tangle</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To knot your thoughts</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166496.html">
             <span class="summary-title">A small group</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A knot of people</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐦</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knot--knotcluster166497.html">
@@ -131,10 +145,10 @@
               <span class="badge-domain">bird</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A knot bird</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -143,8 +157,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

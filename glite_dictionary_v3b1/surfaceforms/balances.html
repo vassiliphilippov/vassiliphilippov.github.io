@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>balance, balances, to balance · Surface Form</title>
+  <title>balances (balance, to balance) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">balance, balances, to balance</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">balances (balance, to balance)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,7 +32,7 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75124.html">
@@ -27,58 +41,58 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Bank balance</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🪙</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75125.html">
             <span class="summary-title">The remainder</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The balance left</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⚖️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75126.html">
             <span class="summary-title">Harmony or stability</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Work-life balance</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🤹</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75128.html">
             <span class="summary-title">To keep steady</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To balance a tray</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -90,23 +104,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75127.html">
             <span class="summary-title">A scale</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A kitchen balance</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/balance--balancecluster75129.html">
@@ -115,10 +129,10 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To balance the account</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -127,8 +141,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

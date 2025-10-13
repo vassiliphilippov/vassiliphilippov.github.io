@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">have, to have</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +32,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🗝️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52740.html">
             <span class="summary-title">To own</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">I have a car</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎁</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52741.html">
             <span class="summary-title">To receive</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Have a present</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🤒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52742.html">
             <span class="summary-title">To experience</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Have a cold</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📅</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52743.html">
             <span class="summary-title">To arrange</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Have a meeting</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🍽️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52744.html">
             <span class="summary-title">To eat or drink</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Have breakfast</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">👶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52745.html">
             <span class="summary-title">To give birth</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Have a baby</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -120,17 +134,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/have--havecluster52746.html">
             <span class="summary-title">A rich person</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A wealthy have</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -139,7 +153,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

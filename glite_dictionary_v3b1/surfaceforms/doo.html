@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>doo, due · Surface Form</title>
+  <title>doo (due) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">doo, due</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun</div>
+  <h1 style="text-align:center">doo (due)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +32,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/due--duecluster107936.html">
             <span class="summary-title">Caused by</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Due to illness</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/due--duecluster107937.html">
             <span class="summary-title">Owed or payable</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Due payment</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/due--duecluster107938.html">
             <span class="summary-title">Expected soon</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Due to arrive</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -72,7 +86,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🕊️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/doo--doocluster93248.html">
@@ -81,42 +95,42 @@
               <span class="badge-domain">Scottish</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A white doo</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💩</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/doo--doocluster93249.html">
             <span class="summary-title">Feces (child&#39;s word)</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">To do a doo</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💇</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/doo--doocluster93250.html">
             <span class="summary-title">A hairstyle</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A new doo</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -125,8 +139,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

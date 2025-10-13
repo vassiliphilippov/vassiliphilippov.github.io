@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>late, later · Surface Form</title>
+  <title>late (later) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">late, later</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • adverb</div>
+  <h1 style="text-align:center">late (later)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="ADV">adv</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⏳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/later--latercluster173855.html">
             <span class="summary-title">Following in time</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Later years</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">⏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176140.html">
             <span class="summary-title">After expected time</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Stay up late</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🚆</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176142.html">
             <span class="summary-title">Delayed</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Late train</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ,ADV">
         <td class="emoji-col">🏁</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176144.html">
             <span class="summary-title">Near the end</span>
             
             
-              <span class="summary-pos">adjective • adverb</span>
-            
-            
               <span class="summary-collocation">Late stage</span>
+            
+            
+              <span class="summary-pos">adjective • adverb</span>
             
           </a>
         </td>
@@ -88,49 +102,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">🕒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176141.html">
             <span class="summary-title">Recently</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Of late</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🆕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176143.html">
             <span class="summary-title">Recent</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Late conversation</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🕊️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/late--latecluster176145.html">
             <span class="summary-title">Recently dead</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">His late wife</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -139,8 +153,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

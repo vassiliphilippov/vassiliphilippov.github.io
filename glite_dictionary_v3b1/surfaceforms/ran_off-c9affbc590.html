@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>to run off · Surface Form</title>
+  <title>ran off (to run off) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">to run off</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+  <h1 style="text-align:center">ran off (to run off)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +23,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏃</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/run_off-805e004c15--run_offcluster29809.html">
             <span class="summary-title">To leave quickly</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To run off in a hurry</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💧</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/run_off-805e004c15--run_offcluster29812.html">
             <span class="summary-title">To flow away</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Rainwater runs off the roof</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -56,23 +61,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/run_off-805e004c15--run_offcluster29810.html">
             <span class="summary-title">To drive away</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To run off intruders</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏅</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/run_off-805e004c15--run_offcluster29811.html">
@@ -81,26 +86,26 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To run off a final match</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🖨️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/run_off-805e004c15--run_offcluster29813.html">
             <span class="summary-title">To make copies</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To run off copies</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -109,8 +114,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

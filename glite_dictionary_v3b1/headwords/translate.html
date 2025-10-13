@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">to translate</h1>
-  <div class="headword-pos">verb</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌐</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49444.html">
             <span class="summary-title">To change language</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To translate a sentence</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49445.html">
             <span class="summary-title">To change form</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To translate ideas</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">➡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49449.html">
             <span class="summary-title">To lead to</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Translate into results</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -72,7 +77,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">➡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49446.html">
@@ -81,32 +86,32 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To translate an image</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">✨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49447.html">
             <span class="summary-title">To elevate spiritually</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To translate the soul</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/translate--translatecluster49448.html">
@@ -115,10 +120,10 @@
               <span class="badge-domain">biochemistry</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To translate mRNA</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -127,7 +132,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

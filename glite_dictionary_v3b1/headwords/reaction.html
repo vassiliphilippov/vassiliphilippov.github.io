@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">reaction</h1>
-  <div class="headword-pos">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,39 +23,39 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤧</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33921.html">
             <span class="summary-title">A body response</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Allergic reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">😲</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33922.html">
             <span class="summary-title">A feeling</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Emotional reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⚗️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33924.html">
@@ -59,16 +64,16 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Chemical reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33926.html">
@@ -77,10 +82,10 @@
               <span class="badge-domain">social media</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Send a reaction icon</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -92,7 +97,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">✊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33923.html">
@@ -101,16 +106,16 @@
               <span class="badge-domain">politics</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Political reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/reaction--reactioncluster33925.html">
@@ -119,10 +124,10 @@
               <span class="badge-domain">physics</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Physics reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -131,7 +136,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

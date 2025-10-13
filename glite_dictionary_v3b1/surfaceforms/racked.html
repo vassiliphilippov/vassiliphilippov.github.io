@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>to rack · Surface Form</title>
+  <title>racked (to rack) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">to rack</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+  <h1 style="text-align:center">racked (to rack)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +23,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28467.html">
             <span class="summary-title">To strain</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack your brain</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28468.html">
@@ -43,10 +48,10 @@
               <span class="badge-domain">games</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack the balls</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -58,7 +63,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🐎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28466.html">
@@ -67,16 +72,16 @@
               <span class="badge-domain">equestrian</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack in the arena</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28469.html">
@@ -85,16 +90,16 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack the lens</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🍷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28470.html">
@@ -103,16 +108,16 @@
               <span class="badge-domain">wine</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack the wine</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28471.html">
@@ -121,16 +126,16 @@
               <span class="badge-domain">crime</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack money</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">⛵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rack--rackcluster28472.html">
@@ -139,10 +144,10 @@
               <span class="badge-domain">nautical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rack before a gale</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -151,8 +156,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

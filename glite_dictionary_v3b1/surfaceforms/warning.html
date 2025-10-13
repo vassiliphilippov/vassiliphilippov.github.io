@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>warn, warning, to warn, to warning · Surface Form</title>
+  <title>warning (to warn) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">warn, warning, to warn, to warning</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun • verb</div>
+  <h1 style="text-align:center">warning (to warn)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +34,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⚠️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/warning--warningcluster89292.html">
             <span class="summary-title">A danger notice</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A warning sign</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🚨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/warning--warningcluster89293.html">
             <span class="summary-title">Giving a signal</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Warning lights flash</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">⚠️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/warn--warncluster89008.html">
             <span class="summary-title">To alert</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To warn about danger</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -72,17 +88,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/warn--warncluster89009.html">
             <span class="summary-title">To order away</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To warn trespassers</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -91,8 +107,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

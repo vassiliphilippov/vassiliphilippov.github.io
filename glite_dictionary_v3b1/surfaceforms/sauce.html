@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>more sauce than meat, sauce, to more sauce than meat, to sauce · Surface Form</title>
+  <title>sauce (more sauce than meat, to sauce) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">more sauce than meat, sauce, to more sauce than meat, to sauce</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb • x</div>
+  <h1 style="text-align:center">sauce (more sauce than meat, to sauce)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+            <button class="pos-filter-btn" data-pos="X">x</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +34,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧂</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sauce--saucecluster39868.html">
             <span class="summary-title">To add flavor</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To sauce the chicken</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🥫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sauce--saucecluster39870.html">
             <span class="summary-title">A flavored liquid</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A spicy sauce</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -56,49 +72,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="X">
         <td class="emoji-col">🍖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/more_sauce_than_meat-f0e4b8ab9e--more_saucecluster26139.html">
             <span class="summary-title">More show than substance</span>
             
             
-              <span class="summary-pos">x</span>
-            
-            
               <span class="summary-collocation">More sauce than meat in speech</span>
+            
+            
+              <span class="summary-pos">x</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sauce--saucecluster39869.html">
             <span class="summary-title">To be cheeky</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To sauce your teacher</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">😎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sauce--saucecluster39871.html">
             <span class="summary-title">Attractive style</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">He has sauce</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -107,8 +123,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

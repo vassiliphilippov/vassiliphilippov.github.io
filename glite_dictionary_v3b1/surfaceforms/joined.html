@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>join, join a library, join battle, joined, to join, to join a library, to join battle, to joined · Surface Form</title>
+  <title>joined (to join, to join a library, to join battle) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">join, join a library, join battle, joined, to join, to join a library, to join battle, to joined</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • verb</div>
+  <h1 style="text-align:center">joined (to join, to join a library, to join battle)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +32,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📚</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/join_a_library-0bf38fe349--join_a_libcluster146170.html">
             <span class="summary-title">To become member</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To join a library</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">⚔️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/join_battle-716649ac98--join_battlcluster146184.html">
             <span class="summary-title">To start fighting</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To join battle quickly</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/joined--joinedcluster146250.html">
             <span class="summary-title">Connected together</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Two joined trailers</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/join--joincluster147666.html">
             <span class="summary-title">To connect</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To join two pieces</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">👥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/join--joincluster147667.html">
             <span class="summary-title">To become a member</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To join a club</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -102,8 +116,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

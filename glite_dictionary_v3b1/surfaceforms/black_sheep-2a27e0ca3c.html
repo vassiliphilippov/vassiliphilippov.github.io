@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">black sheep</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,17 +23,17 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/black_sheep-29470b4d4e--black_sheecluster110406.html">
             <span class="summary-title">An outcast</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The black sheep of the family</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -40,17 +45,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/black_sheep-29470b4d4e--black_sheecluster110405.html">
             <span class="summary-title">A dark-colored sheep</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A black sheep in the flock</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -59,8 +64,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>scissor, scissors, to scissor, to scissors · Surface Form</title>
+  <title>scissors (to scissor) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">scissor, scissors, to scissor, to scissors</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">scissors (to scissor)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +32,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">✂️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scissors--scissorscluster45887.html">
             <span class="summary-title">Cutting tool</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A pair of scissors</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">✂️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scissor--scissorcluster44554.html">
             <span class="summary-title">To cut with scissors</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To scissor the threads</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -56,7 +70,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🦵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scissors--scissorscluster45888.html">
@@ -65,16 +79,16 @@
               <span class="badge-domain">wrestling</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Scissors hold</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scissors--scissorscluster45889.html">
@@ -83,10 +97,10 @@
               <span class="badge-domain">gymnastics</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Scissors move</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -95,8 +109,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

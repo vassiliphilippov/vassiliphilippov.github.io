@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">sack, to sack</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +32,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32218.html">
             <span class="summary-title">A large bag</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A sack of flour</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32223.html">
             <span class="summary-title">Job loss</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">He got the sack</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32224.html">
             <span class="summary-title">To fire</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To sack an employee</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -72,23 +86,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🛍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32219.html">
             <span class="summary-title">To bag</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To sack potatoes</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32220.html">
@@ -97,16 +111,16 @@
               <span class="badge-domain">fashion</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">An 18th-century sack jacket</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32221.html">
@@ -115,16 +129,16 @@
               <span class="badge-domain">fashion</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A 1920s sack dress</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32222.html">
@@ -133,16 +147,16 @@
               <span class="badge-domain">archaic</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A glass of sack wine</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32225.html">
@@ -151,16 +165,16 @@
               <span class="badge-domain">history</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The sack of a city</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/sack--sackcluster32226.html">
@@ -169,10 +183,10 @@
               <span class="badge-domain">history</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To sack a town</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -181,7 +195,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

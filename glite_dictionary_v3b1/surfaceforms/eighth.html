@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>8th, eight, eighth, viii · Surface Form</title>
+  <title>eighth (8th, eight, viii) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">8th, eight, eighth, viii</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun • numeral</div>
+  <h1 style="text-align:center">eighth (8th, eight, viii)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="NUM">num</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +34,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">8️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/8th--8thcluster130314.html">
             <span class="summary-title">Number eight</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">8th place</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧩</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/eighth--eighthcluster119355.html">
             <span class="summary-title">One of eight parts</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">An eighth of the cake</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">8️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/eighth--eighthcluster119356.html">
             <span class="summary-title">Number eight</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Eighth in line</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">8️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/eighth--eighthcluster119357.html">
             <span class="summary-title">In 8th place</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Eighth position</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NUM">
         <td class="emoji-col">8️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/eight--eightcluster119390.html">
             <span class="summary-title">The number 8</span>
             
             
-              <span class="summary-pos">numeral</span>
-            
-            
               <span class="summary-collocation">Eight apples</span>
+            
+            
+              <span class="summary-pos">numeral</span>
             
           </a>
         </td>
@@ -104,17 +120,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NUM">
         <td class="emoji-col">8️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/viii--viiicluster75455.html">
             <span class="summary-title">The number eight</span>
             
             
-              <span class="summary-pos">numeral</span>
-            
-            
               <span class="summary-collocation">Chapter viii</span>
+            
+            
+              <span class="summary-pos">numeral</span>
             
           </a>
         </td>
@@ -123,8 +139,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

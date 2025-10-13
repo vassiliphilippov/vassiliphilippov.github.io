@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>to come out · Surface Form</title>
+  <title>comes out (to come out) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">to come out</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+  <h1 style="text-align:center">comes out (to come out)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +23,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📚</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31277.html">
             <span class="summary-title">To be released</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">A new book comes out</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31278.html">
             <span class="summary-title">To appear</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Flowers come out</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31279.html">
             <span class="summary-title">To be revealed</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">The truth comes out</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏳️‍🌈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31280.html">
             <span class="summary-title">To reveal identity</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">He comes out as gay</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🥇</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31281.html">
             <span class="summary-title">To finish first</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Come out as the winner</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🦷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/come_out-e3a6325e62--come_outcluster31282.html">
             <span class="summary-title">To fall off</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">A tooth comes out</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -118,8 +123,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

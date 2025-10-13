@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">knifelike</h1>
-  <div class="headword-pos">adjective</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +23,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⚡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knifelike--knifelikecluster164438.html">
             <span class="summary-title">Extremely sharp</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Knifelike pain</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knifelike--knifelikecluster164439.html">
             <span class="summary-title">Sharp-edged</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Knifelike edge</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -56,17 +61,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/knifelike--knifelikecluster164440.html">
             <span class="summary-title">Very keen</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Knifelike intellect</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -75,7 +80,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

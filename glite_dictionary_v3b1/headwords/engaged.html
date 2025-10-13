@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">engaged</h1>
-  <div class="headword-pos">adjective</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134867.html">
             <span class="summary-title">Promised to marry</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged to marry</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">☎️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134869.html">
             <span class="summary-title">Busy or occupied</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged phone line</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📝</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134871.html">
             <span class="summary-title">Busy with activity</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged in work</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -72,23 +77,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧑‍💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134865.html">
             <span class="summary-title">Hired</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged for the job</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⚔️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134866.html">
@@ -97,16 +102,16 @@
               <span class="badge-domain">military</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged in battle</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⚙️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134868.html">
@@ -115,16 +120,16 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Gears engaged</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🏛️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/engaged--engagedcluster134870.html">
@@ -133,10 +138,10 @@
               <span class="badge-domain">architecture</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Engaged column</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -145,7 +150,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

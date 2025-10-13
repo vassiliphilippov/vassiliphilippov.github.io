@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>haem, haemoglobin, hem, heme, hemoglobin · Surface Form</title>
+  <title>haemoglobin (haem, hem, heme, hemoglobin) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">haem, haemoglobin, hem, heme, hemoglobin</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">haemoglobin (haem, hem, heme, hemoglobin)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,7 +23,7 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🩸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hemoglobin--hemoglobincluster192657.html">
@@ -27,26 +32,26 @@
               <span class="badge-domain">biology</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Red hemoglobin protein</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hem--hemcluster193607.html">
             <span class="summary-title">Edge of cloth</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Dress hem</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -58,7 +63,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🩸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/haem--haemcluster36483.html">
@@ -67,16 +72,16 @@
               <span class="badge-domain">biology</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Haem in blood</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🩸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/heme--hemecluster56801.html">
@@ -85,26 +90,26 @@
               <span class="badge-domain">biology</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The heme group</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤭</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hem--hemcluster193608.html">
             <span class="summary-title">A throat sound</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A quiet hem</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -113,8 +118,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>small, smaller, smallish · Surface Form</title>
+  <title>smaller (small, smallish) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">small, smaller, smallish</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective</div>
+  <h1 style="text-align:center">smaller (small, smallish)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +23,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/smaller--smallercluster101760.html">
             <span class="summary-title">Less in size</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A smaller size</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/smallish--smallishcluster101811.html">
             <span class="summary-title">Fairly small</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A smallish size</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/small--smallcluster104789.html">
             <span class="summary-title">Not large</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A small business</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">👶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/small--smallcluster104790.html">
             <span class="summary-title">Young or not grown</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Small children</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -88,49 +93,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🟣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/small--smallcluster104791.html">
             <span class="summary-title">Tiny pieces</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Small particles</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🤫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/small--smallcluster104792.html">
             <span class="summary-title">Quiet sound</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Small voice</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/small--smallcluster104793.html">
             <span class="summary-title">Lowercase letters</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Small letters</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -139,8 +144,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

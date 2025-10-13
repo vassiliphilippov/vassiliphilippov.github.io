@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>wash, washed, to wash, to washed · Surface Form</title>
+  <title>washed (to wash) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">wash, washed, to wash, to washed</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • verb</div>
+  <h1 style="text-align:center">washed (to wash)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +32,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/washed--washedcluster89585.html">
             <span class="summary-title">Clean with water</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Washed clothes</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/wash--washcluster99117.html">
             <span class="summary-title">To clean</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To wash your hands</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/wash--washcluster99120.html">
             <span class="summary-title">To carry away</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To wash away soil</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -72,7 +86,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/washed--washedcluster89586.html">
@@ -81,16 +95,16 @@
               <span class="badge-domain">slang</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Washed up star</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/wash--washcluster99123.html">
@@ -99,26 +113,26 @@
               <span class="badge-domain">art</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To wash with gold</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">❌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/wash--washcluster99125.html">
             <span class="summary-title">To be accepted</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">That won&#39;t wash</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -127,8 +141,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

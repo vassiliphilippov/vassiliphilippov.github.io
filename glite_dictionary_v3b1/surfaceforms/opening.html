@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>open, opening, to open, to opening · Surface Form</title>
+  <title>opening (to open) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">open, opening, to open, to opening</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun • verb</div>
+  <h1 style="text-align:center">opening (to open)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +34,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/opening--openingcluster104749.html">
             <span class="summary-title">The beginning</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Opening ceremony</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🕳️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/opening--openingcluster104750.html">
             <span class="summary-title">A hole or gap</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A small opening</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/opening--openingcluster104751.html">
             <span class="summary-title">A job opportunity</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A job opening</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🎬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/opening--openingcluster104753.html">
             <span class="summary-title">First part</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Opening scene</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📦</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/open--opencluster105199.html">
             <span class="summary-title">To make accessible</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To open a box</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🗣️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/open--opencluster105200.html">
             <span class="summary-title">To begin</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To open a meeting</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -120,7 +136,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">♟️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/opening--openingcluster104752.html">
@@ -129,26 +145,26 @@
               <span class="badge-domain">chess</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Chess opening</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/open--opencluster105201.html">
             <span class="summary-title">To lead to</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Room opens onto garden</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -157,8 +173,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

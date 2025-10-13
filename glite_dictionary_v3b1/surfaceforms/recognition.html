@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">recognition</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +23,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38967.html">
             <span class="summary-title">Formal approval</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">International recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38968.html">
             <span class="summary-title">Appreciation</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Public recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧑‍💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38969.html">
             <span class="summary-title">Identifying</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Face recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38970.html">
             <span class="summary-title">Realization</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Sudden recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -88,7 +93,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏛️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38966.html">
@@ -97,16 +102,16 @@
               <span class="badge-domain">law</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Diplomatic recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/recognition--recognitiocluster38971.html">
@@ -115,10 +120,10 @@
               <span class="badge-domain">biology</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Molecule recognition</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -127,8 +132,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

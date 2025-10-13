@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">conflictive</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -19,49 +24,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🤔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/conflictive--conflictivcluster41831.html">
             <span class="summary-title">Causing inner struggle</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Conflictive feelings</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⚡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/conflictive--conflictivcluster41832.html">
             <span class="summary-title">Causing arguments</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Conflictive attitudes</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🗣️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/conflictive--conflictivcluster41833.html">
             <span class="summary-title">Showing disagreement</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Conflictive opinions</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -70,8 +75,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

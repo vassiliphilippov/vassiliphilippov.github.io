@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>green, greener, greenish, greeny · Surface Form</title>
+  <title>greener (green, greenish, greeny) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">green, greener, greenish, greeny</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective</div>
+  <h1 style="text-align:center">greener (green, greenish, greeny)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +23,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🟩</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/greenish--greenishcluster25611.html">
             <span class="summary-title">Somewhat green</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A greenish color</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🌱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/greeny--greenycluster27682.html">
@@ -43,58 +48,58 @@
               <span class="badge-domain">environment</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Greeny policies</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🍏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/green--greencluster27530.html">
             <span class="summary-title">Not ripe</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Green fruit</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧑‍🎓</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/green--greencluster27531.html">
             <span class="summary-title">Inexperienced</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Green worker</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🌱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/green--greencluster27533.html">
             <span class="summary-title">Environmentally friendly</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Green energy</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -106,17 +111,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🤢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/green--greencluster27532.html">
             <span class="summary-title">Looking sick</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Green face</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -125,8 +130,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

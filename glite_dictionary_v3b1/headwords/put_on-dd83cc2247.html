@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">to put on</h1>
-  <div class="headword-pos">verb</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +23,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20023.html">
             <span class="summary-title">To dress</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on a jacket</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎭</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20025.html">
             <span class="summary-title">To organize</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on a show</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">⚖️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20026.html">
             <span class="summary-title">To gain weight</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on weight</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">☕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20029.html">
             <span class="summary-title">To start heating</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on the kettle</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20030.html">
             <span class="summary-title">To play music</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on music</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -104,49 +109,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">➕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20024.html">
             <span class="summary-title">To add</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on an extension</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🚗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20027.html">
             <span class="summary-title">To increase mileage</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Put on more miles</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/put_on-dd83cc2247--put_oncluster20028.html">
             <span class="summary-title">To trick</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To put on a joke</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -155,7 +160,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

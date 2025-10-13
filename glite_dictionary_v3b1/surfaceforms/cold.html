@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">cold</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">❄️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29247.html">
             <span class="summary-title">Low temperature</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A cold drink</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🥶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29248.html">
             <span class="summary-title">Lack of heat</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The winter cold</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤧</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29249.html">
             <span class="summary-title">A mild illness</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Catch a cold</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29250.html">
             <span class="summary-title">Unfriendly</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A cold reply</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -88,39 +102,39 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29251.html">
             <span class="summary-title">Unconscious</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Knocked cold</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29252.html">
             <span class="summary-title">Not close</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A cold guess</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29253.html">
@@ -129,16 +143,16 @@
               <span class="badge-domain">art</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Cold blue tones</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29254.html">
@@ -147,16 +161,16 @@
               <span class="badge-domain">informal</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Know it cold</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💾</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cold--coldcluster29255.html">
@@ -165,10 +179,10 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Cold storage wallet</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -177,8 +191,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

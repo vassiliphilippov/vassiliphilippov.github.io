@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">to rectify</h1>
-  <div class="headword-pos">verb</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,17 +23,17 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">✅</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rectify--rectifycluster40208.html">
             <span class="summary-title">To correct</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rectify a mistake</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -40,7 +45,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rectify--rectifycluster40209.html">
@@ -49,16 +54,16 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rectify current</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rectify--rectifycluster40210.html">
@@ -67,16 +72,16 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rectify a curve</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rectify--rectifycluster40211.html">
@@ -85,10 +90,10 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rectify a liquid</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -97,7 +102,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">weak</h1>
-  <div class="headword-pos">adjective</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +23,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">💪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96168.html">
             <span class="summary-title">Not strong</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak muscles</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96169.html">
             <span class="summary-title">Not skilled</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak at math</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🏛️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96170.html">
             <span class="summary-title">Lacking power</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak leadership</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🫥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96171.html">
             <span class="summary-title">Lacking courage</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak will</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96172.html">
             <span class="summary-title">Not loud or clear</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak voice</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🍵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96173.html">
             <span class="summary-title">Not strong flavor</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak tea</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -120,7 +125,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96174.html">
@@ -129,16 +134,16 @@
               <span class="badge-domain">linguistics</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak vowel</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">✍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96175.html">
@@ -147,16 +152,16 @@
               <span class="badge-domain">grammar</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak verb</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">📉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/weak--weakcluster96176.html">
@@ -165,10 +170,10 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Weak market</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -177,7 +182,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

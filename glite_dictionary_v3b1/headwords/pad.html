@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">pad, to pad</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +32,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124599.html">
             <span class="summary-title">A notepad</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A pad of paper</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🩹</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124600.html">
             <span class="summary-title">A soft cover</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A pad for wounds</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124601.html">
             <span class="summary-title">A place to stay</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A friend&#39;s pad</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐾</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124603.html">
             <span class="summary-title">A soft foot part</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Cat&#39;s pad</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124604.html">
             <span class="summary-title">To fill with soft</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To pad a jacket</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">➕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124606.html">
             <span class="summary-title">To add extra</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To pad a report</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -120,7 +134,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚀</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124598.html">
@@ -129,16 +143,16 @@
               <span class="badge-domain">space</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Rocket pad</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124602.html">
@@ -147,26 +161,26 @@
               <span class="badge-domain">nature</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Water lily pad</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🥾</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pad--padcluster124605.html">
             <span class="summary-title">To walk heavily</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To pad through mud</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -175,7 +189,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

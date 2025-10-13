@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">floater</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,39 +23,39 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52538.html">
             <span class="summary-title">Temporary worker</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Office floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛟</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52541.html">
             <span class="summary-title">Floating object</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Pool floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👁️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52543.html">
@@ -59,10 +64,10 @@
               <span class="badge-domain">medical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Eye floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -74,7 +79,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52537.html">
@@ -83,16 +88,16 @@
               <span class="badge-domain">insurance</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Jewelry floater policy</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🗳️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52539.html">
@@ -101,16 +106,16 @@
               <span class="badge-domain">law</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Election floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52540.html">
@@ -119,26 +124,26 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Bond floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/floater--floatercluster52542.html">
             <span class="summary-title">Drifter</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Wandering floater</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -147,8 +152,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

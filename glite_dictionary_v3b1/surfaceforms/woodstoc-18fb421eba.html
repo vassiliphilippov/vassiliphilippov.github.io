@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>Woodstoc, Woodstock · Surface Form</title>
+  <title>Woodstoc (Woodstock) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">Woodstoc, Woodstock</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">proper noun</div>
+  <h1 style="text-align:center">Woodstoc (Woodstock)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">propn</div>
+    
+  
 </header>
 <main>
   
@@ -18,7 +23,7 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">🎸</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/woodstock-f569e8e5c7--woodstockcluster31080.html">
@@ -27,10 +32,10 @@
               <span class="badge-domain">music</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">Woodstock music festival</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
@@ -42,7 +47,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">🏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/woodstock-f569e8e5c7--woodstockcluster31081.html">
@@ -51,16 +56,16 @@
               <span class="badge-domain">geography</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">Woodstock Oxfordshire town</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">🏞️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/woodstock-f569e8e5c7--woodstockcluster31082.html">
@@ -69,16 +74,16 @@
               <span class="badge-domain">geography</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">Woodstock New York town</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">🎥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/woodstock-f569e8e5c7--woodstockcluster31083.html">
@@ -87,16 +92,16 @@
               <span class="badge-domain">film</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">Woodstock documentary film</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">💿</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/woodstock-f569e8e5c7--woodstockcluster31084.html">
@@ -105,10 +110,10 @@
               <span class="badge-domain">music</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">Woodstock live album</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
@@ -117,8 +122,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>tease, teasing, to tease, to teasing · Surface Form</title>
+  <title>teasing (to tease) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">tease, teasing, to tease, to teasing</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun • verb</div>
+  <h1 style="text-align:center">teasing (to tease)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +34,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😜</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tease--teasecluster10935.html">
             <span class="summary-title">To mock playfully</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tease a friend</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tease--teasecluster10936.html">
             <span class="summary-title">To tempt or arouse</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tease with secrets</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/teasing--teasingcluster10363.html">
             <span class="summary-title">Playfully mocking</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A teasing smile</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/teasing--teasingcluster10364.html">
             <span class="summary-title">Sexually suggestive</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Teasing behavior</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">😜</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/teasing--teasingcluster10366.html">
             <span class="summary-title">Making fun</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Constant teasing</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -104,7 +120,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tease--teasecluster10934.html">
@@ -113,32 +129,32 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tease wool fibers</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/teasing--teasingcluster10365.html">
             <span class="summary-title">Annoying or irritating</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Teasing itch</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/teasing--teasingcluster10367.html">
@@ -147,10 +163,10 @@
               <span class="badge-domain">marketing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Marketing teasing</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -159,8 +175,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>herself, she · Surface Form</title>
+  <title>she (herself) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">herself, she</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • pronoun</div>
+  <h1 style="text-align:center">she (herself)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="PRON">pron</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +32,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="PRON">
         <td class="emoji-col">🪞</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/herself--herselfcluster62003.html">
             <span class="summary-title">Reflexive pronoun</span>
             
             
-              <span class="summary-pos">pronoun</span>
-            
-            
               <span class="summary-collocation">Herself in the mirror</span>
+            
+            
+              <span class="summary-pos">pronoun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PRON">
         <td class="emoji-col">🙋‍♀️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/herself--herselfcluster62004.html">
             <span class="summary-title">Alone or only</span>
             
             
-              <span class="summary-pos">pronoun</span>
-            
-            
               <span class="summary-collocation">All by herself</span>
+            
+            
+              <span class="summary-pos">pronoun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PRON">
         <td class="emoji-col">👩</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/she--shecluster73458.html">
             <span class="summary-title">A female person</span>
             
             
-              <span class="summary-pos">pronoun</span>
-            
-            
               <span class="summary-collocation">She is happy</span>
+            
+            
+              <span class="summary-pos">pronoun</span>
             
           </a>
         </td>
@@ -72,33 +86,33 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="PRON">
         <td class="emoji-col">🚢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/she--shecluster73459.html">
             <span class="summary-title">A ship or country</span>
             
             
-              <span class="summary-pos">pronoun</span>
-            
-            
               <span class="summary-collocation">She sails well</span>
+            
+            
+              <span class="summary-pos">pronoun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐐</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/she--shecluster73460.html">
             <span class="summary-title">A female animal</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A she goat</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -107,8 +121,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

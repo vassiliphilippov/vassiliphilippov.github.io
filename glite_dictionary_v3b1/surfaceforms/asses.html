@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>arse, ass, asses · Surface Form</title>
+  <title>asses (arse, ass) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">arse, ass, asses</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">asses (arse, ass)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/arse--arsecluster46814.html">
             <span class="summary-title">The buttocks</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Sit on your arse</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ass--asscluster52817.html">
             <span class="summary-title">The buttocks</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Sit on your ass</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ass--asscluster52818.html">
             <span class="summary-title">A fool</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Act like an ass</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -72,33 +77,33 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🐴</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ass--asscluster52816.html">
             <span class="summary-title">A donkey</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Pack ass</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ass--asscluster52819.html">
             <span class="summary-title">Sex (slang)</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Get some ass</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -107,8 +112,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

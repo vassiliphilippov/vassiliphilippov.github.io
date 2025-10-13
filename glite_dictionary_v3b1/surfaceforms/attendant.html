@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">attendant</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,17 +32,17 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧑‍💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/attendant--attendantcluster59877.html">
             <span class="summary-title">A helper</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Parking attendant</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -40,65 +54,65 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧑‍🤝‍🧑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/attendant--attendantcluster59873.html">
             <span class="summary-title">Present at event</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Attendant members</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/attendant--attendantcluster59874.html">
             <span class="summary-title">Related or resulting</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Attendant risks</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌐</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/attendant--attendantcluster59875.html">
             <span class="summary-title">Related conditions</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Social attendants</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🙋</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/attendant--attendantcluster59876.html">
             <span class="summary-title">A participant</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">An attendant at a meeting</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -107,8 +121,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

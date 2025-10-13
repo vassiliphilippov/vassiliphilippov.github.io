@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>cap, cape, capped, to cap, to cape, to capped · Surface Form</title>
+  <title>capped (to cap, to cape) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">cap, cape, capped, to cap, to cape, to capped</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • verb</div>
+  <h1 style="text-align:center">capped (to cap, to cape)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +32,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🏔️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/capped--cappedcluster165791.html">
             <span class="summary-title">Covered on top</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Snow-capped mountains</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cap--capcluster168565.html">
             <span class="summary-title">To limit amount</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To cap spending</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -56,23 +70,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🛡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cape--capecluster165232.html">
             <span class="summary-title">To cover</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To cape the pipes</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🦌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cape--capecluster165233.html">
@@ -81,16 +95,16 @@
               <span class="badge-domain">hunting</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To cape a deer</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🦷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/capped--cappedcluster165792.html">
@@ -99,32 +113,32 @@
               <span class="badge-domain">medical</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Capped tooth</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏛️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cap--capcluster168566.html">
             <span class="summary-title">To cover the top</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To cap a tower</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cap--capcluster168567.html">
@@ -133,10 +147,10 @@
               <span class="badge-domain">slang</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To cap a story</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -145,8 +159,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

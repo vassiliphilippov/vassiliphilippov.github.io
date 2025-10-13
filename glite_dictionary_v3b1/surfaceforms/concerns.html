@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>concern, concerns, to concern · Surface Form</title>
+  <title>concerns (concern, to concern) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">concern, concerns, to concern</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">concerns (concern, to concern)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">😟</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/concern--concerncluster38645.html">
             <span class="summary-title">Worry or care</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A mother&#39;s concern</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">❗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/concern--concerncluster38646.html">
             <span class="summary-title">An important issue</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A major concern</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/concern--concerncluster38648.html">
             <span class="summary-title">To relate to</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">The rules concern safety</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😟</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/concern--concerncluster38649.html">
             <span class="summary-title">To worry</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">The news concerns parents</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -88,7 +102,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/concern--concerncluster38647.html">
@@ -97,10 +111,10 @@
               <span class="badge-domain">business</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A business concern</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -109,8 +123,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

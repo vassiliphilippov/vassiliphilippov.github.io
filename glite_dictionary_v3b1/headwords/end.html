@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">end, to end</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏁</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133173.html">
             <span class="summary-title">Final part</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The end of the story</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎯</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133174.html">
             <span class="summary-title">A goal</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A means to an end</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔚</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133175.html">
             <span class="summary-title">Physical limit</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The end of the rope</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🛑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133179.html">
             <span class="summary-title">To finish</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To end a meeting</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -88,7 +102,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133176.html">
@@ -97,16 +111,16 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A football end</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133177.html">
@@ -115,26 +129,26 @@
               <span class="badge-domain">sewing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A fabric end</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤝</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/end--endcluster133178.html">
             <span class="summary-title">A responsibility</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Her end of the deal</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -143,7 +157,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

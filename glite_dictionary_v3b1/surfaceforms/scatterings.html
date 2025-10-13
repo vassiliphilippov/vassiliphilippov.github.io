@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>scattering, scatterings · Surface Form</title>
+  <title>scatterings (scattering) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">scattering, scatterings</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">scatterings (scattering)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌬️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scattering--scatteringcluster42928.html">
             <span class="summary-title">Spreading out</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Scattering of people</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">✨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scattering--scatteringcluster42929.html">
             <span class="summary-title">A few things</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A scattering of applause</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌦️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scattering--scatteringcluster42930.html">
             <span class="summary-title">Light shower</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A scattering of rain</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -72,7 +77,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/scattering--scatteringcluster42931.html">
@@ -81,10 +86,10 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Scattering of particles</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -93,8 +98,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

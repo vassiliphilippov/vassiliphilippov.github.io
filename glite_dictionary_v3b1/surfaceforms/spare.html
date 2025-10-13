@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>spare, to spare · Surface Form</title>
+  <title>spare (to spare) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">spare, to spare</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun • verb</div>
+  <h1 style="text-align:center">spare (to spare)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +34,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124478.html">
             <span class="summary-title">An extra thing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A spare tire</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124480.html">
             <span class="summary-title">Extra or available</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Spare time</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🙌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124483.html">
             <span class="summary-title">To give or allow</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To spare a minute</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🛡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124484.html">
             <span class="summary-title">To save from trouble</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To spare someone trouble</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -88,7 +104,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124479.html">
@@ -97,58 +113,58 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A spare in bowling</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🪑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124481.html">
             <span class="summary-title">Simple or minimal</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Spare room</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💧</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124482.html">
             <span class="summary-title">To use less</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To spare water</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🙏</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/spare--sparecluster124485.html">
             <span class="summary-title">To not harm</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To spare a life</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -157,8 +173,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">regular</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • noun</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,55 +32,55 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52414.html">
             <span class="summary-title">Happening often</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Regular check-ups</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🔷</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52415.html">
             <span class="summary-title">Evenly shaped</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Regular shape</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🪖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52416.html">
             <span class="summary-title">Official group</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Regular army</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🚽</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52417.html">
@@ -75,16 +89,16 @@
               <span class="badge-domain">medical</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Regular bowel movements</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52419.html">
@@ -93,26 +107,26 @@
               <span class="badge-domain">clothing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Regular size</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">☕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52420.html">
             <span class="summary-title">Frequent visitor</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A regular customer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -124,7 +138,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52418.html">
@@ -133,16 +147,16 @@
               <span class="badge-domain">informal</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Regular mess</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🪖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/regular--regularcluster52421.html">
@@ -151,10 +165,10 @@
               <span class="badge-domain">military</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">An army regular</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -163,8 +177,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

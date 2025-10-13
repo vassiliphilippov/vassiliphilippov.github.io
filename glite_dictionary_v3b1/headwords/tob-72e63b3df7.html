@@ -10,7 +10,23 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">TOB</h1>
-  <div class="headword-pos">noun • proper noun • sym</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="PROPN">propn</button>
+          
+            <button class="pos-filter-btn" data-pos="SYM">sym</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -19,7 +35,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🕰️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tob-72e63b3df7--tobcluster168595.html">
@@ -28,16 +44,16 @@
               <span class="badge-domain">medical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">TOB on birth record</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💹</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tob-72e63b3df7--tobcluster168596.html">
@@ -46,16 +62,16 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">TOB price check</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PROPN">
         <td class="emoji-col">🛫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tob-72e63b3df7--tobcluster168597.html">
@@ -64,26 +80,26 @@
               <span class="badge-domain">travel</span>
             
             
-              <span class="summary-pos">proper noun</span>
-            
-            
               <span class="summary-collocation">TOB airport code</span>
+            
+            
+              <span class="summary-pos">proper noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="SYM">
         <td class="emoji-col">📄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tob-72e63b3df7--tobcluster168598.html">
             <span class="summary-title">Business transfer</span>
             
             
-              <span class="summary-pos">sym</span>
-            
-            
               <span class="summary-collocation">Company TOB notice</span>
+            
+            
+              <span class="summary-pos">sym</span>
             
           </a>
         </td>
@@ -92,7 +108,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

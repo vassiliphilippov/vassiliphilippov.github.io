@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>to cash in one&#39;s chips · Surface Form</title>
+  <title>cashes in one&#39;s chips (to cash in one&#39;s chips) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">to cash in one&#39;s chips</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+  <h1 style="text-align:center">cashes in one&#39;s chips (to cash in one&#39;s chips)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,17 +23,17 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💀</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cash_in_ones_chips-3aa098df80--cash_in_oncluster173695.html">
             <span class="summary-title">To die</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">He cashed in his chips last night</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -40,17 +45,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏁</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cash_in_ones_chips-3aa098df80--cash_in_oncluster173696.html">
             <span class="summary-title">To quit and leave</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">She cashed in her chips and retired</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -59,8 +64,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

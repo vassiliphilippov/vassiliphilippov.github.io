@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">under</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • adverb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="ADV">adv</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +32,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ,ADV">
         <td class="emoji-col">⬇️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/under--undercluster30955.html">
             <span class="summary-title">Below something</span>
             
             
-              <span class="summary-pos">adjective • adverb</span>
-            
-            
               <span class="summary-collocation">Under the table</span>
+            
+            
+              <span class="summary-pos">adjective • adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">💲</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/under--undercluster30956.html">
             <span class="summary-title">Less than</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Under 10 dollars</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">🛌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/under--undercluster30957.html">
             <span class="summary-title">In a state</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Under control</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
@@ -70,8 +84,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

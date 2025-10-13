@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>manikin, manikins, mannikin · Surface Form</title>
+  <title>manikins (manikin, mannikin) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">manikin, manikins, mannikin</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">manikins (manikin, mannikin)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +23,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🧍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/manikin--manikincluster17222.html">
             <span class="summary-title">A display dummy</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Store manikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/mannikin--mannikincluster17035.html">
             <span class="summary-title">A display dummy</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Shop mannikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -56,23 +61,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👧</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/manikin--manikincluster17220.html">
             <span class="summary-title">A small person</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A small manikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/manikin--manikincluster17221.html">
@@ -81,32 +86,32 @@
               <span class="badge-domain">fashion</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Fashion manikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/mannikin--mannikincluster17033.html">
             <span class="summary-title">A very small person</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A tiny mannikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/mannikin--mannikincluster17034.html">
@@ -115,16 +120,16 @@
               <span class="badge-domain">fashion</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Fashion mannikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/mannikin--mannikincluster17036.html">
@@ -133,10 +138,10 @@
               <span class="badge-domain">medical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Medical mannikin</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -145,8 +150,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

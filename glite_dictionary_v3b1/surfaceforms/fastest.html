@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>fast, faster, fastest · Surface Form</title>
+  <title>fastest (fast, faster) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">fast, faster, fastest</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective • adverb</div>
+  <h1 style="text-align:center">fastest (fast, faster)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="ADV">adv</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +32,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">⚡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/faster--fastercluster170470.html">
             <span class="summary-title">More quickly</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Work faster today</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ,ADV">
         <td class="emoji-col">🏎️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176981.html">
             <span class="summary-title">Quick or speedy</span>
             
             
-              <span class="summary-pos">adjective • adverb</span>
-            
-            
               <span class="summary-collocation">A fast car</span>
+            
+            
+              <span class="summary-pos">adjective • adverb</span>
             
           </a>
         </td>
@@ -56,81 +70,81 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ,ADV">
         <td class="emoji-col">🧱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176980.html">
             <span class="summary-title">Firmly fixed</span>
             
             
-              <span class="summary-pos">adjective • adverb</span>
-            
-            
               <span class="summary-collocation">Fast to the wall</span>
+            
+            
+              <span class="summary-pos">adjective • adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">⏰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176982.html">
             <span class="summary-title">Showing wrong time</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A fast clock</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🤝</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176983.html">
             <span class="summary-title">Loyal or close</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Fast friends</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🎨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176984.html">
             <span class="summary-title">Does not fade</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Fast colors</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🎉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/fast--fastcluster176985.html">
             <span class="summary-title">Wild or risky</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Fast lifestyle</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -139,8 +153,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">ohhhh</h1>
-  <div class="headword-pos">interjection</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">intj</div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +23,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">🤔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ohhhh--ohhhhcluster89737.html">
             <span class="summary-title">Hesitating sound</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Ohhhh let me think</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">😌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ohhhh--ohhhhcluster89738.html">
             <span class="summary-title">Pleasure sound</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Ohhhh that feels good</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">💡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ohhhh--ohhhhcluster89739.html">
             <span class="summary-title">Realization sound</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Ohhhh I see</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">🥺</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/ohhhh--ohhhhcluster89740.html">
             <span class="summary-title">Sympathy sound</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Ohhhh poor you</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
@@ -86,7 +91,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

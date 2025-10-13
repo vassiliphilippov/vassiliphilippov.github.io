@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">to get down</h1>
-  <div class="headword-pos">verb</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +23,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40923.html">
             <span class="summary-title">To lower yourself</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down on the floor</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📦</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40925.html">
             <span class="summary-title">To take down</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down a box</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">😞</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40926.html">
             <span class="summary-title">To make sad</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Get down your mood</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40927.html">
             <span class="summary-title">To start seriously</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down to work</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -88,49 +93,49 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">✍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40921.html">
             <span class="summary-title">To write</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down ideas on paper</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🐎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40922.html">
             <span class="summary-title">To dismount</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down from a horse</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🥄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/get_down-34ac220a9d--get_downcluster40924.html">
             <span class="summary-title">To swallow</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To get down a meal</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -139,7 +144,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

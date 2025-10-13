@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>rebind, rebound, rebounds, to rebind, to rebound · Surface Form</title>
+  <title>rebounds (to rebind, rebound, to rebound) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">rebind, rebound, rebounds, to rebind, to rebound</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">rebounds (to rebind, rebound, to rebound)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,7 +32,7 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏀</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebound--reboundcluster36470.html">
@@ -27,74 +41,74 @@
               <span class="badge-domain">basketball</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A rebound in basketball</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">↩️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebound--reboundcluster36471.html">
             <span class="summary-title">A bounce back</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A rebound off the wall</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">↩️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebound--reboundcluster36472.html">
             <span class="summary-title">To bounce back</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Balls rebound off surfaces</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebound--reboundcluster36473.html">
             <span class="summary-title">Emotional recovery</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">On the rebound after breakup</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebound--reboundcluster36474.html">
             <span class="summary-title">To recover</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Companies rebound after loss</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -106,23 +120,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📚</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebind--rebindcluster35517.html">
             <span class="summary-title">To give new cover</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rebind a book</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💻</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rebind--rebindcluster35518.html">
@@ -131,10 +145,10 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To rebind a domain</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -143,8 +157,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

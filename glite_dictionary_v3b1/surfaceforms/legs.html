@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>leg, legs · Surface Form</title>
+  <title>legs (leg) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">leg, legs</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">legs (leg)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +23,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🦵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183765.html">
             <span class="summary-title">A body limb</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A broken leg</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🦿</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183766.html">
             <span class="summary-title">A fake limb</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">An artificial leg</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183767.html">
             <span class="summary-title">Part of trousers</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The leg of jeans</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🪑</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183768.html">
             <span class="summary-title">Furniture support</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A table leg</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍖</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183769.html">
             <span class="summary-title">Meat from animal</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A leg of lamb</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏁</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/leg--legcluster183770.html">
             <span class="summary-title">Part of a journey</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The final leg of the race</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -120,17 +125,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/legs--legscluster180803.html">
             <span class="summary-title">Long success</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The legs of an idea</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -139,8 +144,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

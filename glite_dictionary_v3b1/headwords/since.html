@@ -10,7 +10,23 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">since</h1>
-  <div class="headword-pos">adverb • conjunction • preposition</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADP">adp</button>
+          
+            <button class="pos-filter-btn" data-pos="ADV">adv</button>
+          
+            <button class="pos-filter-btn" data-pos="SCONJ">sconj</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +34,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADP">
         <td class="emoji-col">⏳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/since--sincecluster91851.html">
             <span class="summary-title">From a time</span>
             
             
-              <span class="summary-pos">preposition</span>
-            
-            
               <span class="summary-collocation">Since last year</span>
+            
+            
+              <span class="summary-pos">preposition</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">🔄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/since--sincecluster91852.html">
             <span class="summary-title">From then until now</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Ever since then</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="SCONJ">
         <td class="emoji-col">🕰️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/since--sincecluster91853.html">
             <span class="summary-title">From when</span>
             
             
-              <span class="summary-pos">conjunction</span>
-            
-            
               <span class="summary-collocation">Since he left</span>
+            
+            
+              <span class="summary-pos">conjunction</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="SCONJ">
         <td class="emoji-col">🤔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/since--sincecluster91854.html">
             <span class="summary-title">Because</span>
             
             
-              <span class="summary-pos">conjunction</span>
-            
-            
               <span class="summary-collocation">Since it rained</span>
+            
+            
+              <span class="summary-pos">conjunction</span>
             
           </a>
         </td>
@@ -86,7 +102,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

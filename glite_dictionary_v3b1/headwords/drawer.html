@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">drawer</h1>
-  <div class="headword-pos">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,17 +23,17 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🗄️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/drawer--drawercluster100858.html">
             <span class="summary-title">A storage box</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A clothes drawer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -40,7 +45,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">✍️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/drawer--drawercluster100859.html">
@@ -49,32 +54,32 @@
               <span class="badge-domain">finance</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Check drawer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎨</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/drawer--drawercluster100860.html">
             <span class="summary-title">An artist</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A skilled drawer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/drawer--drawercluster100861.html">
@@ -83,10 +88,10 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">App drawer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -95,7 +100,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

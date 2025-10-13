@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">K</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">interjection • noun</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="INTJ">intj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +32,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39620.html">
             <span class="summary-title">A letter</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The letter K</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">👍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39625.html">
             <span class="summary-title">Okay (message)</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Text reply K</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
@@ -56,7 +70,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39621.html">
@@ -65,16 +79,16 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Temperature in K</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39622.html">
@@ -83,16 +97,16 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">K in bananas</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39623.html">
@@ -101,16 +115,16 @@
               <span class="badge-domain">slang</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Street K</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💾</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/k-35f6a8be12--kcluster39624.html">
@@ -119,10 +133,10 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A 16K computer</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -131,8 +145,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

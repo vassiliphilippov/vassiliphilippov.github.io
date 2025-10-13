@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">to hold up</h1>
-  <div class="headword-pos">verb</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🏗️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hold_up-580872f0e9--hold_upcluster71900.html">
             <span class="summary-title">To support weight</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Hold up a roof</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">⏳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hold_up-580872f0e9--hold_upcluster71901.html">
             <span class="summary-title">To delay</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Hold up traffic</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hold_up-580872f0e9--hold_upcluster71902.html">
             <span class="summary-title">To endure</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Hold up under stress</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -72,33 +77,33 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌟</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hold_up-580872f0e9--hold_upcluster71899.html">
             <span class="summary-title">To praise publicly</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Hold up as a hero</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/hold_up-580872f0e9--hold_upcluster71903.html">
             <span class="summary-title">To rob</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Hold up a bank</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -107,7 +112,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

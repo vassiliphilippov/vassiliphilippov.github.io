@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>rigger, riggers · Surface Form</title>
+  <title>riggers (rigger) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">rigger, riggers</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">riggers (rigger)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +23,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏗️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13969.html">
             <span class="summary-title">Lifting equipment worker</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Construction rigger</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛢️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13970.html">
@@ -43,10 +48,10 @@
               <span class="badge-domain">oil industry</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Oil rigger</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -58,7 +63,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⛵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13968.html">
@@ -67,16 +72,16 @@
               <span class="badge-domain">nautical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Ship rigger</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🖥️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13971.html">
@@ -85,16 +90,16 @@
               <span class="badge-domain">animation</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">3D rigger</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13972.html">
@@ -103,16 +108,16 @@
               <span class="badge-domain">nautical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Square rigger</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🖌️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/rigger--riggercluster13973.html">
@@ -121,10 +126,10 @@
               <span class="badge-domain">art</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Artist&#39;s rigger brush</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -133,8 +138,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

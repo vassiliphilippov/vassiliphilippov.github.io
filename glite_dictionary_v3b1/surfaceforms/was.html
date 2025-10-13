@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>to be, to beest, to bes · Surface Form</title>
+  <title>was (to be, to beest, to bes) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">to be, to beest, to bes</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">auxiliary verb • verb</div>
+  <h1 style="text-align:center">was (to be, to beest, to bes)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="AUX">aux</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,39 +32,39 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🌱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/be--becluster87695.html">
             <span class="summary-title">To exist</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To be alive</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🧑‍🏫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/be--becluster87696.html">
             <span class="summary-title">To have identity</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To be a teacher</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="AUX">
         <td class="emoji-col">🔤</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/be--becluster87698.html">
@@ -59,10 +73,10 @@
               <span class="badge-domain">grammar</span>
             
             
-              <span class="summary-pos">auxiliary verb</span>
-            
-            
               <span class="summary-collocation">Be running late</span>
+            
+            
+              <span class="summary-pos">auxiliary verb</span>
             
           </a>
         </td>
@@ -74,7 +88,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">📜</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/beest--beestcluster89711.html">
@@ -83,32 +97,32 @@
               <span class="badge-domain">archaic</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Thou beest wise</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🗣️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/bes--bescluster94880.html">
             <span class="summary-title">To be (dialect)</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">He bes working</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🎭</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/be--becluster87697.html">
@@ -117,26 +131,26 @@
               <span class="badge-domain">theater</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To be Hamlet</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🤫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/be--becluster87699.html">
             <span class="summary-title">To stay undisturbed</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">Let me be</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -145,8 +159,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

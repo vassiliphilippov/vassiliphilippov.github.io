@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>badly, worse, worst · Surface Form</title>
+  <title>badly (worse, worst) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">badly, worse, worst</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adverb</div>
+  <h1 style="text-align:center">badly (worse, worst)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adv</div>
+    
+  
 </header>
 <main>
   
@@ -18,97 +23,97 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">‼️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/badly--badlycluster72738.html">
             <span class="summary-title">Very much</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Badly need help</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">😕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/badly--badlycluster72739.html">
             <span class="summary-title">Not well</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Badly done work</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">👎</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/badly--badlycluster72740.html">
             <span class="summary-title">Unfavorably</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Spoken of badly</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">🙊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/badly--badlycluster72741.html">
             <span class="summary-title">Naughtily</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Children behave badly</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">📉</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/worse--worsecluster121029.html">
             <span class="summary-title">Less well</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">To do worse</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">😞</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/worst--worstcluster122532.html">
             <span class="summary-title">Most badly</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Felt worst after news</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
@@ -120,17 +125,17 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADV">
         <td class="emoji-col">😭</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/badly--badlycluster72742.html">
             <span class="summary-title">With distress</span>
             
             
-              <span class="summary-pos">adverb</span>
-            
-            
               <span class="summary-collocation">Cry badly</span>
+            
+            
+              <span class="summary-pos">adverb</span>
             
           </a>
         </td>
@@ -139,8 +144,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

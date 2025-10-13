@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>cantaloup vine, cantaloupe vine · Surface Form</title>
+  <title>cantaloupe vine (cantaloup vine) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">cantaloup vine, cantaloupe vine</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">cantaloupe vine (cantaloup vine)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -19,23 +24,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cantaloup_vine-a4c426a729--cantaloup_cluster162911.html">
             <span class="summary-title">A fruit plant</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">cantaloup vine plant</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🍈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/cantaloupe_vine-fe39d2fe3a--cantaloupecluster162928.html">
@@ -44,10 +49,10 @@
               <span class="badge-domain">botany</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A cantaloupe vine plant</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -56,8 +61,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

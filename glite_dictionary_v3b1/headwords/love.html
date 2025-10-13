@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">love, to love</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +32,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">❤️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4663.html">
             <span class="summary-title">Strong affection</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">His love for music</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💘</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4664.html">
             <span class="summary-title">Romantic feeling</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Romantic love</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4665.html">
             <span class="summary-title">Sexual activity</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Making love</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🥰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4666.html">
             <span class="summary-title">Dear person</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">My love</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">❤️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4669.html">
             <span class="summary-title">To care deeply</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To love spending time</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -104,7 +118,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">0️⃣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4667.html">
@@ -113,16 +127,16 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Tennis love score</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4668.html">
@@ -131,26 +145,26 @@
               <span class="badge-domain">social media</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Love reaction</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🔥</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/love--lovecluster4670.html">
             <span class="summary-title">To have sex</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To love a partner</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -159,7 +173,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

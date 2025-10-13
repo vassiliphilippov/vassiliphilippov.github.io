@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>175, one hundred seventy-five · Surface Form</title>
+  <title>one hundred seventy-five (175) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">175, one hundred seventy-five</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">numeral</div>
+  <h1 style="text-align:center">one hundred seventy-five (175)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">num</div>
+    
+  
 </header>
 <main>
   
@@ -18,33 +23,33 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NUM">
         <td class="emoji-col">🔢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/175--175cluster128827.html">
             <span class="summary-title">A number</span>
             
             
-              <span class="summary-pos">numeral</span>
-            
-            
               <span class="summary-collocation">Number 175</span>
+            
+            
+              <span class="summary-pos">numeral</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NUM">
         <td class="emoji-col">🔢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/one_hundred_seventy-five-9699b3faad--one_hundrecluster94539.html">
             <span class="summary-title">A number</span>
             
             
-              <span class="summary-pos">numeral</span>
-            
-            
               <span class="summary-collocation">One hundred seventy-five dollars</span>
+            
+            
+              <span class="summary-pos">numeral</span>
             
           </a>
         </td>
@@ -54,8 +59,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>business, businesses · Surface Form</title>
+  <title>businesses (business) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">business, businesses</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">businesses (business)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +23,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153948.html">
             <span class="summary-title">Trade or commerce</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Business activity</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153949.html">
             <span class="summary-title">A company</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A small business</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🛒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153950.html">
             <span class="summary-title">Customers or sales</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Business is slow</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">👔</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153951.html">
             <span class="summary-title">A profession</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">The business world</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🙅</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153952.html">
             <span class="summary-title">Personal concern</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">None of your business</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -104,23 +109,23 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎯</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153953.html">
             <span class="summary-title">Main activity</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Business at hand</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎭</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/business--businesscluster153954.html">
@@ -129,10 +134,10 @@
               <span class="badge-domain">theater</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Stage business</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -141,8 +146,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

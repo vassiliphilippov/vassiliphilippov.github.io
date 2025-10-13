@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>tackle, tackles, to tackle · Surface Form</title>
+  <title>tackles (tackle, to tackle) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">tackle, tackles, to tackle</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun • verb</div>
+  <h1 style="text-align:center">tackles (tackle, to tackle)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +32,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🎣</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2306.html">
             <span class="summary-title">Fishing equipment</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Fishing tackle</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🤼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2309.html">
@@ -43,32 +57,32 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A safe tackle</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2310.html">
             <span class="summary-title">To deal with</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tackle a problem</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🤼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2311.html">
@@ -77,10 +91,10 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tackle a player</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -92,7 +106,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⛵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2307.html">
@@ -101,16 +115,16 @@
               <span class="badge-domain">nautical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Ship tackle</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏈</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2308.html">
@@ -119,16 +133,16 @@
               <span class="badge-domain">sports</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A football tackle</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">🐴</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tackle--tacklecluster2312.html">
@@ -137,10 +151,10 @@
               <span class="badge-domain">animals</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tackle a horse</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -149,8 +163,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

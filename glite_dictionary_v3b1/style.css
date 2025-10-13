@@ -83,6 +83,42 @@ ul.results li:last-child { border-bottom: none; }
   align-items: center;
 }
 
+/* POS Filter Buttons */
+.pos-filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.pos-filter-buttons {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.pos-filter-btn {
+  padding: 6px 14px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-right: 1px solid var(--border-color);
+}
+.pos-filter-btn:last-child {
+  border-right: none;
+}
+.pos-filter-btn:hover {
+  background: #f8f9fa;
+}
+.pos-filter-btn.active {
+  background: var(--accent-color);
+  color: white;
+}
+
 /* Origin Tree Styles */
 .origin-tree {
   margin-top: 1rem;

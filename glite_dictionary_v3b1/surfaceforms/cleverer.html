@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>clever, cleverer, combative, comfortable, feeling confident, pervasive, resourceful, secretive · Surface Form</title>
+  <title>cleverer (clever, combative, comfortable, feeling confident, pervasive, resourceful, secretive) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">clever, cleverer, combative, comfortable, feeling confident, pervasive, resourceful, secretive</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">adjective</div>
+  <h1 style="text-align:center">cleverer (clever, combative, comfortable, feeling confident, pervasive, resourceful, secretive)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">adj</div>
+    
+  
 </header>
 <main>
   
@@ -18,129 +23,129 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/clever--clevercluster14097.html">
             <span class="summary-title">Quick and smart</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A clever idea</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🥊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/combative--combativecluster27259.html">
             <span class="summary-title">Ready to fight</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A combative attitude</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🛋️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/comfortable--comfortablcluster31002.html">
             <span class="summary-title">Physically relaxing</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Comfortable chair</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/comfortable--comfortablcluster31003.html">
             <span class="summary-title">Mentally at ease</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">Feel comfortable talking</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">😌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/feeling_confident-6d642cfb1c--feeling_cocluster174639.html">
             <span class="summary-title">To be sure</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">To feel confident about skills</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🌫️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/pervasive--pervasivecluster152318.html">
             <span class="summary-title">Spreading everywhere</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A pervasive smell</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🧠</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/resourceful--resourcefucluster757.html">
             <span class="summary-title">Good at solving</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A resourceful teacher</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="ADJ">
         <td class="emoji-col">🤫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/secretive--secretivecluster53423.html">
             <span class="summary-title">Tending to hide</span>
             
             
-              <span class="summary-pos">adjective</span>
-            
-            
               <span class="summary-collocation">A secretive smile</span>
+            
+            
+              <span class="summary-pos">adjective</span>
             
           </a>
         </td>
@@ -150,8 +155,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

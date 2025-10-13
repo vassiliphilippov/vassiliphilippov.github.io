@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>high, highs · Surface Form</title>
+  <title>highs (high) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">high, highs</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  <h1 style="text-align:center">highs (high)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -18,49 +23,49 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏆</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69091.html">
             <span class="summary-title">Best moment</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Reach a career high</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🥳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69092.html">
             <span class="summary-title">Euphoric feeling</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">On a high after news</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🌿</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69093.html">
             <span class="summary-title">Drug euphoria</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Drug-induced high</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -72,7 +77,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">☀️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69084.html">
@@ -81,16 +86,16 @@
               <span class="badge-domain">weather</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A weather high</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚗</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69085.html">
@@ -99,26 +104,26 @@
               <span class="badge-domain">automotive</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Drive in high gear</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⛰️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/high--highcluster69090.html">
             <span class="summary-title">Elevated spot</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">From the high above</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -127,8 +132,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

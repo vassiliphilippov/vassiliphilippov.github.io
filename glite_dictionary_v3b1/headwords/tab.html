@@ -10,7 +10,21 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">tab, to tab</h1>
-  <div class="headword-pos">noun • verb</div>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +32,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🏷️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188905.html">
             <span class="summary-title">A small strip</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A folder tab</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">⌨️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188907.html">
@@ -43,16 +57,16 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Tab key</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🗂️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188908.html">
@@ -61,26 +75,26 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A browser tab</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💵</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188909.html">
             <span class="summary-title">A bill</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A bar tab</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -92,7 +106,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188906.html">
@@ -101,16 +115,16 @@
               <span class="badge-domain">medicine</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A tab of medicine</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📰</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188910.html">
@@ -119,48 +133,48 @@
               <span class="badge-domain">media</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">Tab news</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">💳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188911.html">
             <span class="summary-title">To charge</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tab a drink</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">☑️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188912.html">
             <span class="summary-title">To select</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tab a leader</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="VERB">
         <td class="emoji-col">➡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tab--tabcluster188913.html">
@@ -169,10 +183,10 @@
               <span class="badge-domain">computing</span>
             
             
-              <span class="summary-pos">verb</span>
-            
-            
               <span class="summary-collocation">To tab through fields</span>
+            
+            
+              <span class="summary-pos">verb</span>
             
           </a>
         </td>
@@ -181,7 +195,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>

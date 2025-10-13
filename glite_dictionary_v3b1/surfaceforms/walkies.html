@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>walkie, walkies · Surface Form</title>
+  <title>walkies (walkie) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">walkie, walkies</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">interjection • noun</div>
+  <h1 style="text-align:center">walkies (walkie)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="INTJ">intj</button>
+          
+            <button class="pos-filter-btn" data-pos="NOUN">noun</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,65 +32,65 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">🐕</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/walkies--walkiescluster86969.html">
             <span class="summary-title">Pet walk call</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Walkies time!</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/walkies--walkiescluster86970.html">
             <span class="summary-title">A fun walk</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A morning walkies</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚶</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/walkie--walkiecluster85944.html">
             <span class="summary-title">A short walk</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A morning walkie</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📻</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/walkie--walkiecluster85945.html">
             <span class="summary-title">A radio</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">A walkie talkie</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -86,8 +100,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

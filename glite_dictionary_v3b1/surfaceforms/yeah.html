@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>yeah, yeah, yeah · Surface Form</title>
+  <title>yeah (yeah, yeah) · Surface Form</title>
 </head>
 <body>
   <div class="container">
 <header>
-  <h1 style="text-align:center">yeah, yeah, yeah</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">interjection • particle</div>
+  <h1 style="text-align:center">yeah (yeah, yeah)</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="INTJ">intj</button>
+          
+            <button class="pos-filter-btn" data-pos="PART">part</button>
+          
+        </div>
+      </div>
+    
+  
 </header>
 <main>
   
@@ -18,81 +32,81 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">😒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/yeah_yeah-445a100897--yeah_yeahcluster124664.html">
             <span class="summary-title">To show impatience</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">&#34;Yeah, yeah, I know&#34;</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">👍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/yeah--yeahcluster125848.html">
             <span class="summary-title">Yes; agree</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Yeah, sure</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">👂</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/yeah--yeahcluster125849.html">
             <span class="summary-title">Listening; following</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Yeah, I see</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="INTJ">
         <td class="emoji-col">🙄</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/yeah--yeahcluster125850.html">
             <span class="summary-title">Doubt; disbelief</span>
             
             
-              <span class="summary-pos">interjection</span>
-            
-            
               <span class="summary-collocation">Yeah, right</span>
+            
+            
+              <span class="summary-pos">interjection</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="PART">
         <td class="emoji-col">❓</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/yeah--yeahcluster125851.html">
             <span class="summary-title">Ask for agreement</span>
             
             
-              <span class="summary-pos">particle</span>
-            
-            
               <span class="summary-collocation">Coming tonight, yeah?</span>
+            
+            
+              <span class="summary-pos">particle</span>
             
           </a>
         </td>
@@ -102,8 +116,34 @@
   
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

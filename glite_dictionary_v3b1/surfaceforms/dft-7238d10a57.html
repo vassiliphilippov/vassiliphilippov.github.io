@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">DFT</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
 </header>
 <main>
   
@@ -19,7 +24,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">📊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/dft-5fa64b1077--dftcluster52960.html">
@@ -28,16 +33,16 @@
               <span class="badge-domain">technical</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">DFT analysis of signals</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🔬</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/dft-5fa64b1077--dftcluster52961.html">
@@ -46,16 +51,16 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">DFT calculation in chemistry</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">💻</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/dft-5fa64b1077--dftcluster52962.html">
@@ -64,16 +69,16 @@
               <span class="badge-domain">engineering</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">DFT features in chips</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="NOUN">
         <td class="emoji-col">🚌</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/dft-5fa64b1077--dftcluster52963.html">
@@ -82,10 +87,10 @@
               <span class="badge-domain">government</span>
             
             
-              <span class="summary-pos">noun</span>
-            
-            
               <span class="summary-collocation">UK DFT announcement</span>
+            
+            
+              <span class="summary-pos">noun</span>
             
           </a>
         </td>
@@ -94,8 +99,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-

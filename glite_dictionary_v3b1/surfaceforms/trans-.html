@@ -10,7 +10,12 @@
   <div class="container">
 <header>
   <h1 style="text-align:center">trans-</h1>
-  <div style="text-align:center; color: #686868; margin-top: 8px;">x</div>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">x</div>
+    
+  
 </header>
 <main>
   
@@ -18,23 +23,23 @@
     <h3 class="section-title-small">Key Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="X">
         <td class="emoji-col">🌍</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/trans---transcluster46499.html">
             <span class="summary-title">Across or through</span>
             
             
-              <span class="summary-pos">x</span>
-            
-            
               <span class="summary-collocation">Trans-Atlantic flight</span>
+            
+            
+              <span class="summary-pos">x</span>
             
           </a>
         </td>
       </tr>
     
-      <tr>
+      <tr data-pos="X">
         <td class="emoji-col">🏳️‍⚧️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/trans---transcluster46501.html">
@@ -43,10 +48,10 @@
               <span class="badge-domain">gender</span>
             
             
-              <span class="summary-pos">x</span>
-            
-            
               <span class="summary-collocation">Trans-gender person</span>
+            
+            
+              <span class="summary-pos">x</span>
             
           </a>
         </td>
@@ -58,7 +63,7 @@
     <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
     <table class="micro-assets"><tbody>
     
-      <tr>
+      <tr data-pos="X">
         <td class="emoji-col">🧪</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/trans---transcluster46500.html">
@@ -67,10 +72,10 @@
               <span class="badge-domain">science</span>
             
             
-              <span class="summary-pos">x</span>
-            
-            
               <span class="summary-collocation">Trans- isomer</span>
+            
+            
+              <span class="summary-pos">x</span>
             
           </a>
         </td>
@@ -79,8 +84,34 @@
     </tbody></table>
   
 </main>
-  <footer><p class="muted">Surface forms derived from dictionary data</p></footer>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
   </div>
 </body>
 </html>
-
