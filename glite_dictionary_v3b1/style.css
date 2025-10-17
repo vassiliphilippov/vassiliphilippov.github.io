@@ -24,6 +24,22 @@ a:hover { text-decoration: underline; }
 .micro-assets td { padding: 8px 10px; text-align: left; vertical-align: top; }
 .micro-assets th { font-weight: 600; color: #222; border-bottom: 1px solid var(--border-color); background: #f6f8fa; }
 .micro-assets td { border-bottom: 1px solid var(--border-color); }
+.micro-assets.grouped td.summary-col { position: relative; }
+/* Make separator line shorter ONLY when consecutive rows share emoji */
+.micro-assets.grouped tr.same-emoji-next td.summary-col { border-bottom: 1px solid #f1f5f9; }
+.micro-assets.grouped tr.same-emoji-next td.emoji-col { border-bottom: none; }
+/* Vertical connector between consecutive rows with the same emoji */
+.micro-assets.grouped tr.same-emoji-next td.emoji-col { position: relative; }
+.micro-assets.grouped tr.same-emoji-next td.emoji-col::after {
+  content: "";
+  position: absolute;
+  left: 18px; /* add a small gap from emoji */
+  top: 36px;  /* ensure visible gap below the top emoji */
+  bottom: -6px; /* smaller gap before the bottom emoji */
+  width: 1px; /* match thin horizontal line */
+  background: #f1f5f9; /* same as separator color */
+  border-radius: 0;
+}
 .micro-assets tr:last-child td { border-bottom: none; }
 .micro-assets tr:hover td { background: #fafcff; }
 .micro-assets .num { text-align: right; font-variant-numeric: tabular-nums; }
@@ -48,12 +64,23 @@ ul.results li:last-child { border-bottom: none; }
 .result-meta { color: var(--secondary-color); }
 .summary-title { font-weight: 400; color: #020306; font-size: 17px; line-height: 22px; }
 .summary-pos { display: block; color: rgba(2,3,6,0.5); font-size: 14px;
-               line-height: 18px; margin-top: 2px; font-style: italic; }
+               line-height: 18px; margin-top: 2px; }
 .summary-collocation { display: block; color: rgba(2,3,6,0.6); font-size: 15px;
                       line-height: 20px; margin-top: 2px; }
 .summary-link { color: inherit; text-decoration: none; }
 .summary-link:hover { text-decoration: underline; }
-.emoji-col { width: 32px; padding-right: 1.5px; vertical-align: top; }
+.emoji-col { width: 32px; padding-right: 0.5px; vertical-align: top; }
+.non-italic { font-style: normal; }
+/* Smaller headings for sections */
+.section-title-small { font-size: 0.95rem; color: #444; font-weight: 600; margin: 16px 0 8px; }
+/* Difficulty pill */
+.diff-pill { display: inline-flex; align-items: center; gap: 5px; padding: 1.7px 6.8px; border-radius: 999px;
+            background: #f3f4f6; color: #111827; font-size: 0.76em; font-weight: 600; }
+.diff-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--diff-color, #22c55e); display:inline-block; }
+/* Right cell for pill */
+.summary-right { width: 1%; white-space: nowrap; text-align: right; vertical-align: middle; }
+/* Remove left padding right after the emoji */
+.micro-assets td.summary-col { padding-left: 0; }
 
 /* Statistics Page Additions */
 .stats-grid {

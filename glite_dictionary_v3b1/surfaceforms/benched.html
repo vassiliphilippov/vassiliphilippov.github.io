@@ -20,28 +20,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="VERB">
-        <td class="emoji-col">🏋️</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/bench--benchcluster96379.html">
-            <span class="summary-title">To lift weights</span>
-            
-              <span class="badge-domain">sports</span>
-            
-            
-              <span class="summary-collocation">To bench press weights</span>
-            
-            
-              <span class="summary-pos">verb</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="VERB">
+      
+      <tr data-pos="VERB" class="">
         <td class="emoji-col">🚫</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/bench--benchcluster96380.html">
@@ -53,37 +36,57 @@
               <span class="summary-collocation">To bench a player</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.9</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🏋️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/bench--benchcluster96379.html">
+            <span class="summary-title">To lift weights</span>
+            
+              <span class="badge-domain">sports</span>
+            
+            
+              <span class="summary-collocation">To bench press weights</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.6</span>
+  
         </td>
       </tr>
     
     </tbody></table>
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="VERB">
-        <td class="emoji-col">🐕</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/bench--benchcluster96381.html">
-            <span class="summary-title">To show an animal</span>
-            
-              <span class="badge-domain">competition</span>
-            
-            
-              <span class="summary-collocation">To bench a dog</span>
-            
-            
-              <span class="summary-pos">verb</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="VERB">
+      
+      <tr data-pos="VERB" class="">
         <td class="emoji-col">🗂️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/bench--benchcluster96382.html">
@@ -95,9 +98,46 @@
               <span class="summary-collocation">To bench a proposal</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">6.4</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🐕</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/bench--benchcluster96381.html">
+            <span class="summary-title">To show an animal</span>
+            
+              <span class="badge-domain">competition</span>
+            
+            
+              <span class="summary-collocation">To bench a dog</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">7.2</span>
+  
         </td>
       </tr>
     
@@ -109,6 +149,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -128,8 +187,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

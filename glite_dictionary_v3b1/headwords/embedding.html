@@ -21,46 +21,37 @@
   
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">📐</td>
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">📦</td>
         <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127319.html">
-            <span class="summary-title">A math mapping</span>
-            
-              <span class="badge-domain">mathematics</span>
+          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127322.html">
+            <span class="summary-title">Placing inside</span>
             
             
-              <span class="summary-collocation">Mathematical embedding</span>
+              <span class="summary-collocation">Image embedding in text</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
-      </tr>
+        <td class="summary-right">
+          
+          
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🤖</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127320.html">
-            <span class="summary-title">A data vector</span>
-            
-              <span class="badge-domain">machine learning</span>
-            
-            
-              <span class="summary-collocation">Word embedding vector</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.3</span>
+  
         </td>
       </tr>
     
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">📝</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127321.html">
@@ -72,25 +63,74 @@
               <span class="summary-collocation">Clause embedding</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">6.6</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">📦</td>
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🤖</td>
         <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127322.html">
-            <span class="summary-title">Placing inside</span>
+          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127320.html">
+            <span class="summary-title">A data vector</span>
+            
+              <span class="badge-domain">machine learning</span>
             
             
-              <span class="summary-collocation">Image embedding in text</span>
+              <span class="summary-collocation">Word embedding vector</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">7.6</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">📐</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/embedding--embeddingcluster127319.html">
+            <span class="summary-title">A math mapping</span>
+            
+              <span class="badge-domain">mathematics</span>
+            
+            
+              <span class="summary-collocation">Mathematical embedding</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">7.6</span>
+  
         </td>
       </tr>
     
@@ -102,6 +142,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -121,8 +180,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

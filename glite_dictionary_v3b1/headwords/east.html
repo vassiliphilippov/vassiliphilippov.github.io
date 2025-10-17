@@ -31,10 +31,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">🌅</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/east--eastcluster114082.html">
@@ -44,45 +45,23 @@
               <span class="summary-collocation">The east horizon</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
-      </tr>
+        <td class="summary-right">
+          
+          
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🏙️</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/east--eastcluster114083.html">
-            <span class="summary-title">Eastern area</span>
-            
-            
-              <span class="summary-collocation">East of the city</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.1</span>
+  
         </td>
       </tr>
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">🏠</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/east--eastcluster114084.html">
-            <span class="summary-title">Facing sunrise</span>
-            
-            
-              <span class="summary-collocation">East side</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="ADV">
+      
+      <tr data-pos="ADV" class="">
         <td class="emoji-col">➡️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/east--eastcluster114085.html">
@@ -92,9 +71,70 @@
               <span class="summary-collocation">Travel east daily</span>
             
             
-              <span class="summary-pos">adverb</span>
+              <span class="summary-pos non-italic">adverb</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.9</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🏙️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/east--eastcluster114083.html">
+            <span class="summary-title">Eastern area</span>
+            
+            
+              <span class="summary-collocation">East of the city</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">3.6</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">🏠</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/east--eastcluster114084.html">
+            <span class="summary-title">Facing sunrise</span>
+            
+            
+              <span class="summary-collocation">East side</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.3</span>
+  
         </td>
       </tr>
     
@@ -107,6 +147,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -126,8 +185,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

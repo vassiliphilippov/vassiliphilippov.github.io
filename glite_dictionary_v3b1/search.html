@@ -21,7 +21,7 @@
     <ul id="history" class="results"></ul>
   </div>
 </main>
-<script id="search-config" type="application/json">{"index":"search_index_v43_20251013T132356Z.jsonl","index_js":"search_index_v43_20251013T132356Z.js"}</script>
+<script id="search-config" type="application/json">{"index":"search_index_v47_20251017T150411Z.jsonl","index_js":"search_index_v47_20251017T150411Z.js"}</script>
 <style>
 ul.results { list-style: none; padding: 0; margin-top: 8px;
              border: 1px solid #eaeaea; border-radius: 6px; }
@@ -59,7 +59,7 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   const historySection = document.getElementById('history-section');
   const historyList = document.getElementById('history');
 
-  /** @type {{h:string,u:string,p?:string[],m?:number}[]} */
+  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,b?:string}[]} */
   let INDEX = [];
   const maxItems = 80;
   let ACTIVE = -1;
@@ -123,7 +123,9 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   function score(item, q){
     const f = normalize(item.h);
     if (f === q) return 300;
-    if (f.startsWith(q)) return 200;
+    // If this is a regular inflection (has base) and the base starts with query,
+    // rank it lower than an exact-prefix non-base to discourage showing it above the base.
+    if (f.startsWith(q)) return item.b ? 150 : 200;
     const i = f.indexOf(q);
     if (i !== -1) return Math.max(1, 100 - i);
     return -1;
@@ -134,6 +136,9 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
     if (!q) return [];
     const scored = [];
     for (const it of INDEX){
+      // If this is a regular inflection and its base matches the query prefix exactly,
+      // skip it so the base form can represent the family.
+      if (it.b && normalize(it.b).startsWith(q)) continue;
       const s = score(it, q);
       if (s >= 0) scored.push([s, it]);
     }
@@ -180,12 +185,24 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       if (subText) sub.textContent = subText;
       main.appendChild(head);
       if (subText) main.appendChild(sub);
-      const count = document.createElement('span');
-      count.className = 'result-count';
+      const right = document.createElement('span');
+      right.className = 'result-count';
       const m = Number(it.m || 0);
-      if (m > 1) count.textContent = `${m} meanings`;
+      if (m > 1) {
+        right.textContent = `${m} meanings`;
+      } else if (typeof it.d === 'number') {
+        const pill = document.createElement('span');
+        pill.className = 'diff-pill';
+        let color = '#22c55e';
+        if (it.d >= 4.0 && it.d < 7.0) color = '#f59e0b';
+        if (it.d >= 7.0) color = '#ef4444';
+        pill.style.setProperty('--diff-color', color);
+        pill.textContent = it.d.toFixed(1);
+        right.textContent = '';
+        right.appendChild(pill);
+      }
       li.appendChild(main);
-      if (m > 1) li.appendChild(count);
+      if (right.textContent || right.children.length) li.appendChild(right);
       li.addEventListener('click', () => { 
         saveToHistory(it);
         window.location.href = it.u; 

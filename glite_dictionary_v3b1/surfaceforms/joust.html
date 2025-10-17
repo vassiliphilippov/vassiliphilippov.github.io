@@ -30,28 +30,11 @@
   
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🤺</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/joust--joustcluster148734.html">
-            <span class="summary-title">A knight contest</span>
-            
-              <span class="badge-domain">history</span>
-            
-            
-              <span class="summary-collocation">A joust between knights</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="VERB">
+      
+      <tr data-pos="VERB" class="same-emoji-next">
         <td class="emoji-col">🤺</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/joust--joustcluster148735.html">
@@ -63,13 +46,51 @@
               <span class="summary-collocation">To joust on horseback</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">7.2</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="VERB">
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🤺</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/joust--joustcluster148734.html">
+            <span class="summary-title">A knight contest</span>
+            
+              <span class="badge-domain">history</span>
+            
+            
+              <span class="summary-collocation">A joust between knights</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
         <td class="emoji-col">🗣️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/joust--joustcluster148736.html">
@@ -79,9 +100,18 @@
               <span class="summary-collocation">To joust in debate</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">7.5</span>
+  
         </td>
       </tr>
     
@@ -93,6 +123,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -112,8 +161,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

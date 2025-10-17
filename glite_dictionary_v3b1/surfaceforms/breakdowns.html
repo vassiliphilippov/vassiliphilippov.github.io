@@ -20,74 +20,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🧪</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136818.html">
-            <span class="summary-title">Separation process</span>
-            
-            
-              <span class="summary-collocation">Chemical breakdown</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🧠</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136819.html">
-            <span class="summary-title">Health crisis</span>
-            
-            
-              <span class="summary-collocation">Mental breakdown</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
-        <td class="emoji-col">💥</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136820.html">
-            <span class="summary-title">Collapse or failure</span>
-            
-            
-              <span class="summary-collocation">Breakdown in talks</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🚗</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136821.html">
-            <span class="summary-title">Machine failure</span>
-            
-            
-              <span class="summary-collocation">Car breakdown</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">📊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136822.html">
@@ -97,9 +34,122 @@
               <span class="summary-collocation">Breakdown by category</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🧠</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136819.html">
+            <span class="summary-title">Health crisis</span>
+            
+            
+              <span class="summary-collocation">Mental breakdown</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🧪</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136818.html">
+            <span class="summary-title">Separation process</span>
+            
+            
+              <span class="summary-collocation">Chemical breakdown</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">💥</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136820.html">
+            <span class="summary-title">Collapse or failure</span>
+            
+            
+              <span class="summary-collocation">Breakdown in talks</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">3.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🚗</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/breakdown--breakdowncluster136821.html">
+            <span class="summary-title">Machine failure</span>
+            
+            
+              <span class="summary-collocation">Car breakdown</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">3.5</span>
+  
         </td>
       </tr>
     
@@ -112,6 +162,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -131,8 +200,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

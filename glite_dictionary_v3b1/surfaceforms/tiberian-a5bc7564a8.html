@@ -21,28 +21,11 @@
   
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">🏛️</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173299.html">
-            <span class="summary-title">Of Emperor Tiberius</span>
-            
-              <span class="badge-domain">history</span>
-            
-            
-              <span class="summary-collocation">Tiberian emperor</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">🌊</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173300.html">
@@ -54,31 +37,23 @@
               <span class="summary-collocation">Tiberian landscape</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
         </td>
-      </tr>
+        <td class="summary-right">
+          
+          
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">🕌</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173301.html">
-            <span class="summary-title">Of Tiberias city</span>
-            
-              <span class="badge-domain">geography</span>
-            
-            
-              <span class="summary-collocation">Tiberian synagogue</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">8.5</span>
+  
         </td>
       </tr>
     
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">🔡</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173302.html">
@@ -90,9 +65,74 @@
               <span class="summary-collocation">Tiberian vocalization</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">🏛️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173299.html">
+            <span class="summary-title">Of Emperor Tiberius</span>
+            
+              <span class="badge-domain">history</span>
+            
+            
+              <span class="summary-collocation">Tiberian emperor</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">🕌</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/tiberian-74381945ae--tiberiancluster173301.html">
+            <span class="summary-title">Of Tiberias city</span>
+            
+              <span class="badge-domain">geography</span>
+            
+            
+              <span class="summary-collocation">Tiberian synagogue</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
+  
         </td>
       </tr>
     
@@ -104,6 +144,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -123,8 +182,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

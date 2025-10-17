@@ -29,26 +29,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">✋</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/demand--demandcluster58773.html">
-            <span class="summary-title">A strong request</span>
-            
-            
-              <span class="summary-collocation">A demand for answers</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="same-emoji-next">
         <td class="emoji-col">⏳</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/demand--demandcluster58774.html">
@@ -58,13 +43,101 @@
               <span class="summary-collocation">High demand on time</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">⏳</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/demand--demandcluster58777.html">
+            <span class="summary-title">To require</span>
+            
+            
+              <span class="summary-collocation">Demand hard work</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="same-emoji-next">
+        <td class="emoji-col">✋</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/demand--demandcluster58773.html">
+            <span class="summary-title">A strong request</span>
+            
+            
+              <span class="summary-collocation">A demand for answers</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">✋</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/demand--demandcluster58776.html">
+            <span class="summary-title">To ask forcefully</span>
+            
+            
+              <span class="summary-collocation">To demand an explanation</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">🛒</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/demand--demandcluster58775.html">
@@ -76,41 +149,18 @@
               <span class="summary-collocation">Demand for products</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
-      </tr>
+        <td class="summary-right">
+          
+          
     
-      <tr data-pos="VERB">
-        <td class="emoji-col">✋</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/demand--demandcluster58776.html">
-            <span class="summary-title">To ask forcefully</span>
-            
-            
-              <span class="summary-collocation">To demand an explanation</span>
-            
-            
-              <span class="summary-pos">verb</span>
-            
-          </a>
-        </td>
-      </tr>
     
-      <tr data-pos="VERB">
-        <td class="emoji-col">⏳</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/demand--demandcluster58777.html">
-            <span class="summary-title">To require</span>
-            
-            
-              <span class="summary-collocation">Demand hard work</span>
-            
-            
-              <span class="summary-pos">verb</span>
-            
-          </a>
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
         </td>
       </tr>
     
@@ -123,6 +173,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -142,8 +211,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

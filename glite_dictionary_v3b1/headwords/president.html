@@ -20,44 +20,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🇺🇸</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/president--presidentcluster48592.html">
-            <span class="summary-title">Head of state</span>
-            
-            
-              <span class="summary-collocation">The country&#39;s president</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
-        <td class="emoji-col">🎓</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/president--presidentcluster48593.html">
-            <span class="summary-title">Head of university</span>
-            
-              <span class="badge-domain">education</span>
-            
-            
-              <span class="summary-collocation">University president</span>
-            
-            
-              <span class="summary-pos">noun</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">💼</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/president--presidentcluster48594.html">
@@ -69,13 +36,23 @@
               <span class="summary-collocation">Company president</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="NOUN">
+      
+      <tr data-pos="NOUN" class="">
         <td class="emoji-col">🗣️</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/president--presidentcluster48595.html">
@@ -85,9 +62,72 @@
               <span class="summary-collocation">Club president</span>
             
             
-              <span class="summary-pos">noun</span>
+              <span class="summary-pos non-italic">noun</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🇺🇸</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/president--presidentcluster48592.html">
+            <span class="summary-title">Head of state</span>
+            
+            
+              <span class="summary-collocation">The country&#39;s president</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.3</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🎓</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/president--presidentcluster48593.html">
+            <span class="summary-title">Head of university</span>
+            
+              <span class="badge-domain">education</span>
+            
+            
+              <span class="summary-collocation">University president</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">4.5</span>
+  
         </td>
       </tr>
     
@@ -100,6 +140,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -119,8 +178,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

@@ -29,10 +29,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">🎻</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/untuned--untunedcluster57253.html">
@@ -44,55 +45,29 @@
               <span class="summary-collocation">Untuned violin</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.3</span>
+  
         </td>
       </tr>
     
     </tbody></table>
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">📻</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/untuned--untunedcluster57251.html">
-            <span class="summary-title">Not set correctly</span>
-            
-              <span class="badge-domain">technical</span>
-            
-            
-              <span class="summary-collocation">Untuned radio</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="ADJ">
-        <td class="emoji-col">⚙️</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/untuned--untunedcluster57252.html">
-            <span class="summary-title">Not optimized</span>
-            
-              <span class="badge-domain">technical</span>
-            
-            
-              <span class="summary-collocation">Untuned engine</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="VERB">
+      
+      <tr data-pos="VERB" class="">
         <td class="emoji-col">😢</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/untune--untunecluster56445.html">
@@ -102,13 +77,23 @@
               <span class="summary-collocation">To untune the mind</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.0</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="VERB">
+      
+      <tr data-pos="VERB" class="">
         <td class="emoji-col">🎹</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/untune--untunecluster56446.html">
@@ -120,9 +105,74 @@
               <span class="summary-collocation">To untune a piano</span>
             
             
-              <span class="summary-pos">verb</span>
+              <span class="summary-pos non-italic">verb</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">5.8</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">⚙️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/untuned--untunedcluster57252.html">
+            <span class="summary-title">Not optimized</span>
+            
+              <span class="badge-domain">technical</span>
+            
+            
+              <span class="summary-collocation">Untuned engine</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">6.1</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">📻</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/untuned--untunedcluster57251.html">
+            <span class="summary-title">Not set correctly</span>
+            
+              <span class="badge-domain">technical</span>
+            
+            
+              <span class="summary-collocation">Untuned radio</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #f59e0b">6.1</span>
+  
         </td>
       </tr>
     
@@ -134,6 +184,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -153,8 +222,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>

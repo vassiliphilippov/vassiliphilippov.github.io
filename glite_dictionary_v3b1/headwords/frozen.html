@@ -20,26 +20,11 @@
 <main>
   
   
-    <h3 class="section-title-small">Key Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">❄️</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/frozen--frozencluster15722.html">
-            <span class="summary-title">Turned to ice</span>
-            
-            
-              <span class="summary-collocation">Frozen water pipes</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">🥦</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/frozen--frozencluster15723.html">
@@ -49,13 +34,23 @@
               <span class="summary-collocation">Frozen vegetables</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">😱</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/frozen--frozencluster15727.html">
@@ -65,35 +60,55 @@
               <span class="summary-collocation">Frozen with fear</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">❄️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/frozen--frozencluster15722.html">
+            <span class="summary-title">Turned to ice</span>
+            
+            
+              <span class="summary-collocation">Frozen water pipes</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.0</span>
+  
         </td>
       </tr>
     
     </tbody></table>
   
   
-    <h3 class="section-title-small">Rare &amp; Specialized Meanings</h3>
-    <table class="micro-assets"><tbody>
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
     
-      <tr data-pos="ADJ">
-        <td class="emoji-col">💲</td>
-        <td class="summary-col">
-          <a class="summary-link" href="../senseclusters/frozen--frozencluster15724.html">
-            <span class="summary-title">Not changing</span>
-            
-            
-              <span class="summary-collocation">Frozen prices</span>
-            
-            
-              <span class="summary-pos">adjective</span>
-            
-          </a>
-        </td>
-      </tr>
-    
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">🏦</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/frozen--frozencluster15725.html">
@@ -105,13 +120,23 @@
               <span class="summary-collocation">Frozen bank accounts</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
         </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.0</span>
+  
+        </td>
       </tr>
     
-      <tr data-pos="ADJ">
+      
+      <tr data-pos="ADJ" class="">
         <td class="emoji-col">😐</td>
         <td class="summary-col">
           <a class="summary-link" href="../senseclusters/frozen--frozencluster15726.html">
@@ -121,9 +146,44 @@
               <span class="summary-collocation">Frozen smile</span>
             
             
-              <span class="summary-pos">adjective</span>
+              <span class="summary-pos non-italic">adjective</span>
             
           </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">2.6</span>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">💲</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/frozen--frozencluster15724.html">
+            <span class="summary-title">Not changing</span>
+            
+            
+              <span class="summary-collocation">Frozen prices</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    
+    
+    
+    <span class="diff-pill" style="--diff-color: #22c55e">3.2</span>
+  
         </td>
       </tr>
     
@@ -135,6 +195,25 @@
 (function(){
   const filterBtns = document.querySelectorAll('.pos-filter-btn');
   const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -154,8 +233,11 @@
           row.style.display = posList.includes(selectedPos) ? '' : 'none';
         }
       });
+      recomputeEmojiGrouping();
     });
   });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
 })();
 </script>
   </div>
