@@ -75,8 +75,12 @@ ul.results li:last-child { border-bottom: none; }
 .section-title-small { font-size: 0.95rem; color: #444; font-weight: 600; margin: 16px 0 8px; }
 /* Difficulty pill */
 .diff-pill { display: inline-flex; align-items: center; gap: 5px; padding: 1.7px 6.8px; border-radius: 999px;
-            background: #f3f4f6; color: #111827; font-size: 0.76em; font-weight: 600; }
+            background: #f3f4f6; color: #111827; font-size: 0.76em; font-weight: 600; cursor: help; }
 .diff-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--diff-color, #22c55e); display:inline-block; }
+/* Predicted difficulty pill styling */
+.diff-pill-predicted { opacity: 0.65; font-style: italic; }
+/* Container for multiple difficulty pills */
+.diff-pills-container { display: inline-flex; gap: 4px; align-items: center; }
 /* Right cell for pill */
 .summary-right { width: 1%; white-space: nowrap; text-align: right; vertical-align: middle; }
 /* Remove left padding right after the emoji */
