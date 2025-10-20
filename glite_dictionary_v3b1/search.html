@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Search · Surface Forms</title>
+  <title>Search · Glite Dictionary</title>
 </head>
 <body>
   <div class="container">
@@ -21,7 +21,7 @@
     <ul id="history" class="results"></ul>
   </div>
 </main>
-<script id="search-config" type="application/json">{"index":"search_index_v47_20251018T023033Z.jsonl","index_js":"search_index_v47_20251018T023033Z.js"}</script>
+<script id="search-config" type="application/json">{"index":"search_index_v50_20251020T223706Z.jsonl","index_js":"search_index_v50_20251020T223706Z.js"}</script>
 <style>
 ul.results { list-style: none; padding: 0; margin-top: 8px;
              border: 1px solid #eaeaea; border-radius: 6px; }
@@ -59,7 +59,7 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   const historySection = document.getElementById('history-section');
   const historyList = document.getElementById('history');
 
-  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,b?:string}[]} */
+  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,dt?:number,dp?:number,b?:string}[]} */
   let INDEX = [];
   const maxItems = 80;
   let ACTIVE = -1;
@@ -118,32 +118,105 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
     historySection.hidden = false;
   }
 
-  function normalize(s){ return (s||'').toLowerCase(); }
+  function normalize(text){ 
+    return (text || '').toLowerCase(); 
+  }
 
-  function score(item, q){
-    const f = normalize(item.h);
-    if (f === q) return 300;
-    // If this is a regular inflection (has base) and the base starts with query,
-    // rank it lower than an exact-prefix non-base to discourage showing it above the base.
-    if (f.startsWith(q)) return item.b ? 150 : 200;
-    const i = f.indexOf(q);
-    if (i !== -1) return Math.max(1, 100 - i);
+  /**
+   * Check if an index item is an inflected form (e.g., "cats" is inflected from "cat").
+   * An item is inflected if it has a base form that differs from itself.
+   */
+  function isInflectedForm(item){
+    if (!item.b) return false;
+    const normalizedSurfaceForm = normalize(item.h);
+    const normalizedBaseForm = normalize(item.b);
+    return normalizedBaseForm !== normalizedSurfaceForm;
+  }
+
+  /**
+   * Check if we should hide an inflected form from search results.
+   * We hide inflections when their base form would match the query,
+   * UNLESS the user is explicitly searching for that exact inflection.
+   */
+  function shouldHideInflection(item, query){
+    if (!isInflectedForm(item)) {
+      return false; // Not an inflection, never hide
+    }
+    
+    const normalizedSurfaceForm = normalize(item.h);
+    const normalizedBaseForm = normalize(item.b);
+    const normalizedQuery = normalize(query);
+    
+    const isExactMatch = normalizedSurfaceForm === normalizedQuery;
+    if (isExactMatch) {
+      return false; // User is searching for this exact form, show it
+    }
+    
+    const baseFormMatchesQuery = normalizedBaseForm.startsWith(normalizedQuery);
+    return baseFormMatchesQuery; // Hide if base form matches query
+  }
+
+  /**
+   * Calculate a search relevance score for an item.
+   * Higher scores appear first in results.
+   */
+  function calculateRelevanceScore(item, query){
+    const normalizedSurfaceForm = normalize(item.h);
+    const normalizedQuery = normalize(query);
+    
+    // Exact match: highest priority
+    if (normalizedSurfaceForm === normalizedQuery) {
+      return 300;
+    }
+    
+    // Starts with query: high priority
+    // (but rank inflections lower than base forms)
+    if (normalizedSurfaceForm.startsWith(normalizedQuery)) {
+      return isInflectedForm(item) ? 150 : 200;
+    }
+    
+    // Contains query: lower priority, penalize by position
+    const matchPosition = normalizedSurfaceForm.indexOf(normalizedQuery);
+    if (matchPosition !== -1) {
+      return Math.max(1, 100 - matchPosition);
+    }
+    
+    // No match
     return -1;
   }
 
-  function suggest(q){
-    q = normalize(q.trim());
-    if (!q) return [];
-    const scored = [];
-    for (const it of INDEX){
-      // If this is a regular inflection and its base matches the query prefix exactly,
-      // skip it so the base form can represent the family.
-      if (it.b && normalize(it.b).startsWith(q)) continue;
-      const s = score(it, q);
-      if (s >= 0) scored.push([s, it]);
+  /**
+   * Find and rank matching items for the search query.
+   */
+  function suggest(query){
+    const normalizedQuery = normalize(query.trim());
+    if (!normalizedQuery) {
+      return [];
     }
-    scored.sort((a,b) => b[0] - a[0] || a[1].h.localeCompare(b[1].h));
-    return scored.slice(0, maxItems).map(x => x[1]);
+    
+    const scoredMatches = [];
+    
+    for (const item of INDEX){
+      // Skip inflections when their base form matches
+      // (e.g., skip "cats" when searching for "cat", unless searching for "cats" exactly)
+      if (shouldHideInflection(item, normalizedQuery)) {
+        continue;
+      }
+      
+      const relevanceScore = calculateRelevanceScore(item, normalizedQuery);
+      if (relevanceScore >= 0) {
+        scoredMatches.push([relevanceScore, item]);
+      }
+    }
+    
+    // Sort by score (descending), then alphabetically by headword
+    scoredMatches.sort((a, b) => {
+      if (b[0] !== a[0]) return b[0] - a[0];
+      return a[1].h.localeCompare(b[1].h);
+    });
+    
+    // Return top results
+    return scoredMatches.slice(0, maxItems).map(match => match[1]);
   }
 
   const POS_MAP = {
@@ -191,15 +264,39 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       if (m > 1) {
         right.textContent = `${m} meanings`;
       } else if (typeof it.d === 'number') {
-        const pill = document.createElement('span');
-        pill.className = 'diff-pill';
+        const container = document.createElement('div');
+        container.className = 'diff-pills-container';
+        
+        // Main difficulty pill
+        const mainPill = document.createElement('span');
+        mainPill.className = 'diff-pill';
         let color = '#22c55e';
         if (it.d >= 4.0 && it.d < 7.0) color = '#f59e0b';
         if (it.d >= 7.0) color = '#ef4444';
-        pill.style.setProperty('--diff-color', color);
-        pill.textContent = it.d.toFixed(1);
+        mainPill.style.setProperty('--diff-color', color);
+        mainPill.textContent = it.d.toFixed(1);
+        if (typeof it.dt === 'number') {
+          mainPill.title = 'Main difficulty (based on tested data)';
+        } else {
+          mainPill.title = 'Main difficulty (based on prediction)';
+        }
+        container.appendChild(mainPill);
+        
+        // Predicted difficulty pill (only if both tested and predicted exist)
+        if (typeof it.dt === 'number' && typeof it.dp === 'number') {
+          const predPill = document.createElement('span');
+          predPill.className = 'diff-pill diff-pill-predicted';
+          let colorPred = '#22c55e';
+          if (it.dp >= 4.0 && it.dp < 7.0) colorPred = '#f59e0b';
+          if (it.dp >= 7.0) colorPred = '#ef4444';
+          predPill.style.setProperty('--diff-color', colorPred);
+          predPill.textContent = it.dp.toFixed(1);
+          predPill.title = 'Predicted difficulty';
+          container.appendChild(predPill);
+        }
+        
         right.textContent = '';
-        right.appendChild(pill);
+        right.appendChild(container);
       }
       li.appendChild(main);
       if (right.textContent || right.children.length) li.appendChild(right);
@@ -328,6 +425,20 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
         render(CURRENT);
       } else {
         renderHistory();
+      }
+    }
+  });
+
+  // Handle back button navigation: clear search and refocus
+  window.addEventListener('pageshow', function(event) {
+    // event.persisted is true when page is loaded from bfcache (back/forward cache)
+    if (event.persisted) {
+      input.value = '';
+      CURRENT = [];
+      render(CURRENT);
+      renderHistory();
+      if (!input.disabled) {
+        input.focus();
       }
     }
   });
