@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>started (to start, to start with a clean sheet) · Glite Dictionary</title>
+</head>
+<body>
+  <div class="container">
+<header>
+  <h1 style="text-align:center">started (to start, to start with a clean sheet)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
+</header>
+<main>
+  
+  
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🚦</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/start--startcluster145527.html">
+            <span class="summary-title">To begin</span>
+            
+            
+              <span class="summary-collocation">To start a project</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+      
+      
+        <span class="freq-badge">800/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🏅</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/start--startcluster145528.html">
+            <span class="summary-title">To play first</span>
+            
+              <span class="badge-domain">sports</span>
+            
+            
+              <span class="summary-collocation">Start the game</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">1.5</span>
+      
+      
+        <span class="freq-badge">50/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+  
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">😲</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/start--startcluster145529.html">
+            <span class="summary-title">To jump in surprise</span>
+            
+            
+              <span class="summary-collocation">To start suddenly</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
+      
+      
+        <span class="freq-badge">20/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🆕</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/start_with_a_clean_sheet-e97e55c878--start_withcluster140640.html">
+            <span class="summary-title">To begin fresh</span>
+            
+            
+              <span class="summary-collocation">To start with a clean sheet</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #f59e0b">4.4</span>
+      
+      
+        <span class="freq-badge">0.01/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+</main>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+      recomputeEmojiGrouping();
+    });
+  });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
+})();
+</script>
+  </div>
+</body>
+</html>

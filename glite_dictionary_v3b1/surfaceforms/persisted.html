@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>persisted (to persist) · Glite Dictionary</title>
+</head>
+<body>
+  <div class="container">
+<header>
+  <h1 style="text-align:center">persisted (to persist)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">verb</div>
+    
+  
+</header>
+<main>
+  
+  
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">⏳</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/persist--persistcluster152362.html">
+            <span class="summary-title">To last</span>
+            
+            
+              <span class="summary-collocation">Old customs persist</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">3.5</span>
+      
+      
+        <span class="freq-badge">10/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">💪</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/persist--persistcluster152363.html">
+            <span class="summary-title">To keep trying</span>
+            
+            
+              <span class="summary-collocation">To persist despite problems</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">3.7</span>
+      
+      
+        <span class="freq-badge">8/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+  
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🏥</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/persist--persistcluster152364.html">
+            <span class="summary-title">To stay</span>
+            
+            
+              <span class="summary-collocation">Symptoms persist</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #f59e0b">5.2</span>
+      
+      
+        <span class="freq-badge">2/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">💾</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/persist--persistcluster152365.html">
+            <span class="summary-title">To save data</span>
+            
+              <span class="badge-domain">computing</span>
+            
+            
+              <span class="summary-collocation">To persist data</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #f59e0b">6.8</span>
+      
+      
+        <span class="freq-badge">0.1/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+</main>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+      recomputeEmojiGrouping();
+    });
+  });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
+})();
+</script>
+  </div>
+</body>
+</html>

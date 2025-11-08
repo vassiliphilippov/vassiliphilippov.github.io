@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>specailised · Glite Dictionary</title>
+</head>
+<body>
+  <div class="container">
+<header>
+  <h1 style="text-align:center">specailised</h1>
+  
+  
+    
+      <div class="pos-filter-container">
+        <div class="pos-filter-buttons" id="pos-filter">
+          <button class="pos-filter-btn active" data-pos="all">all</button>
+          
+            <button class="pos-filter-btn" data-pos="ADJ">adj</button>
+          
+            <button class="pos-filter-btn" data-pos="VERB">verb</button>
+          
+        </div>
+      </div>
+    
+  
+</header>
+<main>
+  
+  
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="ADJ" class="">
+        <td class="emoji-col">🛠️</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/specialized--specializecluster191968.html">
+            <span class="summary-title">Designed for purpose</span>
+            
+            
+              <span class="summary-collocation">A specialized software</span>
+            
+            
+              <span class="summary-pos non-italic">adjective</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #f59e0b">5.4</span>
+      
+      
+        <span class="freq-badge">11/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+  
+    <h3 class="section-title-small muted">Rare &amp; Specialized Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">📝</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/specialize--specializecluster192004.html">
+            <span class="summary-title">To specify</span>
+            
+            
+              <span class="summary-collocation">To specialize details</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">3.8</span>
+      
+      
+        <span class="freq-badge">0.7/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="VERB" class="">
+        <td class="emoji-col">🦎</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/specialize--specializecluster192003.html">
+            <span class="summary-title">To adapt</span>
+            
+              <span class="badge-domain">science</span>
+            
+            
+              <span class="summary-collocation">Animals specialize for survival</span>
+            
+            
+              <span class="summary-pos non-italic">verb</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #f59e0b">4.4</span>
+      
+      
+        <span class="freq-badge">4/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+</main>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+      recomputeEmojiGrouping();
+    });
+  });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
+})();
+</script>
+  </div>
+</body>
+</html>
