@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>Hogwarts · A magic school</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">4.1</span>
       
       
-        <span class="freq-badge">0.98/m</span>
+        <span class="freq-badge">0.9/m</span>
       
     </div>
   </div>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Hogwarts</b> school</blockquote><blockquote>Harry Potter received his acceptance letter to <b>Hogwarts</b> on his eleventh birthday.</blockquote><blockquote>The four houses at <b>Hogwarts</b> are Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.</blockquote><blockquote>Many fans visit film locations inspired by <b>Hogwarts</b> when traveling in the UK.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-hogwarts|cluster.17693"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "The Try Guys", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 677440, "phrase": "One of us is going to save \u003cb\u003eHogwarts\u003c/b\u003e, and it\u0027s me, not Hermione.", "start_ms": 673320, "video_id": "Bl8zFdubKeM", "video_title": "The Try Guys Play Boink, Marry, Kill"}, {"channel_name": "Jenna Julien - Videos", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 1895920, "phrase": "How well do you know your \u003cb\u003eHogwarts\u003c/b\u003e staff and subjects?", "start_ms": 1892880, "video_id": "Zv2phrPmRF8", "video_title": "Podcast #128 - Pottermore"}, {"channel_name": "Rosanna Pansino", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 1110600, "phrase": "If you look up there, that\u0027s the top of \u003cb\u003eHogwarts\u003c/b\u003e Castle.", "start_ms": 1106680, "video_id": "43AwgPkuPYw", "video_title": "My Boyfriend Bought Me A Billboard!"}, {"channel_name": "The Useless Hotline Podcast", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 1565880, "phrase": "I want you to guess which \u003cb\u003eHogwarts\u003c/b\u003e house you\u0027d think I would be, and then I\u0027m going to tell you I know what you\u0027re thinking.", "start_ms": 1557280, "video_id": "BDrFFHeVhsQ", "video_title": "George Clarke Reveals All About His Bike Accident!!"}, {"channel_name": "Adam Savage\u2019s Tested", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 315720, "phrase": "The projection mapping they do at night on the side of \u003cb\u003eHogwarts\u003c/b\u003e Castle is just impeccable.", "start_ms": 309520, "video_id": "K4BLIYHJpyc", "video_title": "VR Shots Fired - This is Only a Test 494 - 4/4/19"}, {"channel_name": "Smosh Pit", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 753400, "phrase": "Who needs to learn pre algebra out \u003cb\u003eHogwarts\u003c/b\u003e when we can just use magic.", "start_ms": 747480, "video_id": "ouG2AmMp3jU", "video_title": "TRY NOT TO LAUGH CHALLENGE - BACK TO SCHOOL SPECIAL"}, {"channel_name": "Hannah Witton", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 429920, "phrase": "This time around I bought Hogwarts pajamas, tiny, cute little \u003cb\u003eHogwarts\u003c/b\u003e pajamas like this.", "start_ms": 423000, "video_id": "MUqhCaUN_1o", "video_title": "APRIL FAVOURITES 2017 | Hannah Witton"}, {"channel_name": "withcindy", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 946280, "phrase": "So, no, I\u0027m telling you that they have kids and that that child goes to \u003cb\u003eHogwarts\u003c/b\u003e as well.", "start_ms": 940880, "video_id": "JKUtOoFBQns", "video_title": "BOOKTUBE BOYFRIEND TAG \ud83d\udc96 (we broke up after this)"}, {"channel_name": "Ali Abdaal", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 283120, "phrase": "Then again, clearly some of her have come to \u003cb\u003eHogwarts\u003c/b\u003e in possession of ability so formidable that you feel confident enough to not per attention.", "start_ms": 272240, "video_id": "DhGSyddz-g0", "video_title": "My Favourite iPhone Apps"}, {"channel_name": "Andr\u00e9 Duqum", "concept_id": "ct:ct7fmXnFFLRFZvNsqCPA8hogwarts", "end_ms": 4780920, "phrase": "All of my rituals, every ritual that I lead for people, even my whole week at \u003cb\u003eHogwarts\u003c/b\u003e retreat, I had a whole different schedule planned.", "start_ms": 4771640, "video_id": "Sisg-gtFpg4", "video_title": "This WITCH Reveals How To Live a Life of Magic | Mia Magik"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-hogwarts|cluster.17693', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-hogwarts|cluster.17693', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -81,6 +103,109 @@
             <li><code>ct:ci4euyVdNTghfibudCacA</code></li>
           
         </ul>
+      </div>
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>18</td>
+                  <td style='text-align: right; padding: 8px;'>67,696,835</td>
+                  <td style='text-align: right; padding: 8px;'>0.27</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>99</td>
+                  <td style='text-align: right; padding: 8px;'>41,656,742</td>
+                  <td style='text-align: right; padding: 8px;'>2.38</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>44</td>
+                  <td style='text-align: right; padding: 8px;'>98,046,614</td>
+                  <td style='text-align: right; padding: 8px;'>0.45</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>39</td>
+                  <td style='text-align: right; padding: 8px;'>96,701,264</td>
+                  <td style='text-align: right; padding: 8px;'>0.40</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>57</td>
+                  <td style='text-align: right; padding: 8px;'>95,124,381</td>
+                  <td style='text-align: right; padding: 8px;'>0.60</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>11</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.12</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>2</td>
+                  <td style='text-align: right; padding: 8px;'>39,987,437</td>
+                  <td style='text-align: right; padding: 8px;'>0.05</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>68</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.74</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.63</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.43</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.63 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 11.4 occurrences</div>
+              <div><strong>Per month:</strong> 0.9 occurrences</div>
+              <div><strong>Per week:</strong> 0.2 occurrences</div>
+            </div>
+          </div>
+        </div>
       </div>
     
     

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>CDF · A probability function</title>
 </head>
 <body>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Statistics <b>CDF</b> curve</blockquote><blockquote>The <b>CDF</b> is useful for calculating the probability of a random variable falling within a certain range.</blockquote><blockquote>In statistics class, we learned how to plot a <b>CDF</b> for different types of data.</blockquote><blockquote>You can use the <b>CDF</b> to determine the likelihood that a measurement does not exceed a specific value.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-cdf|cluster.179481"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "MIT OpenCourseWare", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 1850960, "phrase": "So now what would the \u003cb\u003eCDF\u003c/b\u003e look like in this case?", "start_ms": 1846240, "video_id": "mHfn_7ym6to", "video_title": "8. Continuous Random Variables"}, {"channel_name": "MIT OpenCourseWare", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 1645080, "phrase": "So when might we prefer to plot \u003cb\u003eCDF\u003c/b\u003e versus PDF?", "start_ms": 1640200, "video_id": "yiQTHtvszJ8", "video_title": "Lecture 05: Summarizing and Describing Data"}, {"channel_name": "Harvard University", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 586920, "phrase": "So let let\u0027s let capital F be the \u003cb\u003eCDF\u003c/b\u003e as usual.", "start_ms": 579480, "video_id": "N8O6zd6vTZ8", "video_title": "Lecture 17: Moment Generating Functions | Statistics 110"}, {"channel_name": "Harvard University", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 257120, "phrase": "OK, well in the continuous case we have a \u003cb\u003eCDF\u003c/b\u003e exactly the same thing.", "start_ms": 250480, "video_id": "Tci---bVs60", "video_title": "Lecture 12: Discrete vs. Continuous, the Uniform | Statistics 110"}, {"channel_name": "Stanford", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 4041000, "phrase": "Well, so it\u0027s just convenient to choose the \u003cb\u003eCDF\u003c/b\u003e to be the sigmoid function, OK.", "start_ms": 4033120, "video_id": "QGd06MTRMHs", "video_title": "Lecture 15 | Machine Learning (Stanford)"}, {"channel_name": "Sabine Hossenfelder", "concept_id": "ct:ct7eFJZH8XsWTzYwnBkcNcdf", "end_ms": 321600, "phrase": "Of course, this doesn\u0027t make the \u003cb\u003eCDF\u003c/b\u003e result go away, but it adds to the suspicion that it\u0027s probably not new physics.", "start_ms": 313880, "video_id": "SR4BM7PANMw", "video_title": "CERN checks Particle Physics Anomaly, A New Explanation for the Interstellar Object \u0027Oumuamua \u0026 More"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-cdf|cluster.179481', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-cdf|cluster.179481', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -81,6 +103,109 @@
             <li><code>ct:ci4euyZqVvnFGXzoMAJfq</code></li>
           
         </ul>
+      </div>
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>67,696,835</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>2</td>
+                  <td style='text-align: right; padding: 8px;'>98,085,816</td>
+                  <td style='text-align: right; padding: 8px;'>0.02</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>98,046,614</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>96,701,264</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>95,124,381</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>50,029,752</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.00</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.00 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 0.1 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
+              <div><strong>Per week:</strong> 0.0 occurrences</div>
+            </div>
+          </div>
+        </div>
       </div>
     
     

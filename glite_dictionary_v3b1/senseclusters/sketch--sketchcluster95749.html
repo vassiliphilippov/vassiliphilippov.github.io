@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>sketch · A data summary</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">8.6</span>
       
       
-        <span class="freq-badge">0.48/m</span>
+        <span class="freq-badge">0.4/m</span>
       
     </div>
   </div>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>A data <b>sketch</b></blockquote><blockquote>The system uses a <b>sketch</b> to estimate item frequencies in a data stream with limited memory.</blockquote><blockquote>Researchers compared different <b>sketch</b> implementations to find the fastest with acceptable error rates.</blockquote><blockquote>They used a Count-Min <b>sketch</b> to approximate heavy hitters in the network traffic efficiently.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-sketch|cluster.95749"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "Harvard University", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 549720, "phrase": "I\u0027m going to compress X, for example, to its \u003cb\u003esketch\u003c/b\u003e, right?", "start_ms": 544760, "video_id": "JgWWK-8DCes", "video_title": "Algorithms for Big Data (COMPSCI 229r), Lecture 7"}, {"channel_name": "Harvard University", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 4126080, "phrase": "We carry this one if this \u003cb\u003esketch\u003c/b\u003e is less than that sketch.", "start_ms": 4121440, "video_id": "3_o0-zPRQqw", "video_title": "Advanced Algorithms (COMPSCI 224), Lecture 2"}, {"channel_name": "Channel UCbiGcwDWZjz05njNPrJU7jA", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 640800, "phrase": "And this is because the blink \u003cb\u003esketch\u003c/b\u003e is reinstalled on those Arduinos.", "start_ms": 636040, "video_id": "FkTgKc-IOyM", "video_title": "Introduction to Arduino: UNO R4 Minima"}, {"channel_name": "Sabine Hossenfelder", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 1055120, "phrase": "The AI must decide if new \u003cb\u003esketches\u003c/b\u003e match the pattern.", "start_ms": 1051120, "video_id": "T3EHANFeyns", "video_title": "What is \"Intelligence\"?"}, {"channel_name": "Chris Williamson", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 901000, "phrase": "So a sector stack, a \u003cb\u003esketch\u003c/b\u003e, which would have a range card.", "start_ms": 897040, "video_id": "G9boJpqiZTQ", "video_title": "The Dark Truth About The Trump Assassination Attempt - Tim Kennedy"}, {"channel_name": "Zoe Hong", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 794320, "phrase": "We can\u0027t see it because on top of it we have the \u003cb\u003esketch\u003c/b\u003e layer that\u0027s got a white background.", "start_ms": 789000, "video_id": "fPzX65_mFcM", "video_title": "How to Render Fashion Illustrations in Adobe Photoshop"}, {"channel_name": "Arduino", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 826600, "phrase": "And if we want to upload a \u003cb\u003esketch\u003c/b\u003e, we can simply run this command.", "start_ms": 819320, "video_id": "J-qGn1eEidA", "video_title": "Arduino CLI: Getting Started"}, {"channel_name": "Krista King", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 55400, "phrase": "We\u0027ve also been given this \u003cb\u003esketch\u003c/b\u003e, which is a sketch of level curves of this region.", "start_ms": 49600, "video_id": "2cKf3wV6mZg", "video_title": "Average value of a double integral (KristaKingMath)"}, {"channel_name": "Rick Beato", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 1709680, "phrase": "Well, the process generally was that the arranger, Don Sebeski, Emilia Don, whoever they were, they would bring a basic a \u003cb\u003esketch\u003c/b\u003e of an arrangement.", "start_ms": 1699600, "video_id": "k2vqJ78VA4g", "video_title": "The Ron Carter Interview"}, {"channel_name": "Arduino", "concept_id": "ct:ct7hgHsSMdsGseom2wj6nsketch", "end_ms": 355880, "phrase": "That means that we have successfully uploaded the first \u003cb\u003esketch\u003c/b\u003e to the first device, and now we\u0027re going to create the next thing.", "start_ms": 345880, "video_id": "RsmPT4kAUl8", "video_title": "Making Your Plants Smart with Arduino Cloud"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-sketch|cluster.95749', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-sketch|cluster.95749', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -73,6 +95,109 @@
         </ul>
       </div>
     
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>10</td>
+                  <td style='text-align: right; padding: 8px;'>67,696,835</td>
+                  <td style='text-align: right; padding: 8px;'>0.15</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>39</td>
+                  <td style='text-align: right; padding: 8px;'>98,085,816</td>
+                  <td style='text-align: right; padding: 8px;'>0.40</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>14</td>
+                  <td style='text-align: right; padding: 8px;'>98,046,614</td>
+                  <td style='text-align: right; padding: 8px;'>0.14</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>31</td>
+                  <td style='text-align: right; padding: 8px;'>96,701,264</td>
+                  <td style='text-align: right; padding: 8px;'>0.32</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>4</td>
+                  <td style='text-align: right; padding: 8px;'>95,124,381</td>
+                  <td style='text-align: right; padding: 8px;'>0.04</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>20</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.21</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>29</td>
+                  <td style='text-align: right; padding: 8px;'>42,410,686</td>
+                  <td style='text-align: right; padding: 8px;'>0.68</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>14</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.15</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.26</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.18</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.26 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 4.8 occurrences</div>
+              <div><strong>Per month:</strong> 0.4 occurrences</div>
+              <div><strong>Per week:</strong> 0.1 occurrences</div>
+            </div>
+          </div>
+        </div>
+      </div>
     
     
       <div><h3>Origin Information</h3>

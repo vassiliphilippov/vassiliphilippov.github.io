@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>Sasquatch · A large wild creature</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
       
       
-        <span class="freq-badge">0.47/m</span>
+        <span class="freq-badge">0.5/m</span>
       
     </div>
   </div>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>A <b>Sasquatch</b> sighting</blockquote><blockquote>Some hikers claim to have seen a <b>Sasquatch</b> in the remote forest.</blockquote><blockquote>Stories about the elusive <b>Sasquatch</b> have fascinated people for decades.</blockquote><blockquote>The legend of the <b>Sasquatch</b> is a popular subject in North American folklore.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-sasquatch|cluster.142280"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "Vanity Fair", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 831000, "phrase": "Well, no, he\u0027s he\u0027s a fictional character, but he\u0027s based on the \u003cb\u003eSasquatch\u003c/b\u003e, which is real.", "start_ms": 825040, "video_id": "7z3nMSOI3BY", "video_title": "Taika Waititi \u0026 Rhys Darby Take Lie Detector Tests | Vanity Fair"}, {"channel_name": "The Late Show with Stephen Colbert", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 628920, "phrase": "Well, I have incredible news because a new Bigfoot sighting shows clear video evidence of \u003cb\u003eSasquatch\u003c/b\u003e walking.", "start_ms": 622040, "video_id": "BDKTfKn0Y80", "video_title": "Scalise Nabs House Speaker Nom | George Santos Scammed His Own Donors | Bigfoot Found!"}, {"channel_name": "Good Mythical Morning", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 80120, "phrase": "One of them\u0027s bald, a \u003cb\u003eSasquatch\u003c/b\u003e and a Olympic swimmer.", "start_ms": 75080, "video_id": "yTEecHeW7Go", "video_title": "World\u0027s Craziest Chest Hair Designs"}, {"channel_name": "Good Mythical Morning", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 516680, "phrase": "Yeah, and a version of \u003cb\u003eSasquatch\u003c/b\u003e Fuzz aptly named Link Squatch.", "start_ms": 511520, "video_id": "ekkxjIx-TDU", "video_title": "8 Things Guys Secretly Want"}, {"channel_name": "Ear Biscuits", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 125680, "phrase": "It\u0027s called California on \u003cb\u003eSasquatch\u003c/b\u003e, a not Finding Bigfoot special.", "start_ms": 120440, "video_id": "zLsIsFSixoo", "video_title": "Kassem G: How I Got Here (Apr 2015)"}, {"channel_name": "Tim Ferriss", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 322280, "phrase": "Hello boys and girls, \u003cb\u003eSasquatches\u003c/b\u003e and squirrels.", "start_ms": 319200, "video_id": "EyopAlh04iA", "video_title": "Esther Perel Interview | The Tim Ferriss Show (Podcast)"}, {"channel_name": "Gregory B. Sadler", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 3241760, "phrase": "We, we don\u0027t really know mysterious creatures like Yetis or \u003cb\u003eSasquatches\u003c/b\u003e or I don\u0027t know, whatever.", "start_ms": 3233440, "video_id": "T5O3p874Ag0", "video_title": "Arthur Clarke\u0027s Mysterious Cosmos | Worlds of Speculative Fiction (lecture 29)"}, {"channel_name": "Ear Biscuits", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 1821720, "phrase": "So I\u0027m, I\u0027m kind of making an argument for like a small \u003cb\u003eSasquatch\u003c/b\u003e in the Amazon, but that ain\u0027t Sasquatch.", "start_ms": 1813760, "video_id": "tCi4OKHk51I", "video_title": "Rhett\u2019s Encounter With A Wild Bear"}, {"channel_name": "Zane and Heath: UNFILTERED", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 3106640, "phrase": "Yes, we he\u0027s wrapped in toilet paper, a mummy right, he\u0027s a he\u0027s a big ape \u003cb\u003eSasquatch\u003c/b\u003e big ape.", "start_ms": 3098560, "video_id": "MgaOhKbw5SA", "video_title": "We Caught Our Babysitter Throwing a Party - UNFILTERED #53"}, {"channel_name": "Decoding the Unknown", "concept_id": "ct:ct7h2NSVi3KMbHQ78BQgHsasquatc", "end_ms": 379280, "phrase": "A cooling card of the \u003cb\u003eSasquatch\u003c/b\u003e and the Nunty Nook wasn\u0027t the only paranormal game in town.", "start_ms": 372760, "video_id": "G3OuC6x1-AM", "video_title": "What Really Happened in Portlock, Alaska?"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-sasquatch|cluster.142280', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-sasquatch|cluster.142280', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -59,7 +81,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">8.6</span>
       
       
-        <span class="freq-badge">1.91/m</span>
+        <span class="freq-badge">2/m</span>
       
     </div>
   </span>
@@ -108,6 +130,109 @@
             <li><code>ct:ci4euyD6E1Tua6APGnXX5</code></li>
           
         </ul>
+      </div>
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>27</td>
+                  <td style='text-align: right; padding: 8px;'>67,696,835</td>
+                  <td style='text-align: right; padding: 8px;'>0.40</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>30</td>
+                  <td style='text-align: right; padding: 8px;'>98,085,816</td>
+                  <td style='text-align: right; padding: 8px;'>0.31</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>10</td>
+                  <td style='text-align: right; padding: 8px;'>98,046,614</td>
+                  <td style='text-align: right; padding: 8px;'>0.10</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>35</td>
+                  <td style='text-align: right; padding: 8px;'>96,701,264</td>
+                  <td style='text-align: right; padding: 8px;'>0.36</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>30</td>
+                  <td style='text-align: right; padding: 8px;'>95,124,381</td>
+                  <td style='text-align: right; padding: 8px;'>0.32</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>31</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.33</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>5</td>
+                  <td style='text-align: right; padding: 8px;'>42,410,686</td>
+                  <td style='text-align: right; padding: 8px;'>0.12</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>84</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.92</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.36</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.32</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.36 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 6.5 occurrences</div>
+              <div><strong>Per month:</strong> 0.5 occurrences</div>
+              <div><strong>Per week:</strong> 0.1 occurrences</div>
+            </div>
+          </div>
+        </div>
       </div>
     
     

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>mention · A short reference</title>
 </head>
 <body>
@@ -42,6 +44,26 @@
       </div>
     
     
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-mention|cluster.32710"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "The Late Show with Stephen Colbert", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 1854080, "phrase": "They left after the first \u003cb\u003emention\u003c/b\u003e that we\u0027re going to attack.", "start_ms": 1849520, "video_id": "hm-cMZebwHk", "video_title": "Donald Trump\u0027s Teleprompter: LIVE From New Hampshire"}, {"channel_name": "Channel UCbk_QsfaFZG6PdQeCvaYXJQ", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 393720, "phrase": "There wasn\u0027t even a \u003cb\u003emention\u003c/b\u003e of do you go to the gym?", "start_ms": 389280, "video_id": "6z0Ker1Z3-0", "video_title": "The Holistic Doctor\u0027s 3-STEP HACK For Optimal Physical \u0026 Mental Health!"}, {"channel_name": "I\u0027ve Had It", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 432640, "phrase": "Not one \u003cb\u003emention\u003c/b\u003e of the lives lost.", "start_ms": 429120, "video_id": "tv0hIdLqibs", "video_title": "IHIP News: Did Trump\u2019s \u201cBuyout\u201d Lead to HORRENDOUS Aircraft Collision?"}, {"channel_name": "Gregory B. Sadler", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 1479520, "phrase": "But there\u0027s no \u003cb\u003emention\u003c/b\u003e of Stoic in there whatsoever.", "start_ms": 1476080, "video_id": "1ZeWvhqJIjs", "video_title": "How To Tell A Joke: An Ancient Guide To The Art of Humor | Sadler\u0027s Honest Book Reviews"}, {"channel_name": "Linus Tech Tips", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 30920, "phrase": "But others, like this AV receiver, make no \u003cb\u003emention\u003c/b\u003e of latency whatsoever.", "start_ms": 25160, "video_id": "ZX7HnNd5PB4", "video_title": "We can FINALLY Test This!! - Capture card latency"}, {"channel_name": "Two Hot Takes", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 413120, "phrase": "There\u0027s been no \u003cb\u003ementions\u003c/b\u003e of age so far.", "start_ms": 408320, "video_id": "MCAPRAEG9wk", "video_title": "Unhinged -- Reddit Stories -- FULL EPISODE"}, {"channel_name": "Two Hot Takes", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 248400, "phrase": "There\u0027s been no \u003cb\u003ementions\u003c/b\u003e of age so far.", "start_ms": 243600, "video_id": "3SUTLyoekNI", "video_title": "\u0027Stepmom Tried to Walk-Out w/ My Baby..\u0027"}, {"channel_name": "Harvard University", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 901840, "phrase": "There are two \u003cb\u003ementions\u003c/b\u003e of women and one of woman.", "start_ms": 898040, "video_id": "sYtOxET0wkQ", "video_title": "It\u0027s Complicated: 375 Years of Women at Harvard || Radcliffe Institute for Advanced Study"}, {"channel_name": "Alex O\u0027Connor", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 492040, "phrase": "So that\u0027s our earliest \u003cb\u003emention\u003c/b\u003e possible mention of of this deity.", "start_ms": 487040, "video_id": "K3koeHN-6mU", "video_title": "The History of Yahweh - Storm God to Israelite Deity"}, {"channel_name": "Meet Kevin", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 300480, "phrase": "And then I\u0027d ask ChatGPT, hey, was there any \u003cb\u003emention\u003c/b\u003e of XYZ?", "start_ms": 295680, "video_id": "iu3dQYW5ArQ", "video_title": "Tucker Carlson is DEATHLY *Afraid* of THIS Elon Musk Warning"}, {"channel_name": "YaleCourses", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 3493040, "phrase": "And he\u0027s a man of \u003cb\u003ementions\u003c/b\u003e places all the time.", "start_ms": 3489280, "video_id": "AVhB2dXZiiE", "video_title": "7. Inferno XIX, XXI, XXV, XXVI"}, {"channel_name": "Robinson Erhardt", "concept_id": "ct:ct7fS3nT6seZPmDNhjWEvmention", "end_ms": 3381400, "phrase": "I think that no, I believe that the \u003cb\u003ementions\u003c/b\u003e are very bad.", "start_ms": 3377040, "video_id": "ViifI2IQeTE", "video_title": "Ernest Lepore: Linguistic Conventions, Slurs, and Philosophy of Language | Robinson\u0027s Podcast #85"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-mention|cluster.32710', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-mention|cluster.32710', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
+      </div>
+    
+    
       <div class='synonyms'><h3>Synonyms</h3>
         <ul class='synonym-list'>
           
@@ -59,7 +81,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">3.2</span>
       
       
-        <span class="freq-badge">37/m</span>
+        <span class="freq-badge">40/m</span>
       
     </div>
   </span>
@@ -82,7 +104,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">6.8</span>
       
       
-        <span class="freq-badge">4.38/m</span>
+        <span class="freq-badge">4/m</span>
       
     </div>
   </span>
@@ -128,7 +150,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">2.5</span>
       
       
-        <span class="freq-badge">8.97/m</span>
+        <span class="freq-badge">9/m</span>
       
     </div>
   </span>
@@ -183,6 +205,109 @@
             <li><code>ct:csuhRWUjxrqsGQd3HQ5cMmention</code></li>
           
         </ul>
+      </div>
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>128</td>
+                  <td style='text-align: right; padding: 8px;'>13,271,446</td>
+                  <td style='text-align: right; padding: 8px;'>9.64</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>108</td>
+                  <td style='text-align: right; padding: 8px;'>6,329,450</td>
+                  <td style='text-align: right; padding: 8px;'>17.06</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>99</td>
+                  <td style='text-align: right; padding: 8px;'>16,097,258</td>
+                  <td style='text-align: right; padding: 8px;'>6.15</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>124</td>
+                  <td style='text-align: right; padding: 8px;'>6,129,440</td>
+                  <td style='text-align: right; padding: 8px;'>20.23</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>108</td>
+                  <td style='text-align: right; padding: 8px;'>9,685,470</td>
+                  <td style='text-align: right; padding: 8px;'>11.15</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>111</td>
+                  <td style='text-align: right; padding: 8px;'>9,561,431</td>
+                  <td style='text-align: right; padding: 8px;'>11.61</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>132</td>
+                  <td style='text-align: right; padding: 8px;'>9,164,324</td>
+                  <td style='text-align: right; padding: 8px;'>14.40</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>98</td>
+                  <td style='text-align: right; padding: 8px;'>31,097,367</td>
+                  <td style='text-align: right; padding: 8px;'>3.15</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>11.68</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>11.38</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (11.68 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 213.1 occurrences</div>
+              <div><strong>Per month:</strong> 17.5 occurrences</div>
+              <div><strong>Per week:</strong> 4.1 occurrences</div>
+            </div>
+          </div>
+        </div>
       </div>
     
     

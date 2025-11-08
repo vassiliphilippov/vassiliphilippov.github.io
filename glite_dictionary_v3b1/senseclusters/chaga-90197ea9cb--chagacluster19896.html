@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>Chaga · A medicinal fungus</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
       
       
-        <span class="freq-badge">0.00/m</span>
+        <span class="freq-badge">0.01/m</span>
       
     </div>
   </div>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Chaga</b> mushroom tea</blockquote><blockquote>She brewed a cup of <b>Chaga</b> tea to help soothe her sore throat.</blockquote><blockquote>Wild foragers carefully harvested chunks of <b>Chaga</b> from the birch tree's trunk last autumn.</blockquote><blockquote>Clinical studies are examining whether regular <b>Chaga</b> consumption affects markers of inflammation.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-chaga|cluster.19896"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "Tim Ferriss", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 6736760, "phrase": "The next is actually their \u003cb\u003eChaga\u003c/b\u003e tea which tastes delicious.", "start_ms": 6732120, "video_id": "k3qWJEwQqM4", "video_title": "Chip Wilson \u2014 Building Lululemon, the Art of Setting Goals, and More | The Tim Ferriss Show"}, {"channel_name": "Tim Ferriss", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 5753880, "phrase": "The next is actually their \u003cb\u003echaga\u003c/b\u003e tea, which tastes delicious.", "start_ms": 5749200, "video_id": "cUuf2UcICz0", "video_title": "Lori Gottlieb \u2014 The Power of Getting to Unknow Yourself  | The Tim Ferriss Show"}, {"channel_name": "IMPAULSIVE", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 3259280, "phrase": "You have \u003cb\u003echaga\u003c/b\u003e mushrooms, king of all mushrooms, right?", "start_ms": 3256280, "video_id": "6tKkiYiqVkM", "video_title": "Superfood HUNTER Darin Olien lost everything in the Malibu WILDFIRES - IMPAULSIVE EP. 89"}, {"channel_name": "Shawn Ryan Show", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 517480, "phrase": "Like it\u0027s A and they say they found spores of of of \u003cb\u003echaga\u003c/b\u003e spores in the stratosphere.", "start_ms": 511120, "video_id": "9ZVogrua1Q0", "video_title": "Laird Hamilton - The Greatest Big Wave Surfer of All Time | SRS #86"}, {"channel_name": "Dr. Josh Axe", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 2079840, "phrase": "So like \u003cb\u003echaga\u003c/b\u003e and lion\u0027s mane reishi.", "start_ms": 2076720, "video_id": "oKM4jzWz6d0", "video_title": "Big Pharma, Gut Health, and Longevity | Dr. Will Cole on Thriving in a Toxic World"}, {"channel_name": "Pretty Basic Podcast", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 2318360, "phrase": "I did, I did have coffee and I had some old like \u003cb\u003echaga\u003c/b\u003e mix that I did put in there.", "start_ms": 2312600, "video_id": "miURfASFZoM", "video_title": "Beauty Scams in the Industry - PRETTY BASIC - EP. 175"}, {"channel_name": "George Janko", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 3286880, "phrase": "So there\u0027s lion mane, lion\u0027s mane, Turkey tail, reishi, shiitake, \u003cb\u003echaga\u003c/b\u003e and Cordyceps.", "start_ms": 3281080, "video_id": "Brw1eE0pTuA", "video_title": "My Life After Impaulsive | EP. 53"}, {"channel_name": "Chris Williamson", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 749880, "phrase": "Just just black coffee and then, well, the, well, the hot water\u0027s going for the cacao tea or the \u003cb\u003echaga\u003c/b\u003e or the coffee\u0027s brewing.", "start_ms": 739720, "video_id": "-S6xfoFz1cU", "video_title": "BEN GREENFIELD | The Ultimate Daily Routine | Modern Wisdom Podcast 157"}, {"channel_name": "Chris Williamson", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 597720, "phrase": "Just just black coffee and then, well, the well, the hot water is going for the cacao tea or the \u003cb\u003echaga\u003c/b\u003e or the coffee\u0027s brewing.", "start_ms": 587520, "video_id": "1H394oyhKLY", "video_title": "Ben Greenfield Shares His Entire Morning Routine"}, {"channel_name": "ZOE", "concept_id": "ct:ct7eG8dFJrpBE4p2LSam6chaga", "end_ms": 2320880, "phrase": "But but that many of these fungal species like reishi and lion\u0027s mane \u003cb\u003echaga\u003c/b\u003e, these have been used for a, a, a very long time.", "start_ms": 2312000, "video_id": "tKuoBKaMVJc", "video_title": "Mushroom expert: uncovering the health secrets of fungi | Merlin Sheldrake \u0026 Prof. Tim Spector"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-chaga|cluster.19896', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-chaga|cluster.19896', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -73,6 +95,109 @@
         </ul>
       </div>
     
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>67,696,835</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>98,085,816</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>98,046,614</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>96,701,264</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>6</td>
+                  <td style='text-align: right; padding: 8px;'>95,124,381</td>
+                  <td style='text-align: right; padding: 8px;'>0.06</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>50,029,752</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>0</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.00</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.01</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 0.1 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
+              <div><strong>Per week:</strong> 0.0 occurrences</div>
+            </div>
+          </div>
+        </div>
+      </div>
     
     
       <div><h3>Origin Information</h3>

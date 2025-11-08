@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../youtube_player.css">
+  <script src="../youtube_player.js"></script>
   <title>forecaster · A predictor</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">3.7</span>
       
       
-        <span class="freq-badge">2.28/m</span>
+        <span class="freq-badge">3/m</span>
       
     </div>
   </div>
@@ -39,6 +41,26 @@
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>A <b>forecaster</b> predicts weather</blockquote><blockquote>Many people rely on a financial <b>forecaster</b> for investment advice.</blockquote><blockquote>The <b>forecaster</b> explained how climate models are used to predict future temperatures.</blockquote><blockquote>The weather <b>forecaster</b> predicted heavy rain for the weekend.</blockquote>
+      </div>
+    
+    
+      <div class="youtube-examples-section">
+        <h3>Video Examples</h3>
+        <div id="youtube-player-forecaster|cluster.3030"></div>
+        <script>
+          (function() {
+            const examplesData = [{"channel_name": "Chris Williamson", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 3849720, "phrase": "They get very mad at any pollster or \u003cb\u003eforecaster\u003c/b\u003e who doesn\u0027t say good news for their candidate.", "start_ms": 3842760, "video_id": "fRCrZSS1fek", "video_title": "The Hidden Factors Influencing The Election - Nate Silver"}, {"channel_name": "Meet Kevin", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 234000, "phrase": "Speaking of which, inflation and GDP, let\u0027s take a look at what the November Survey of Professional \u003cb\u003eForecasters\u003c/b\u003e predicts.", "start_ms": 225640, "video_id": "WYybdP19KP0", "video_title": "The Fed is *Freaking Out* | Jerome SCREWED UP!"}, {"channel_name": "Triggernometry", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 5628360, "phrase": "Larry Opie is the mother of Narcissus and she asks a blind seer, a \u003cb\u003eforecaster\u003c/b\u003e of the future, what her son\u0027s outcome was going to be.", "start_ms": 5617560, "video_id": "FwRnLuDHWjQ", "video_title": "Academia Has Fallen - Dr Paul A. Taylor"}, {"channel_name": "The Late Show with Stephen Colbert", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 116440, "phrase": "If we get this done, a wide range of independent \u003cb\u003eforecasters\u003c/b\u003e project that it\u0027ll have an incredibly significant impact on GDP and jobs.", "start_ms": 106920, "video_id": "F_INmmkTRO0", "video_title": "Inside The Hill: Biden attacks Facebook just for killing people"}, {"channel_name": "Big Think", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 17480, "phrase": "I\u0027m a technology \u003cb\u003eforecaster\u003c/b\u003e, which means I spend my time exploring the intersection between technological advancements and entrepreneurship.", "start_ms": 6560, "video_id": "Fs12Y2mGDHY", "video_title": "Big Think Interview With Paul Saffo  | Big Think"}, {"channel_name": "MIT OpenCourseWare", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 3247720, "phrase": "So, and just, I mean, as a personal note, when I was in the Air Force, I was a weather \u003cb\u003eforecaster\u003c/b\u003e for missile operations.", "start_ms": 3238600, "video_id": "rV5eSoBqrsY", "video_title": "Lec 14 | MIT 16.885J Aircraft Systems Engineering, Fall 2005"}, {"channel_name": "Stanford", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 2533040, "phrase": "And if the \u003cb\u003eforecaster\u003c/b\u003e says totally, then you\u0027re in the last lecture.", "start_ms": 2528200, "video_id": "TzY09ZfmOUI", "video_title": "Lecture 17 | Convex Optimization II (Stanford)"}, {"channel_name": "Meet Kevin", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 764640, "phrase": "Rofessional \u003cb\u003eforecasters\u003c/b\u003e don\u0027t see hyper runaway inflation.", "start_ms": 759720, "video_id": "RZ66-eqCMes", "video_title": "Fed JUST Released NEW Inflation Report [Details]"}, {"channel_name": "Stanford", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 6734880, "phrase": "And these are people that are known as rain, you know, \u003cb\u003eforecasters\u003c/b\u003e, basically they, they call them rain makers.", "start_ms": 6727120, "video_id": "D1_5jPETmTI", "video_title": "Climate Change and the Agricultural Adaption"}, {"channel_name": "Gregory B. Sadler", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 6297880, "phrase": "She is talking with Raul about the \u003cb\u003eforecasters\u003c/b\u003e and the fall and all of that.", "start_ms": 6289080, "video_id": "fbYlSwjOdYA", "video_title": "Dan Simmons\u0027 Hyperion Cantos (part 2) | Worlds Of Speculative Fiction (lecture 66)"}, {"channel_name": "YaleCourses", "concept_id": "ct:ct7f7P7H38NBXfguwP1S5forecast", "end_ms": 895720, "phrase": "So it\u0027s a little bit like if you had a weather \u003cb\u003eforecaster\u003c/b\u003e, All right.", "start_ms": 890760, "video_id": "0ZLNbxWH8Lc", "video_title": "7. Behavioral Finance: The Role of Psychology"}];
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                const player = new YouTubeExamplesPlayer('youtube-player-forecaster|cluster.3030', examplesData);
+                player.initialize();
+              });
+            } else {
+              const player = new YouTubeExamplesPlayer('youtube-player-forecaster|cluster.3030', examplesData);
+              player.initialize();
+            }
+          })();
+        </script>
       </div>
     
     
@@ -59,7 +81,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">4.4</span>
       
       
-        <span class="freq-badge">0.18/m</span>
+        <span class="freq-badge">0.2/m</span>
       
     </div>
   </span>
@@ -105,7 +127,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">6.6</span>
       
       
-        <span class="freq-badge">2.97/m</span>
+        <span class="freq-badge">3/m</span>
       
     </div>
   </span>
@@ -128,7 +150,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">9.5</span>
       
       
-        <span class="freq-badge">0.32/m</span>
+        <span class="freq-badge">0.5/m</span>
       
     </div>
   </span>
@@ -179,6 +201,109 @@
             <li><code>ct:ci4euxxBFkRekQejWFxyq</code></li>
           
         </ul>
+      </div>
+    
+    
+      <div><h3>Frequency Details</h3>
+        <div class='frequency-details'>
+          <table style='width: 100%; border-collapse: collapse; margin-bottom: 1rem;'>
+            <thead>
+              <tr style='border-bottom: 2px solid #ddd;'>
+                <th style='text-align: left; padding: 8px;'>Corpus</th>
+                <th style='text-align: right; padding: 8px;'>Occurrences</th>
+                <th style='text-align: right; padding: 8px;'>Total Words</th>
+                <th style='text-align: right; padding: 8px;'>Per Million</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>mag</code></td>
+                  <td style='text-align: right; padding: 8px;'>109</td>
+                  <td style='text-align: right; padding: 8px;'>33,531,501</td>
+                  <td style='text-align: right; padding: 8px;'>3.25</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>web</code></td>
+                  <td style='text-align: right; padding: 8px;'>98</td>
+                  <td style='text-align: right; padding: 8px;'>53,385,557</td>
+                  <td style='text-align: right; padding: 8px;'>1.84</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>spok</code></td>
+                  <td style='text-align: right; padding: 8px;'>96</td>
+                  <td style='text-align: right; padding: 8px;'>32,586,290</td>
+                  <td style='text-align: right; padding: 8px;'>2.95</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>blog</code></td>
+                  <td style='text-align: right; padding: 8px;'>100</td>
+                  <td style='text-align: right; padding: 8px;'>55,300,846</td>
+                  <td style='text-align: right; padding: 8px;'>1.81</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>news</code></td>
+                  <td style='text-align: right; padding: 8px;'>100</td>
+                  <td style='text-align: right; padding: 8px;'>28,816,892</td>
+                  <td style='text-align: right; padding: 8px;'>3.47</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>fic</code></td>
+                  <td style='text-align: right; padding: 8px;'>30</td>
+                  <td style='text-align: right; padding: 8px;'>93,827,527</td>
+                  <td style='text-align: right; padding: 8px;'>0.32</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>acad</code></td>
+                  <td style='text-align: right; padding: 8px;'>45</td>
+                  <td style='text-align: right; padding: 8px;'>37,019,481</td>
+                  <td style='text-align: right; padding: 8px;'>1.22</td>
+                </tr>
+              
+                <tr style='border-bottom: 1px solid #eee;'>
+                  <td style='padding: 8px;'><code>tvm</code></td>
+                  <td style='text-align: right; padding: 8px;'>6</td>
+                  <td style='text-align: right; padding: 8px;'>91,324,286</td>
+                  <td style='text-align: right; padding: 8px;'>0.07</td>
+                </tr>
+              
+              <tr style='border-top: 2px solid #ddd; font-weight: bold;'>
+                <td style='padding: 8px;'>Mean</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>1.86</td>
+              </tr>
+              <tr style='font-weight: bold;'>
+                <td style='padding: 8px;'>Median</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>—</td>
+                <td style='text-align: right; padding: 8px;'>1.82</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (1.86 per million)</div>
+            <div style='margin-left: 1rem;'>
+              
+              
+              
+              
+              
+              
+              
+              <div><strong>Per year:</strong> 34.0 occurrences</div>
+              <div><strong>Per month:</strong> 2.8 occurrences</div>
+              <div><strong>Per week:</strong> 0.7 occurrences</div>
+            </div>
+          </div>
+        </div>
       </div>
     
     
