@@ -1,16 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=../senseclusters/operating_theater-a962cc6bfc--operating_cluster192368.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting… operating rooms</title>
-  <link rel="canonical" href="../senseclusters/operating_theater-a962cc6bfc--operating_cluster192368.html">
   <link rel="stylesheet" href="../style.css">
-  <script>window.location.replace('../senseclusters/operating_theater-a962cc6bfc--operating_cluster192368.html');</script>
-  </head>
-  <body><div class="container">
-    <p>Redirecting to <a href="../senseclusters/operating_theater-a962cc6bfc--operating_cluster192368.html">operating rooms</a>…</p>
-  </div></body>
+  <title>operating rooms (operating room, operating theater) · Glite Dictionary</title>
+</head>
+<body>
+  <div class="container">
+<header>
+  <h1 style="text-align:center">operating rooms (operating room, operating theater)</h1>
+  
+  
+    
+      <div style="text-align:center; color: #686868; margin-top: 8px;">noun</div>
+    
+  
+</header>
+<main>
+  
+  
+    <h3 class="section-title-small muted">Key Meanings</h3>
+    <table class="micro-assets grouped"><tbody>
+    
+      
+      <tr data-pos="NOUN" class="same-emoji-next">
+        <td class="emoji-col">🏥</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/operating_room-a2c90cc157--operating_cluster98723.html">
+            <span class="summary-title">A surgery room</span>
+            
+              <span class="badge-domain">medical</span>
+            
+            
+              <span class="summary-collocation">The operating room</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">3.2</span>
+      
+      
+        <span class="freq-badge">2.04/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+      
+      <tr data-pos="NOUN" class="">
+        <td class="emoji-col">🏥</td>
+        <td class="summary-col">
+          <a class="summary-link" href="../senseclusters/operating_theater-a962cc6bfc--operating_cluster192368.html">
+            <span class="summary-title">A surgery room</span>
+            
+              <span class="badge-domain">medical</span>
+            
+            
+              <span class="summary-collocation">The operating theater room</span>
+            
+            
+              <span class="summary-pos non-italic">noun</span>
+            
+          </a>
+        </td>
+        <td class="summary-right">
+          
+          
+    <div class="diff-freq-container">
+      
+        
+        
+        
+        <span class="diff-pill" style="--diff-color: #22c55e">3.7</span>
+      
+      
+        <span class="freq-badge">0.22/m</span>
+      
+    </div>
+  
+        </td>
+      </tr>
+    
+    </tbody></table>
+  
+  
+</main>
+
+<script>
+(function(){
+  const filterBtns = document.querySelectorAll('.pos-filter-btn');
+  const rows = document.querySelectorAll('tr[data-pos]');
+  function recomputeEmojiGrouping(){
+    const tables = document.querySelectorAll('table.micro-assets.grouped');
+    tables.forEach(tbl => {
+      const trList = Array.from(tbl.querySelectorAll('tbody tr[data-pos]'));
+      trList.forEach(r => r.classList.remove('same-emoji-next'));
+      let prevVisible = null;
+      trList.forEach(r => {
+        if ((r.style.display || '') === 'none') return;
+        if (prevVisible) {
+          const prevEmoji = (prevVisible.querySelector('.emoji-col') || {}).textContent || '';
+          const curEmoji = (r.querySelector('.emoji-col') || {}).textContent || '';
+          if (prevEmoji === curEmoji) {
+            prevVisible.classList.add('same-emoji-next');
+          }
+        }
+        prevVisible = r;
+      });
+    });
+  }
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedPos = btn.dataset.pos;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter rows
+      rows.forEach(row => {
+        const rowPos = row.dataset.pos || '';
+        if (selectedPos === 'all') {
+          row.style.display = '';
+        } else {
+          const posList = rowPos.split(',');
+          row.style.display = posList.includes(selectedPos) ? '' : 'none';
+        }
+      });
+      recomputeEmojiGrouping();
+    });
+  });
+  // Recompute on initial load as well
+  recomputeEmojiGrouping();
+})();
+</script>
+  </div>
+</body>
 </html>

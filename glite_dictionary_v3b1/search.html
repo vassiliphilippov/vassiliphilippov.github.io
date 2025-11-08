@@ -21,7 +21,7 @@
     <ul id="history" class="results"></ul>
   </div>
 </main>
-<script id="search-config" type="application/json">{"index":"search_index_v62_20251021T105851Z.jsonl","index_js":"search_index_v62_20251021T105851Z.js"}</script>
+<script id="search-config" type="application/json">{"index":"search_index_v66_20251108T033526Z.jsonl","index_js":"search_index_v66_20251108T033526Z.js"}</script>
 <style>
 ul.results { list-style: none; padding: 0; margin-top: 8px;
              border: 1px solid #eaeaea; border-radius: 6px; }
@@ -59,7 +59,7 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   const historySection = document.getElementById('history-section');
   const historyList = document.getElementById('history');
 
-  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,dt?:number,dp?:number,b?:string}[]} */
+  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,f?:string,b?:string,c?:string,cl?:string}[]} */
   let INDEX = [];
   const maxItems = 80;
   let ACTIVE = -1;
@@ -189,7 +189,35 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
    * Find and rank matching items for the search query.
    */
   function suggest(query){
-    const normalizedQuery = normalize(query.trim());
+    const trimmedQuery = query.trim();
+    
+    // Check for concept_id search (ct: prefix)
+    if (trimmedQuery.startsWith('ct:')) {
+      const conceptId = trimmedQuery.substring(3).trim();
+      if (!conceptId) return [];
+      const matches = [];
+      for (const item of INDEX) {
+        if (item.c && item.c.includes(conceptId)) {
+          matches.push(item);
+        }
+      }
+      return matches.slice(0, maxItems);
+    }
+    
+    // Check for cluster_id search (cl: prefix)
+    if (trimmedQuery.startsWith('cl:')) {
+      const clusterId = trimmedQuery.substring(3).trim();
+      if (!clusterId) return [];
+      const matches = [];
+      for (const item of INDEX) {
+        if (item.cl && item.cl.includes(clusterId)) {
+          matches.push(item);
+        }
+      }
+      return matches.slice(0, maxItems);
+    }
+    
+    const normalizedQuery = normalize(trimmedQuery);
     if (!normalizedQuery) {
       return [];
     }
@@ -263,36 +291,28 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       const m = Number(it.m || 0);
       if (m > 1) {
         right.textContent = `${m} meanings`;
-      } else if (typeof it.d === 'number') {
+      } else if (typeof it.d === 'number' || typeof it.f === 'string') {
         const container = document.createElement('div');
-        container.className = 'diff-pills-container';
+        container.className = 'diff-freq-container';
         
-        // Main difficulty pill
-        const mainPill = document.createElement('span');
-        mainPill.className = 'diff-pill';
-        let color = '#22c55e';
-        if (it.d >= 4.0 && it.d < 7.0) color = '#f59e0b';
-        if (it.d >= 7.0) color = '#ef4444';
-        mainPill.style.setProperty('--diff-color', color);
-        mainPill.textContent = it.d.toFixed(1);
-        if (typeof it.dt === 'number') {
-          mainPill.title = 'Main difficulty (based on tested data)';
-        } else {
-          mainPill.title = 'Main difficulty (based on prediction)';
+        // Difficulty pill
+        if (typeof it.d === 'number') {
+          const diffPill = document.createElement('span');
+          diffPill.className = 'diff-pill';
+          let color = '#22c55e';
+          if (it.d >= 4.0 && it.d < 7.0) color = '#f59e0b';
+          if (it.d >= 7.0) color = '#ef4444';
+          diffPill.style.setProperty('--diff-color', color);
+          diffPill.textContent = it.d.toFixed(1);
+          container.appendChild(diffPill);
         }
-        container.appendChild(mainPill);
         
-        // Predicted difficulty pill (only if both tested and predicted exist)
-        if (typeof it.dt === 'number' && typeof it.dp === 'number') {
-          const predPill = document.createElement('span');
-          predPill.className = 'diff-pill diff-pill-predicted';
-          let colorPred = '#22c55e';
-          if (it.dp >= 4.0 && it.dp < 7.0) colorPred = '#f59e0b';
-          if (it.dp >= 7.0) colorPred = '#ef4444';
-          predPill.style.setProperty('--diff-color', colorPred);
-          predPill.textContent = it.dp.toFixed(1);
-          predPill.title = 'Predicted difficulty';
-          container.appendChild(predPill);
+        // Frequency badge
+        if (typeof it.f === 'string') {
+          const freqBadge = document.createElement('span');
+          freqBadge.className = 'freq-badge';
+          freqBadge.textContent = it.f;
+          container.appendChild(freqBadge);
         }
         
         right.textContent = '';
