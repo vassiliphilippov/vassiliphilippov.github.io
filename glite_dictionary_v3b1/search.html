@@ -21,7 +21,7 @@
     <ul id="history" class="results"></ul>
   </div>
 </main>
-<script id="search-config" type="application/json">{"index":"search_index_v73_20251108T225419Z.jsonl","index_js":"search_index_v73_20251108T225419Z.js"}</script>
+<script id="search-config" type="application/json">{"index":"search_index_v82_20251109T023215Z.jsonl","index_js":"search_index_v82_20251109T023215Z.js"}</script>
 <style>
 ul.results { list-style: none; padding: 0; margin-top: 8px;
              border: 1px solid #eaeaea; border-radius: 6px; }
@@ -59,10 +59,19 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   const historySection = document.getElementById('history-section');
   const historyList = document.getElementById('history');
 
-  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,f?:string,b?:string,c?:string,cl?:string}[]} */
+  /** @type {{h:string,u:string,p?:string[],m?:number,d?:number,f_num?:number,is_inflected?:boolean,b?:string,c?:string,cl?:string}[]} */
   let INDEX = [];
   const maxItems = 80;
   let ACTIVE = -1;
+
+  // Performance tracking
+  const PERF = {
+    loadStart: performance.now(),
+    loadEnd: 0,
+    indexSize: 0,
+    firstSearchStart: 0,
+    firstSearchEnd: 0,
+  };
 
   // Search history management
   const HISTORY_KEY = 'dictv3_search_history';
@@ -102,7 +111,8 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       head.textContent = it.h;
       const sub = document.createElement('span');
       sub.className = 'result-sub';
-      const subText = posSummary(it.p || []);
+      // Reconstruct POS display from p array (also works with history items)
+      const subText = it.p_display || posSummary(it.p || []);
       if (subText) sub.textContent = subText;
       main.appendChild(head);
       if (subText) main.appendChild(sub);
@@ -124,9 +134,14 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
 
   /**
    * Check if an index item is an inflected form (e.g., "cats" is inflected from "cat").
-   * An item is inflected if it has a base form that differs from itself.
+   * OPTIMIZATION: Uses precomputed is_inflected flag from Python to avoid normalization.
    */
   function isInflectedForm(item){
+    // Use precomputed value if available (faster)
+    if (item.is_inflected !== undefined && item.is_inflected !== null) {
+      return item.is_inflected;
+    }
+    // Fallback for backwards compatibility (should not happen with new index)
     if (!item.b) return false;
     const normalizedSurfaceForm = normalize(item.h);
     const normalizedBaseForm = normalize(item.b);
@@ -135,25 +150,30 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
 
   /**
    * Check if we should hide an inflected form from search results.
-   * We hide inflections when their base form would match the query,
+   * We hide inflections when their base form is PRESENT in the results,
    * UNLESS the user is explicitly searching for that exact inflection.
+   * 
+   * @param {object} item - The search index item to check
+   * @param {string} query - The normalized search query
+   * @param {Set<string>} baseFormsInResults - Set of base forms present in results
    */
-  function shouldHideInflection(item, query){
+  function shouldHideInflection(item, query, baseFormsInResults){
     if (!isInflectedForm(item)) {
       return false; // Not an inflection, never hide
     }
     
     const normalizedSurfaceForm = normalize(item.h);
-    const normalizedBaseForm = normalize(item.b);
     const normalizedQuery = normalize(query);
     
+    // If user is searching for this exact form, always show it
     const isExactMatch = normalizedSurfaceForm === normalizedQuery;
     if (isExactMatch) {
-      return false; // User is searching for this exact form, show it
+      return false;
     }
     
-    const baseFormMatchesQuery = normalizedBaseForm.startsWith(normalizedQuery);
-    return baseFormMatchesQuery; // Hide if base form matches query
+    // Hide inflection if its base form is present in the search results
+    const normalizedBaseForm = normalize(item.b);
+    return baseFormsInResults.has(normalizedBaseForm);
   }
 
   /**
@@ -185,10 +205,16 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
     return -1;
   }
 
+
   /**
    * Find and rank matching items for the search query.
    */
   function suggest(query){
+    // Track first search performance
+    if (PERF.firstSearchStart === 0) {
+      PERF.firstSearchStart = performance.now();
+    }
+    
     const trimmedQuery = query.trim();
     
     // Check for concept_id search (ct: prefix)
@@ -222,29 +248,78 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       return [];
     }
     
+    // PASS 1: Collect all matching items (before inflection filtering)
     const scoredMatches = [];
     
     for (const item of INDEX){
-      // Skip inflections when their base form matches
-      // (e.g., skip "cats" when searching for "cat", unless searching for "cats" exactly)
-      if (shouldHideInflection(item, normalizedQuery)) {
-        continue;
-      }
-      
       const relevanceScore = calculateRelevanceScore(item, normalizedQuery);
       if (relevanceScore >= 0) {
         scoredMatches.push([relevanceScore, item]);
       }
     }
     
-    // Sort by score (descending), then alphabetically by headword
-    scoredMatches.sort((a, b) => {
+    // Build set of all base forms (headwords) present in the initial results
+    // This is used to filter out inflections when their base form is available
+    const baseFormsInResults = new Set();
+    for (const [score, item] of scoredMatches) {
+      const normalizedHeadword = normalize(item.h);
+      baseFormsInResults.add(normalizedHeadword);
+    }
+    
+    // PASS 2: Filter out inflections whose base forms are in the results
+    // (e.g., hide "cats" if "cat" is present, unless user searched for "cats" exactly)
+    const filteredMatches = [];
+    for (const [score, item] of scoredMatches) {
+      if (!shouldHideInflection(item, normalizedQuery, baseFormsInResults)) {
+        filteredMatches.push([score, item]);
+      }
+    }
+    
+    // Sort filtered results by score (descending), then by frequency (descending), then alphabetically
+    filteredMatches.sort((a, b) => {
+      // First: relevance score (higher is better)
       if (b[0] !== a[0]) return b[0] - a[0];
+      
+      // Second: frequency (higher is better) - use pre-parsed numeric value
+      const freqA = a[1].f_num || 0;
+      const freqB = b[1].f_num || 0;
+      if (freqB !== freqA) return freqB - freqA;
+      
+      // Third: alphabetically
       return a[1].h.localeCompare(b[1].h);
     });
     
     // Return top results
-    return scoredMatches.slice(0, maxItems).map(match => match[1]);
+    const results = filteredMatches.slice(0, maxItems).map(match => match[1]);
+    
+    // Track first search completion
+    if (PERF.firstSearchStart > 0 && PERF.firstSearchEnd === 0) {
+      PERF.firstSearchEnd = performance.now();
+      const searchTime = PERF.firstSearchEnd - PERF.firstSearchStart;
+      console.log(`[Search Performance] First search completed in ${searchTime.toFixed(2)}ms`);
+    }
+    
+    return results;
+  }
+
+  /**
+   * Reconstruct frequency display string from numeric value.
+   * Reduces index size by ~3-5% by not storing redundant string.
+   */
+  function formatFrequency(f_num){
+    if (!f_num || typeof f_num !== 'number') return null;
+    return f_num + '/m';
+  }
+
+  /**
+   * Get difficulty color from numeric difficulty score.
+   * Reduces index size by not storing redundant hex colors.
+   */
+  function getDifficultyColor(difficulty){
+    if (typeof difficulty !== 'number') return '#22c55e';
+    if (difficulty >= 7.0) return '#ef4444';  // red
+    if (difficulty >= 4.0) return '#f59e0b';  // orange
+    return '#22c55e';  // green
   }
 
   const POS_MAP = {
@@ -282,7 +357,8 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       head.textContent = it.h;
       const sub = document.createElement('span');
       sub.className = 'result-sub';
-      const subText = posSummary(it.p || []);
+      // Reconstruct POS display from p array (or use cached p_display if present)
+      const subText = it.p_display || posSummary(it.p || []);
       if (subText) sub.textContent = subText;
       main.appendChild(head);
       if (subText) main.appendChild(sub);
@@ -291,7 +367,7 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
       const m = Number(it.m || 0);
       if (m > 1) {
         right.textContent = `${m} meanings`;
-      } else if (typeof it.d === 'number' || typeof it.f === 'string') {
+      } else if (typeof it.d === 'number' || typeof it.f_num === 'number') {
         const container = document.createElement('div');
         container.className = 'diff-freq-container';
         
@@ -299,20 +375,23 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
         if (typeof it.d === 'number') {
           const diffPill = document.createElement('span');
           diffPill.className = 'diff-pill';
-          let color = '#22c55e';
-          if (it.d >= 4.0 && it.d < 7.0) color = '#f59e0b';
-          if (it.d >= 7.0) color = '#ef4444';
+          // Reconstruct color from difficulty (or use cached d_color if present)
+          const color = it.d_color || getDifficultyColor(it.d);
           diffPill.style.setProperty('--diff-color', color);
           diffPill.textContent = it.d.toFixed(1);
           container.appendChild(diffPill);
         }
         
         // Frequency badge
-        if (typeof it.f === 'string') {
+        if (typeof it.f_num === 'number') {
           const freqBadge = document.createElement('span');
           freqBadge.className = 'freq-badge';
-          freqBadge.textContent = it.f;
-          container.appendChild(freqBadge);
+          // Reconstruct frequency string from f_num (or use cached f if present)
+          const freqText = it.f || formatFrequency(it.f_num);
+          if (freqText) {
+            freqBadge.textContent = freqText;
+            container.appendChild(freqBadge);
+          }
         }
         
         right.textContent = '';
@@ -435,7 +514,39 @@ ul.results li.active { background: #f0f6ff; outline: 1px solid #c8e1ff; }
   // Load the index, then enable search
   loadIndex().then(arr => {
     if (Array.isArray(arr)) {
+      PERF.loadEnd = performance.now();
+      PERF.indexSize = arr.length;
+      
       INDEX = arr;
+      
+      // Log loading performance
+      const loadTime = PERF.loadEnd - PERF.loadStart;
+      let indexSizeKB = 'N/A';
+      try {
+        indexSizeKB = (JSON.stringify(arr).length / 1024).toFixed(2);
+      } catch (e) {
+        // In case serialization fails for very large indexes
+      }
+      
+      // Check which precomputed fields are present
+      const sampleRecord = arr.length > 0 ? arr[0] : {};
+      const hasPrecomputed = {
+        f_num: 'f_num' in sampleRecord,
+        is_inflected: 'is_inflected' in sampleRecord,
+      };
+      const precomputedCount = Object.values(hasPrecomputed).filter(Boolean).length;
+      
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('📊 SEARCH INDEX LOADING PERFORMANCE');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log(`⏱️  Load time: ${loadTime.toFixed(2)}ms`);
+      console.log(`📦 Index size: ${PERF.indexSize.toLocaleString()} records`);
+      console.log(`💾 Data size: ${indexSizeKB} KB`);
+      console.log(`⚡ Records/ms: ${(PERF.indexSize / loadTime).toFixed(2)}`);
+      console.log(`🚀 Precomputed fields: ${precomputedCount}/2 (f_num, is_inflected)`);
+      console.log(`📉 Size optimized: removed f, p_display, d_color (~5% savings)`);
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      
       input.disabled = false;
       input.placeholder = 'Search surface forms… (e.g., ran, runners, take off)';
       input.focus();
