@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/unsalted.html'>&larr; Back to unsalted</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/unsalted.html'>&larr; Back to unsalted</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>unsalted</h1>
   <div class='part-of-speech non-italic'>adjective</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>not using a cryptographic salt (hashing)</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / 8cnc8s54lt6ad / (AmE), / 8cnc8s54d0lt6ad / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/33f579a1-fd75-4bc1-8b42-61d970db49dd.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ 8cnc8s54lt6ad /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ 8cnc8s54d0lt6ad /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/33f579a1-fd75-4bc1-8b42-61d970db49dd.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in computing, especially information security) (of a password hash or stored credential) created without adding a cryptographic salt, making it weaker and more vulnerable to precomputed attacks.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Unsalted</b> password</blockquote><blockquote>The IT audit flagged <b>unsalted</b> password hashes, leaving users vulnerable to rainbow-table attacks.</blockquote><blockquote>Developers updated the code after discovering <b>unsalted</b> hashes being stored in the legacy database.</blockquote><blockquote>Modern frameworks warn if you attempt to save <b>unsalted</b> credentials without using a secure hashing function.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The database stored the <b>unsalted</b> passwords.</blockquote><blockquote>Why are we using <b>unsalted</b> hashes?</blockquote><blockquote>The security team warned against <b>unsalted</b> credentials.</blockquote><blockquote><b>Unsalted</b> passwords are more vulnerable to attacks.</blockquote><blockquote>Using <b>unsalted</b> hashes can lead to data breaches.</blockquote><blockquote>Is it safe to store <b>unsalted</b> passwords?</blockquote><blockquote>The developers decided against <b>unsalted</b> hashes for security.</blockquote><blockquote>Why would anyone use <b>unsalted</b> credentials?</blockquote><blockquote>Our system is vulnerable due to <b>unsalted</b> passwords.</blockquote><blockquote>The report highlighted the risks of <b>unsalted</b> hashes.</blockquote><blockquote>Using <b>unsalted</b> passwords is a bad practice!</blockquote>
       </div>
     
     

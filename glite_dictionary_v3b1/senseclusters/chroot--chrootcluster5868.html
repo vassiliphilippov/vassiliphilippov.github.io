@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/chroot.html'>&larr; Back to chroot</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/chroot.html'>&larr; Back to chroot</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>chroot</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>Unix directory isolation</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
       
       
-        <span class="freq-badge">0.07/m</span>
+        <span class="freq-badge">0.02/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / tʃeɪnʤ ruːt / (AmE), / tʃeɪnʤ ruːt / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/06320ea4-4b73-4946-aa0d-eb9a9ba3d678.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ tʃeɪnʤ ruːt /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ tʃeɪnʤ ruːt /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/06320ea4-4b73-4946-aa0d-eb9a9ba3d678.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">a Unix command or system call that changes the apparent root directory for a process, isolating it from the rest of the system</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>The <b>chroot</b> command</blockquote><blockquote>The administrator used <b>chroot</b> to create a secure environment for testing new software.</blockquote><blockquote>Running a server inside a <b>chroot</b> can help limit potential security risks.</blockquote><blockquote>Before installing the package, she entered a <b>chroot</b> to avoid affecting the main system.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The command <b>chroot</b> allows you to set a new root directory.</blockquote><blockquote>You can use <b>chroot</b> to isolate applications.</blockquote><blockquote>Is it possible to <b>chroot</b> a process in Linux?</blockquote><blockquote>The server uses <b>chroot</b> for security purposes.</blockquote><blockquote>How do you <b>chroot</b> into a directory?</blockquote><blockquote>The <b>chroot</b> environment limits the process's filesystem access.</blockquote><blockquote>You must run the <b>chroot</b> command as root.</blockquote><blockquote>After using <b>chroot</b>, the application runs in a separate environment.</blockquote><blockquote>I need to <b>chroot</b> my server for better security.</blockquote><blockquote>The administrator used <b>chroot</b> to create a secure environment.</blockquote><blockquote>Can you explain how <b>chroot</b> works?</blockquote><blockquote>The <b>chroot</b> command is essential for container security.</blockquote><blockquote>Using <b>chroot</b> can prevent unauthorized access.</blockquote><blockquote>How does the <b>chroot</b> system call function?</blockquote><blockquote>You should not <b>chroot</b> if unsure about the command.</blockquote><blockquote>The <b>chroot</b> process is critical for maintaining security.</blockquote><blockquote>What happens if you forget to <b>chroot</b>?</blockquote><blockquote>Don't forget to <b>chroot</b> before you start!</blockquote><blockquote>The <b>chroot</b> command is so useful!</blockquote><blockquote>Can you show me how to <b>chroot</b> properly?</blockquote>
       </div>
     
     
@@ -163,7 +202,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.05 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -172,8 +211,8 @@
               
               
               
-              <div><strong>Per year:</strong> 0.8 occurrences</div>
-              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.2 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>

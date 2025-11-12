@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/attention.html'>&larr; Back to attention</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/attention.html'>&larr; Back to attention</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>attention</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>ML mechanism that weights input elements</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.2</span>
       
       
-        <span class="freq-badge">1/m</span>
+        <span class="freq-badge">0.3/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / 59c8t5bn8359n / (AmE), / 59c8t5bn83(59)n / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/cfac1bab-4c01-46b7-b8db-819768907cbf.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ 59c8t5bn8359n /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ 59c8t5bn83(59)n /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/cfac1bab-4c01-46b7-b8db-819768907cbf.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in machine learning) a mechanism in neural networks that assigns dynamic weights to different parts of the input so the model focuses on the most relevant information.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Attention</b> mechanism in AI</blockquote><blockquote>The transformer model uses an <b>attention</b> mechanism to weigh each word in the input sequence.</blockquote><blockquote>Researchers improved translation quality by adding multi-head <b>attention</b> to the neural network architecture.</blockquote><blockquote>By visualising <b>attention</b> weights, they could see which tokens the model focused on during prediction.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The model requires constant <b>attention</b> to improve accuracy.</blockquote><blockquote>The neural network needs more <b>attention</b> to detail.</blockquote><blockquote>In machine learning, <b>attention</b> mechanisms help models focus.</blockquote><blockquote>The <b>attention</b> given to the training data is crucial.</blockquote><blockquote>The algorithm's <b>attention</b> to relevant data improves performance.</blockquote><blockquote>The model's <b>attention</b> can be adjusted dynamically.</blockquote><blockquote>Look at how the model prioritizes <b>attention</b>!</blockquote><blockquote>What kind of <b>attention</b> does this model require?</blockquote>
       </div>
     
     
@@ -182,7 +221,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.77 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.23 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -191,9 +230,9 @@
               
               
               
-              <div><strong>Per year:</strong> 14.1 occurrences</div>
-              <div><strong>Per month:</strong> 1.2 occurrences</div>
-              <div><strong>Per week:</strong> 0.3 occurrences</div>
+              <div><strong>Per year:</strong> 4.1 occurrences</div>
+              <div><strong>Per month:</strong> 0.3 occurrences</div>
+              <div><strong>Per week:</strong> 0.1 occurrences</div>
             </div>
           </div>
         </div>

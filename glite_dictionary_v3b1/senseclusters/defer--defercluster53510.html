@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/defer.html'>&larr; Back to defer</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/defer.html'>&larr; Back to defer</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>defer</h1>
   <div class='part-of-speech non-italic'>verb</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>schedule code to run at scope exit</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.9</span>
       
       
-        <span class="freq-badge">0.08/m</span>
+        <span class="freq-badge">0.03/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / dɪˈfɜr / (AmE), / dɪˈfɜː / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/6bbba342-386a-47a7-902a-9c49ab4c68c5.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ dɪˈfɜr /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ dɪˈfɜː /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/6bbba342-386a-47a7-902a-9c49ab4c68c5.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in programming) to arrange that a function or block of code is executed automatically when the current function or scope finishes, typically to perform cleanup or release resources.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>To <b>defer</b> code execution</blockquote><blockquote>Go programmers often use <b>defer</b> to close files automatically when a function returns.</blockquote><blockquote>The library automatically <b>deferred</b> the database close operation until the transaction finished.</blockquote><blockquote>The cleanup routine <b>defers</b> closing sockets until after the function's last statement executes.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The program will <b>defer</b> the cleanup process until it finishes executing.</blockquote><blockquote>When you call the function, it will <b>defer</b> the resource release.</blockquote><blockquote>The system <b>defers</b> tasks to avoid memory overload.</blockquote><blockquote>Why does the function <b>defer</b> execution until later?</blockquote><blockquote>The code is <b>deferring</b> the cleanup until all tasks are done.</blockquote><blockquote>Can you explain how to <b>defer</b> execution in this context?</blockquote><blockquote>The application <b>defers</b> certain tasks to improve performance.</blockquote><blockquote>After the function completes, it <b>defers</b> the resource cleanup.</blockquote><blockquote>Have you <b>deferred</b> the cleanup process in your code?</blockquote><blockquote>The library <b>defers</b> resource management until the end of the program.</blockquote><blockquote>Why is the function <b>deferring</b> the cleanup?</blockquote><blockquote>Don't forget to <b>defer</b> the cleanup!</blockquote><blockquote>The library <b>defers</b> updates until the next release cycle.</blockquote><blockquote>The function <b>defers</b> its execution automatically.</blockquote>
       </div>
     
     
@@ -169,7 +208,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.05 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.02 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -178,8 +217,8 @@
               
               
               
-              <div><strong>Per year:</strong> 0.9 occurrences</div>
-              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.3 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>

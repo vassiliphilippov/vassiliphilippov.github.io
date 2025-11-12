@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/ingress.html'>&larr; Back to ingress</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/ingress.html'>&larr; Back to ingress</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>ingress</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>entry point for external traffic (computing)</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.7</span>
       
       
-        <span class="freq-badge">0.06/m</span>
+        <span class="freq-badge">0.05/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / ˈɪnˌɡrɛs / (AmE), / ˈɪŋɡrɛs / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/2bbc705b-dac0-47e6-aae0-63fca723e316.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ ˈɪnˌɡrɛs /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ ˈɪŋɡrɛs /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/2bbc705b-dac0-47e6-aae0-63fca723e316.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(computing) A configuration, resource, or service that defines rules for routing external network traffic into internal services or applications (commonly used in Kubernetes and cloud environments).</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Ingress</b> controller setup</blockquote><blockquote>The cluster uses an <b>ingress</b> controller to route external requests to internal services.</blockquote><blockquote>After updating the <b>ingress</b>, external requests started reaching the new service correctly.</blockquote><blockquote>They configured TLS termination on the <b>ingress</b> to secure traffic entering the cluster.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>ingress</b> rules must be configured correctly.</blockquote><blockquote>We need to set up <b>ingresses</b> for our applications.</blockquote><blockquote>Can you explain the <b>ingress</b> configuration?</blockquote><blockquote>The cloud provider offers various <b>ingresses</b> for security.</blockquote><blockquote>What are the best practices for <b>ingress</b> management?</blockquote><blockquote>The <b>ingress</b> controller handles traffic routing.</blockquote><blockquote>They implemented multiple <b>ingresses</b> for scalability.</blockquote><blockquote>Is the <b>ingress</b> secure enough for sensitive data?</blockquote><blockquote>The team discussed the <b>ingress</b> setup during the meeting.</blockquote><blockquote>Don't forget to review the <b>ingress</b> policies!</blockquote><blockquote>The <b>ingresses</b> allow external access to the services.</blockquote><blockquote>How many <b>ingresses</b> do we need for the project?</blockquote><blockquote>After setting up the <b>ingress</b>, the application became accessible.</blockquote><blockquote>The <b>ingress</b> settings were misconfigured initially.</blockquote><blockquote>He often forgets to update the <b>ingress</b> rules.</blockquote><blockquote>The developer accidentally created multiple <b>ingresses</b> for the same service.</blockquote><blockquote>The <b>ingress</b> was crucial for our Kubernetes deployment.</blockquote><blockquote>The team needs to clarify the <b>ingress</b> requirements.</blockquote><blockquote>The project manager emphasized the importance of <b>ingress</b> security.</blockquote><blockquote>The <b>ingress</b> documentation is very helpful for new developers.</blockquote><blockquote>He forgot to check the <b>ingress</b> logs for errors.</blockquote><blockquote>Can you help me with the <b>ingress</b> setup?</blockquote><blockquote>The <b>ingress</b> controller manages external traffic effectively.</blockquote><blockquote>Is the <b>ingress</b> configuration optimized for performance?</blockquote><blockquote>The <b>ingress</b> setup was completed ahead of schedule.</blockquote><blockquote>The <b>ingress</b> is essential for our network security!</blockquote><blockquote>Don't forget to check the <b>ingress</b> settings!</blockquote><blockquote>The <b>ingress</b> for our app is configured incorrectly.</blockquote><blockquote>Alice's <b>ingress</b> configuration was perfect!</blockquote><blockquote>Bob's <b>ingress</b> rules were misconfigured.</blockquote><blockquote>The <b>ingress</b> setup by the team was successful.</blockquote><blockquote>Is the <b>ingress</b> documentation clear for new hires?</blockquote>
       </div>
     
     
@@ -182,7 +221,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.04 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.03 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -191,8 +230,8 @@
               
               
               
-              <div><strong>Per year:</strong> 0.7 occurrences</div>
-              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.6 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>

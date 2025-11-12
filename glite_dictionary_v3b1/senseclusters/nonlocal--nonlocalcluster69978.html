@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/nonlocal.html'>&larr; Back to nonlocal</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/nonlocal.html'>&larr; Back to nonlocal</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>nonlocal</h1>
   <div class='part-of-speech non-italic'>x</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>Python reserved word</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / nɑnˈloʊkəl / (AmE), / nɒnˈləʊkəl / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/4610cc93-601a-447e-a493-af9fea8804df.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ nɑnˈloʊkəl /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ nɒnˈləʊkəl /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/4610cc93-601a-447e-a493-af9fea8804df.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">a reserved word in Python used in a nested function to refer to a variable in the nearest enclosing non-global scope</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Python <b>nonlocal</b> keyword</blockquote><blockquote>The <b>nonlocal</b> keyword allows you to modify a variable from an enclosing function in Python.</blockquote><blockquote>If you want to change a variable defined outside the inner function, use <b>nonlocal</b>.</blockquote><blockquote>Without <b>nonlocal</b>, the assignment would create a new local variable instead of modifying the outer one.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The variable is defined as <b>nonlocal</b>.</blockquote><blockquote>You must declare the variable as <b>nonlocal</b> to modify it.</blockquote><blockquote>Why is the <b>nonlocal</b> keyword important in Python?</blockquote><blockquote>In Python, you can use <b>nonlocal</b> to access variables from outer functions.</blockquote><blockquote>The function needs a <b>nonlocal</b> declaration for the variable to work.</blockquote><blockquote>If you forget the <b>nonlocal</b> keyword, it will raise an error.</blockquote><blockquote>Is <b>nonlocal</b> used only in nested functions?</blockquote><blockquote>The <b>nonlocal</b> variable can be modified inside the nested function.</blockquote><blockquote>Don't forget to use <b>nonlocal</b> when needed!</blockquote><blockquote>Can you explain how <b>nonlocal</b> works in Python?</blockquote><blockquote>In this example, we will use <b>nonlocal</b> to demonstrate its functionality.</blockquote><blockquote>The function cannot access the variable without <b>nonlocal</b>.</blockquote><blockquote>Using <b>nonlocal</b> helps avoid confusion with global variables.</blockquote><blockquote>I learned that <b>nonlocal</b> is crucial for nested functions.</blockquote><blockquote>The code snippet failed because it didn't declare the variable <b>nonlocal</b>.</blockquote><blockquote>My friend, a Python expert, says <b>nonlocal</b> is essential.</blockquote><blockquote>The programmer explained the <b>nonlocal</b> concept clearly.</blockquote><blockquote>Don't forget to declare it <b>nonlocal</b>!</blockquote>
       </div>
     
     

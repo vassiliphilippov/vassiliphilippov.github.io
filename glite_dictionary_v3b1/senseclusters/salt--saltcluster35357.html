@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/salt.html'>&larr; Back to salt</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/salt.html'>&larr; Back to salt</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>salt</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>random value added before hashing</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">6.5</span>
       
       
-        <span class="freq-badge">0.3/m</span>
+        <span class="freq-badge">0.1/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / sɔlt / (AmE), / sɒlt / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/565affa2-75a1-4b6f-b43e-3fa7d83837ce.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ sɔlt /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ sɒlt /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/565affa2-75a1-4b6f-b43e-3fa7d83837ce.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in computing, cryptography) a random value added to data (often a password) before hashing to make precomputed attacks and rainbow-table lookups ineffective.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Password <b>salt</b></blockquote><blockquote>Systems store password hashes with a unique <b>salt</b> per user to improve security.</blockquote><blockquote>The developer accidentally reused the same <b>salt</b>, making multiple accounts vulnerable to attack.</blockquote><blockquote>Modern frameworks generate random <b>salts</b> automatically when creating password hashes for new users.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The system uses a unique <b>salt</b> for each password.</blockquote><blockquote>You should always use a different <b>salt</b> for hashing.</blockquote><blockquote>Can you explain how <b>salt</b> enhances security?</blockquote><blockquote>The <b>salt</b> prevents attackers from using precomputed tables.</blockquote><blockquote>I learned that adding <b>salt</b> increases the complexity of the hash.</blockquote><blockquote>A strong <b>salt</b> is crucial for protecting sensitive data.</blockquote><blockquote>Why is <b>salt</b> important in cryptography?</blockquote><blockquote>The developer added a random <b>salt</b> to each entry.</blockquote><blockquote>This method uses <b>salts</b> to secure user passwords.</blockquote><blockquote>Have you ever used a <b>salt</b> in your hashing process?</blockquote><blockquote>The security team recommends using a unique <b>salt</b> for each user.</blockquote><blockquote>To enhance security, always generate a new <b>salt</b>.</blockquote><blockquote>The <b>salt</b> is added before hashing the password.</blockquote><blockquote>I forgot to add a <b>salt</b> to my password hash!</blockquote><blockquote>The programmer explained how <b>salts</b> work in security.</blockquote><blockquote>Using the right <b>salt</b> can significantly improve security.</blockquote><blockquote>The expert, Dr. Smith, noted that a unique <b>salt</b> is essential.</blockquote><blockquote>Can Facebook use a different <b>salt</b> for each user?</blockquote><blockquote>Amazon's security team uses a special <b>salt</b> for encryption.</blockquote><blockquote>Is a random <b>salt</b> really effective in preventing attacks?</blockquote>
       </div>
     
     
@@ -153,7 +192,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.20 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.07 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -162,9 +201,9 @@
               
               
               
-              <div><strong>Per year:</strong> 3.7 occurrences</div>
-              <div><strong>Per month:</strong> 0.3 occurrences</div>
-              <div><strong>Per week:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 1.4 occurrences</div>
+              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>
         </div>

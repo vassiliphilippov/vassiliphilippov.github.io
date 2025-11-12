@@ -32,6 +32,7 @@ class YouTubeExamplesPlayer {
         this.isPlayerReady = false;
         this.progressInterval = null;
         this.isAdvancing = false;
+        this.wasPlaying = false;
         
         // Element references (will be set after render)
         this.elements = {};
@@ -105,10 +106,15 @@ class YouTubeExamplesPlayer {
             if (index === this.currentIndex) {
                 dot.classList.add('active');
             }
+            if (example.unavailable) {
+                dot.style.display = 'none';
+            }
             dot.addEventListener('click', () => {
-                this.isAdvancing = false;
-                this.currentIndex = index;
-                this._updateDisplay();
+                if (!example.unavailable) {
+                    this.isAdvancing = false;
+                    this.currentIndex = index;
+                    this._updateDisplay();
+                }
             });
             this.elements.dotsContainer.appendChild(dot);
         });
@@ -117,7 +123,9 @@ class YouTubeExamplesPlayer {
     _updateDots() {
         const dots = this.elements.dotsContainer.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
-            if (index === this.currentIndex) {
+            if (this.examples[index].unavailable) {
+                dot.style.display = 'none';
+            } else if (index === this.currentIndex) {
                 dot.classList.add('active');
             } else {
                 dot.classList.remove('active');
@@ -154,9 +162,15 @@ class YouTubeExamplesPlayer {
     _advanceToNext() {
         this.isAdvancing = true;
         
-        if (this.currentIndex < this.examples.length - 1) {
+        // Find next available video
+        let nextIndex = this.currentIndex + 1;
+        while (nextIndex < this.examples.length && this.examples[nextIndex].unavailable) {
+            nextIndex++;
+        }
+        
+        if (nextIndex < this.examples.length) {
             setTimeout(() => {
-                this.currentIndex++;
+                this.currentIndex = nextIndex;
                 this._updateDisplay();
                 this.isAdvancing = false;
             }, 500);
@@ -191,10 +205,18 @@ class YouTubeExamplesPlayer {
         const example = this.examples[this.currentIndex];
         const startSeconds = example.start_ms / 1000;
         
-        this.player.loadVideoById({
-            videoId: example.video_id,
-            startSeconds: startSeconds
-        });
+        // If user was playing, auto-start the next video; otherwise just cue it
+        if (this.wasPlaying) {
+            this.player.loadVideoById({
+                videoId: example.video_id,
+                startSeconds: startSeconds
+            });
+        } else {
+            this.player.cueVideoById({
+                videoId: example.video_id,
+                startSeconds: startSeconds
+            });
+        }
     }
     
     _onYouTubeIframeAPIReady() {
@@ -212,11 +234,13 @@ class YouTubeExamplesPlayer {
                 'showinfo': 0,
                 'iv_load_policy': 3,
                 'playsinline': 1,
+                'enablejsapi': 1,
                 'origin': window.location.origin
             },
             events: {
                 'onReady': () => this._onPlayerReady(),
-                'onStateChange': (event) => this._onPlayerStateChange(event)
+                'onStateChange': (event) => this._onPlayerStateChange(event),
+                'onError': (event) => this._onPlayerError(event)
             }
         });
     }
@@ -229,6 +253,7 @@ class YouTubeExamplesPlayer {
     
     _onPlayerStateChange(event) {
         if (event.data === YT.PlayerState.PLAYING) {
+            this.wasPlaying = true;
             this.elements.playIcon.style.display = 'none';
             this.elements.pauseIcon.style.display = 'block';
             
@@ -237,6 +262,16 @@ class YouTubeExamplesPlayer {
                 clearInterval(this.progressInterval);
             }
             this.progressInterval = setInterval(() => this._updateProgress(), 100);
+        } else if (event.data === YT.PlayerState.PAUSED) {
+            this.wasPlaying = false;
+            this.elements.playIcon.style.display = 'block';
+            this.elements.pauseIcon.style.display = 'none';
+            
+            // Stop progress monitoring
+            if (this.progressInterval) {
+                clearInterval(this.progressInterval);
+                this.progressInterval = null;
+            }
         } else {
             this.elements.playIcon.style.display = 'block';
             this.elements.pauseIcon.style.display = 'none';
@@ -245,6 +280,49 @@ class YouTubeExamplesPlayer {
             if (this.progressInterval) {
                 clearInterval(this.progressInterval);
                 this.progressInterval = null;
+            }
+        }
+    }
+    
+    _onPlayerError(event) {
+        const errorCode = event.data;
+        // Error codes: 100 (not found), 101/150 (embedding not allowed)
+        if ([100, 101, 150].includes(errorCode)) {
+            console.warn(`YouTube video unavailable (error ${errorCode}), hiding player for video ${this.examples[this.currentIndex].video_id}`);
+            
+            // Mark this example as unavailable
+            this.examples[this.currentIndex].unavailable = true;
+            
+            // Try to skip to next available video
+            this._skipUnavailableVideo();
+        }
+    }
+    
+    _skipUnavailableVideo() {
+        // Find next available video
+        let nextIndex = this.currentIndex + 1;
+        while (nextIndex < this.examples.length && this.examples[nextIndex].unavailable) {
+            nextIndex++;
+        }
+        
+        if (nextIndex < this.examples.length) {
+            // Found an available video, skip to it
+            this.currentIndex = nextIndex;
+            this._updateDisplay();
+        } else {
+            // Try to find a previous available video
+            let prevIndex = this.currentIndex - 1;
+            while (prevIndex >= 0 && this.examples[prevIndex].unavailable) {
+                prevIndex--;
+            }
+            
+            if (prevIndex >= 0) {
+                this.currentIndex = prevIndex;
+                this._updateDisplay();
+            } else {
+                // All videos unavailable, hide the entire player
+                this.container.style.display = 'none';
+                console.error('All YouTube videos are unavailable, hiding player');
             }
         }
     }
@@ -281,16 +359,30 @@ class YouTubeExamplesPlayer {
         this.elements.prevBtn.addEventListener('click', () => {
             if (this.currentIndex > 0) {
                 this.isAdvancing = false;
-                this.currentIndex--;
-                this._updateDisplay();
+                // Find previous available video
+                let prevIndex = this.currentIndex - 1;
+                while (prevIndex >= 0 && this.examples[prevIndex].unavailable) {
+                    prevIndex--;
+                }
+                if (prevIndex >= 0) {
+                    this.currentIndex = prevIndex;
+                    this._updateDisplay();
+                }
             }
         });
         
         this.elements.nextBtn.addEventListener('click', () => {
             if (this.currentIndex < this.examples.length - 1) {
                 this.isAdvancing = false;
-                this.currentIndex++;
-                this._updateDisplay();
+                // Find next available video
+                let nextIndex = this.currentIndex + 1;
+                while (nextIndex < this.examples.length && this.examples[nextIndex].unavailable) {
+                    nextIndex++;
+                }
+                if (nextIndex < this.examples.length) {
+                    this.currentIndex = nextIndex;
+                    this._updateDisplay();
+                }
             }
         });
         
@@ -298,12 +390,26 @@ class YouTubeExamplesPlayer {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft' && this.currentIndex > 0) {
                 this.isAdvancing = false;
-                this.currentIndex--;
-                this._updateDisplay();
+                // Find previous available video
+                let prevIndex = this.currentIndex - 1;
+                while (prevIndex >= 0 && this.examples[prevIndex].unavailable) {
+                    prevIndex--;
+                }
+                if (prevIndex >= 0) {
+                    this.currentIndex = prevIndex;
+                    this._updateDisplay();
+                }
             } else if (e.key === 'ArrowRight' && this.currentIndex < this.examples.length - 1) {
                 this.isAdvancing = false;
-                this.currentIndex++;
-                this._updateDisplay();
+                // Find next available video
+                let nextIndex = this.currentIndex + 1;
+                while (nextIndex < this.examples.length && this.examples[nextIndex].unavailable) {
+                    nextIndex++;
+                }
+                if (nextIndex < this.examples.length) {
+                    this.currentIndex = nextIndex;
+                    this._updateDisplay();
+                }
             } else if (e.key === ' ') {
                 e.preventDefault();
                 if (this.player && this.player.getPlayerState) {

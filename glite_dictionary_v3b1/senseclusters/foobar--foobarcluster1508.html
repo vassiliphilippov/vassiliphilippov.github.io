@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/foobar.html'>&larr; Back to foobar</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/foobar.html'>&larr; Back to foobar</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>foobar</h1>
   <div class='part-of-speech non-italic'>verb</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>to break software</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / ˈfuːbɑːr / (AmE), / ˈfuːbɑː / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/0031c7a5-e3e4-49a8-9d57-00fe24ff595c.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ ˈfuːbɑːr /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ ˈfuːbɑː /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/0031c7a5-e3e4-49a8-9d57-00fe24ff595c.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">to cause a computer system, program, or data to stop working properly or become corrupted (informal)</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>To <b>foobar</b> a program</blockquote><blockquote>If you delete that file, you might <b>foobar</b> the entire application.</blockquote><blockquote>He accidentally <b>foobared</b> the database while trying to update the records.</blockquote><blockquote>Be careful not to <b>foobar</b> the system with untested code changes.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>Don't <b>foobar</b> the system!</blockquote><blockquote>He <b>foobared</b> the entire database last night.</blockquote><blockquote>Why did you <b>foobar</b> the code?</blockquote><blockquote>The last update <b>foobared</b> my software.</blockquote><blockquote>Can you please stop <b>foobaring</b> everything?</blockquote><blockquote>I think he <b>foobars</b> every project he touches.</blockquote><blockquote>Stop <b>foobaring</b> around with that program!</blockquote><blockquote>Did you really <b>foobared</b> your computer?</blockquote><blockquote>The new update <b>foobared</b> my entire setup.</blockquote><blockquote>I can't believe you <b>foobared</b> the mainframe!</blockquote><blockquote>After he <b>foobared</b> the system, everything crashed.</blockquote><blockquote>Why do you always <b>foobaring</b> the files?</blockquote><blockquote>It seems that every time he tries, he ends up <b>foobaring</b> it.</blockquote><blockquote>The computer <b>foobared</b> after the last patch.</blockquote><blockquote>i really hope you don't <b>foobar</b> the project.</blockquote>
       </div>
     
     
@@ -62,7 +101,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">4.3</span>
       
       
-        <span class="freq-badge">4/m</span>
+        <span class="freq-badge">3/m</span>
       
     </div>
   </span>

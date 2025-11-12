@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/reducer.html'>&larr; Back to reducer</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/reducer.html'>&larr; Back to reducer</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>reducer</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>function that combines values into one</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.2</span>
       
       
-        <span class="freq-badge">0.1/m</span>
+        <span class="freq-badge">0.02/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / rɪˈdusər / (AmE), / rɪˈdjuːsə / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/4c02fa0a-be47-4d25-9b73-21a5b092ea9e.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ rɪˈdusər /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ rɪˈdjuːsə /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/4c02fa0a-be47-4d25-9b73-21a5b092ea9e.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">In computer science, a function that combines multiple inputs (such as elements of a collection or an existing state and an action) into a single value or new state by repeatedly applying a specified operation.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>MapReduce <b>reducer</b> function</blockquote><blockquote>The Hadoop job used a custom <b>reducer</b> to sum all sales values for each product id.</blockquote><blockquote>In Redux, every <b>reducer</b> receives the current state and an action, then returns new state.</blockquote><blockquote>You can implement a <b>reducer</b> in JavaScript with reduce to combine array items into a single total.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>reducer</b> function takes an array and combines its elements.</blockquote><blockquote>A good <b>reducer</b> can simplify complex data structures.</blockquote><blockquote>Can you explain how a <b>reducer</b> works in Redux?</blockquote><blockquote>The <b>reducers</b> in functional programming help manage state.</blockquote><blockquote>I wrote a <b>reducer</b> to handle user actions.</blockquote><blockquote>What is the purpose of a <b>reducer</b> in programming?</blockquote><blockquote>The <b>reducer</b> combines the previous state and the action.</blockquote><blockquote>Using multiple <b>reducers</b> can keep your code organized.</blockquote><blockquote>The team developed a new <b>reducer</b> for the project.</blockquote><blockquote>Have you tested the new <b>reducer</b> yet?</blockquote><blockquote>The <b>reducer</b> efficiently processes large datasets.</blockquote><blockquote>A <b>reducer</b> can be a crucial part of your application.</blockquote><blockquote>Why is the <b>reducer</b> important in functional programming?</blockquote><blockquote>The <b>reducer</b> allows for more predictable state management.</blockquote><blockquote>Many developers prefer using <b>reducers</b> for state updates.</blockquote><blockquote>The <b>reducer</b> pattern is widely used in modern applications.</blockquote><blockquote>i need to learn more about the <b>reducer</b> function.</blockquote><blockquote>This <b>reducer</b> is fantastic!</blockquote><blockquote>Have you seen the latest <b>reducer</b> updates?</blockquote><blockquote>React's <b>reducer</b> is very useful!</blockquote>
       </div>
     
     
@@ -182,7 +221,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.08 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -191,8 +230,8 @@
               
               
               
-              <div><strong>Per year:</strong> 1.5 occurrences</div>
-              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.2 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>

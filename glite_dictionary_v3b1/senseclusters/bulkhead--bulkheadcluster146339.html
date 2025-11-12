@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/bulkhead.html'>&larr; Back to bulkhead</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/bulkhead.html'>&larr; Back to bulkhead</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>bulkhead</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>software fault‑isolation boundary</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.9</span>
       
       
-        <span class="freq-badge">0.02/m</span>
+        <span class="freq-badge">0.03/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / ˈbʌlkˌhɛd / (AmE), / ˈbʌlkˌhɛd / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/dc3a7471-f070-4f8c-86a1-8f998d58ef7a.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ ˈbʌlkˌhɛd /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ ˈbʌlkˌhɛd /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/dc3a7471-f070-4f8c-86a1-8f998d58ef7a.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in computing and system design) an isolation boundary or design pattern that confines failures, latency, or resource exhaustion to one component so problems do not cascade to other parts of a system.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>System <b>bulkhead</b></blockquote><blockquote>To protect the system, they added a <b>bulkhead</b> around each service to limit failure scope.</blockquote><blockquote>During the outage, the <b>bulkhead</b> prevented slow database responses from affecting unrelated services.</blockquote><blockquote>A well-designed <b>bulkhead</b> isolates high-latency components, keeping user-facing services responsive.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>bulkhead</b> in the server architecture prevents failures from spreading.</blockquote><blockquote>We need to implement a <b>bulkhead</b> design in our application.</blockquote><blockquote>A well-designed <b>bulkhead</b> can significantly improve system reliability.</blockquote><blockquote>Why is a <b>bulkhead</b> important in system design?</blockquote><blockquote>The engineers proposed adding more <b>bulkheads</b> to isolate components.</blockquote><blockquote>Can you explain how a <b>bulkhead</b> works in computing?</blockquote><blockquote>Implementing a <b>bulkhead</b> pattern can reduce downtime during failures.</blockquote><blockquote>The <b>bulkheads</b> in this system help manage resource exhaustion effectively.</blockquote><blockquote>Have you seen how the <b>bulkhead</b> isolates the database from failures?</blockquote><blockquote>The <b>bulkhead</b> design allows for better fault tolerance.</blockquote><blockquote>A <b>bulkhead</b> can prevent cascading failures in microservices.</blockquote><blockquote>The system crashed because it lacked a proper <b>bulkhead</b>.</blockquote><blockquote>Why don't we add a <b>bulkhead</b> to improve performance?</blockquote><blockquote>The <b>bulkhead</b> effectively contained the resource issues.</blockquote><blockquote>I don't understand why we need a <b>bulkhead</b> in our system.</blockquote><blockquote>The architect's plan included multiple <b>bulkheads</b> for safety.</blockquote><blockquote>A <b>bulkhead</b> can help in managing latency effectively.</blockquote><blockquote>The <b>bulkhead</b> system was praised for its efficiency!</blockquote><blockquote>This <b>bulkhead</b> design has been implemented in many modern systems.</blockquote><blockquote>The new <b>bulkheads</b> will improve our system's fault tolerance.</blockquote><blockquote>A <b>bulkhead</b> is crucial for system stability.</blockquote><blockquote>Look at the <b>bulkheads</b> in the new software architecture!</blockquote>
       </div>
     
     
@@ -163,7 +202,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.02 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -172,7 +211,7 @@
               
               
               
-              <div><strong>Per year:</strong> 0.3 occurrences</div>
+              <div><strong>Per year:</strong> 0.4 occurrences</div>
               <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>

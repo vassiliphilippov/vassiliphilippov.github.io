@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/smell.html'>&larr; Back to smell</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/smell.html'>&larr; Back to smell</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>smell</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>software design indicator</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.9</span>
       
       
-        <span class="freq-badge">0.06/m</span>
+        <span class="freq-badge">0.10/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / smɛl / (AmE), / smɛl / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/aa7d4570-40f5-4e20-aa9d-565656958dcb.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ smɛl /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ smɛl /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/aa7d4570-40f5-4e20-aa9d-565656958dcb.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in software engineering) a symptom in source code that suggests a deeper problem in design, structure, or maintainability and often indicates the need for refactoring.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Code <b>smell</b></blockquote><blockquote>During the review, she pointed out a <b>smell</b> in the authentication module that could cause future bugs.</blockquote><blockquote>Many teams try to refactor when they detect a <b>smell</b> that makes the code hard to change.</blockquote><blockquote>Experienced developers can often spot a <b>smell</b> quickly and suggest improvements before releases.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The code had a <b>smell</b> that suggested it needed refactoring.</blockquote><blockquote>Many developers ignore the <b>smell</b> in the architecture.</blockquote><blockquote>Is there a <b>smell</b> indicating a deeper issue?</blockquote><blockquote>The software's <b>smell</b> pointed to poor design choices.</blockquote><blockquote>Sometimes, you can detect a <b>smell</b> before the problem appears.</blockquote><blockquote>The <b>smell</b> of the code was hard to ignore.</blockquote><blockquote>Could this <b>smell</b> indicate a larger issue?</blockquote><blockquote>The team identified a <b>smell</b> in the legacy code.</blockquote><blockquote>I can sense a <b>smell</b> coming from the outdated modules.</blockquote><blockquote>The <b>smell</b> in this codebase is concerning.</blockquote><blockquote>Don't you think there's a <b>smell</b> in the design?</blockquote><blockquote>This project has a <b>smell</b> that needs attention!</blockquote><blockquote>Why does this system have a <b>smell</b> of neglect?</blockquote><blockquote>The <b>smell</b> of outdated practices is evident.</blockquote><blockquote>This code has a <b>smell</b> that needs fixing!</blockquote><blockquote>I noticed a <b>smell</b> in the API response.</blockquote><blockquote>The code's <b>smell</b> suggests it needs refactoring.</blockquote><blockquote>The project manager should address the <b>smell</b> in the code.</blockquote><blockquote>The <b>smell</b> of the code indicates a need for improvement.</blockquote><blockquote>Has anyone else noticed this <b>smell</b>?</blockquote><blockquote>The <b>smell</b> in the code could lead to bigger issues.</blockquote><blockquote>There is a <b>smell</b> that suggests a refactor is necessary.</blockquote><blockquote>This code has a <b>smell</b> that cannot be ignored.</blockquote><blockquote>The <b>smell</b> of this algorithm is quite evident.</blockquote><blockquote>The <b>smell</b> in the codebase is alarming!</blockquote><blockquote>Alice noticed a <b>smell</b> in the new software design.</blockquote><blockquote>The project's <b>smell</b> is becoming more evident!</blockquote>
       </div>
     
     
@@ -182,7 +221,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.04 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.06 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -191,7 +230,7 @@
               
               
               
-              <div><strong>Per year:</strong> 0.7 occurrences</div>
+              <div><strong>Per year:</strong> 1.2 occurrences</div>
               <div><strong>Per month:</strong> 0.1 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>

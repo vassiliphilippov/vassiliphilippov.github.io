@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/medallion.html'>&larr; Back to medallion</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/medallion.html'>&larr; Back to medallion</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>medallion</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>three-layer data architecture (Bronze/Silver/Gold)</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">8.4</span>
       
       
-        <span class="freq-badge">0.02/m</span>
+        <span class="freq-badge">0.00/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / məˈdæliən / (AmE), / mɪˈdaliən / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/40cfe71f-53d0-4413-87df-10d4fd637d07.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ məˈdæliən /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ mɪˈdaliən /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/40cfe71f-53d0-4413-87df-10d4fd637d07.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in data engineering) a three-layer data architecture that organises data into Bronze (raw), Silver (cleaned), and Gold (curated) zones for processing and analytics.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Medallion</b> architecture</blockquote><blockquote>The data team adopted a <b>medallion</b> architecture to organize Bronze, Silver, and Gold data.</blockquote><blockquote>Using a <b>medallion</b> model helped them separate raw logs, cleaned records, and analytics-ready tables.</blockquote><blockquote>Many modern platforms provide tools to implement a <b>medallion</b> workflow for reliable data delivery.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>medallion</b> architecture helps organize data efficiently.</blockquote><blockquote>In our project, we implemented a <b>medallion</b> model for data processing.</blockquote><blockquote>The data flows through the <b>medallion</b> layers from Bronze to Gold.</blockquote><blockquote>Can you explain the <b>medallion</b> concept in data engineering?</blockquote><blockquote>The <b>medallions</b> help streamline our analytics processes.</blockquote><blockquote>Why is the <b>medallion</b> model preferred for data organization?</blockquote><blockquote>The <b>medallion</b> approach separates raw and cleaned data effectively.</blockquote><blockquote>Have you seen the latest <b>medallion</b> data architecture updates?</blockquote><blockquote>The <b>medallion</b> concept simplifies data management.</blockquote><blockquote>A <b>medallion</b> structure can enhance data processing speed.</blockquote><blockquote>The team adopted a <b>medallion</b> strategy for their analytics framework.</blockquote><blockquote>The <b>medallion</b> model is essential for effective data governance.</blockquote><blockquote>Is the <b>medallion</b> architecture scalable for large datasets?</blockquote><blockquote>The <b>medallion</b> system is gaining popularity in data engineering.</blockquote><blockquote>The <b>medallion</b> method has revolutionized our data analytics.</blockquote><blockquote>The <b>medallion</b> architecture includes Bronze, Silver, and Gold layers.</blockquote><blockquote>The <b>medallion</b> system improves data quality significantly.</blockquote><blockquote>The data <b>medallion</b> architecture is quite effective.</blockquote><blockquote>What are the benefits of a <b>medallion</b> architecture?</blockquote><blockquote>Have you heard about the new <b>medallion</b> system?</blockquote>
       </div>
     
     
@@ -163,7 +202,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.00 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -172,7 +211,7 @@
               
               
               
-              <div><strong>Per year:</strong> 0.2 occurrences</div>
+              <div><strong>Per year:</strong> 0.0 occurrences</div>
               <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>

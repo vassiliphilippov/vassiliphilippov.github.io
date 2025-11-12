@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/truncate.html'>&larr; Back to truncate</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/truncate.html'>&larr; Back to truncate</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>truncate</h1>
   <div class='part-of-speech non-italic'>verb</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>remove all rows from a database table</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">7.0</span>
       
       
-        <span class="freq-badge">0.08/m</span>
+        <span class="freq-badge">0.02/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / c8tr8c4bke6at / (AmE), / c8tr8c4bke6at / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/eb8003c6-affc-446a-baa5-3fd22ffb87ad.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ c8tr8c4bke6at /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ c8tr8c4bke6at /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/eb8003c6-affc-446a-baa5-3fd22ffb87ad.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in computing, especially databases) to remove all rows from a table or similar data structure, typically using a TRUNCATE command so the table&#39;s contents are quickly reset.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>To <b>truncate</b> a table</blockquote><blockquote>The nightly maintenance script will <b>truncate</b> the staging table to reset data before loading fresh records.</blockquote><blockquote>Before backups, the DBA <b>truncated</b> the temporary tables to free space and improve restore speed.</blockquote><blockquote>Use caution when you <b>truncate</b> a production table; many systems cannot roll back the operation easily.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>You can <b>truncate</b> the database table using the SQL command.</blockquote><blockquote>The system <b>truncates</b> the records automatically every month.</blockquote><blockquote>Why do we need to <b>truncate</b> the data before analysis?</blockquote><blockquote>After the update, the program <b>truncated</b> the old entries.</blockquote><blockquote>To optimize performance, we should <b>truncate</b> unnecessary logs.</blockquote><blockquote>The command <b>truncates</b> all rows from the selected table.</blockquote><blockquote>Can you explain how to <b>truncate</b> a table in SQL?</blockquote><blockquote>The data was <b>truncated</b> to improve processing speed.</blockquote><blockquote>Don't forget to <b>truncate</b> the table after testing!</blockquote><blockquote>The application <b>truncated</b> the data unexpectedly.</blockquote><blockquote>Did you <b>truncate</b> the database before the backup?</blockquote><blockquote>The admin <b>truncates</b> the log files regularly.</blockquote><blockquote>I accidentally <b>truncated</b> the table without backup.</blockquote>
       </div>
     
     
@@ -217,7 +256,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.05 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.01 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -226,8 +265,8 @@
               
               
               
-              <div><strong>Per year:</strong> 1.0 occurrences</div>
-              <div><strong>Per month:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.3 occurrences</div>
+              <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>
           </div>

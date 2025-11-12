@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/mock.html'>&larr; Back to mock</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/mock.html'>&larr; Back to mock</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>mock</h1>
   <div class='part-of-speech non-italic'>verb</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>simulate a component in tests</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / mɑk / (AmE), / mɒk / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/d6f7c9e1-398c-4bec-8c66-f47d3ea966ff.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ mɑk /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ mɒk /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/d6f7c9e1-398c-4bec-8c66-f47d3ea966ff.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in software development) to replace or simulate the behaviour of a real component (such as an API, database, or service) with a controlled stand-in during testing.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>To <b>mock</b> an API</blockquote><blockquote>During tests, the team <b>mocked</b> the payment API so failures wouldn't hit production.</blockquote><blockquote>I <b>mock</b> the email service in my unit tests to return controlled data for each case.</blockquote><blockquote>They were <b>mocking</b> the remote server during integration tests to simulate slow responses.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>You can <b>mock</b> the API during testing.</blockquote><blockquote>The developers <b>mocked</b> the database to test the application.</blockquote><blockquote>We need to <b>mock</b> the service before deployment.</blockquote><blockquote>Can you <b>mock</b> this component for the test?</blockquote><blockquote>The team decided to <b>mock</b> the API to avoid real calls.</blockquote><blockquote>They are <b>mocking</b> the user interface for testing purposes.</blockquote><blockquote>Has the team <b>mocked</b> the service yet?</blockquote><blockquote>You should <b>mock</b> the database connection in your tests.</blockquote><blockquote>I heard they <b>mocked</b> the API response successfully.</blockquote><blockquote>Why don't we <b>mock</b> the external service?</blockquote><blockquote>The software engineers are <b>mocking</b> the API right now.</blockquote><blockquote>The project manager asked if we could <b>mock</b> the data.</blockquote><blockquote>Could you please <b>mock</b> the user data for testing?</blockquote><blockquote>The team <b>mocked</b> the API endpoints effectively.</blockquote><blockquote>I will <b>mock</b> the database for our tests.</blockquote><blockquote>They <b>mock</b> the service to ensure consistent testing.</blockquote><blockquote>Alice can <b>mock</b> the API easily.</blockquote>
       </div>
     
     
@@ -85,7 +124,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">8.4</span>
       
       
-        <span class="freq-badge">0.01/m</span>
+        <span class="freq-badge">0.00/m</span>
       
     </div>
   </span>
@@ -108,7 +147,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">5.4</span>
       
       
-        <span class="freq-badge">10/m</span>
+        <span class="freq-badge">4/m</span>
       
     </div>
   </span>
@@ -244,7 +283,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.13 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (0.11 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -253,7 +292,7 @@
               
               
               
-              <div><strong>Per year:</strong> 2.3 occurrences</div>
+              <div><strong>Per year:</strong> 1.9 occurrences</div>
               <div><strong>Per month:</strong> 0.2 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>

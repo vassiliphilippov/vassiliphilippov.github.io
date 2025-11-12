@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/warp.html'>&larr; Back to warp</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/warp.html'>&larr; Back to warp</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>warp</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>group of GPU threads</div>
@@ -31,16 +32,54 @@
         <span class="diff-pill" style="--diff-color: #ef4444">9.9</span>
       
       
-        <span class="freq-badge">6/m</span>
+        <span class="freq-badge">20/m</span>
       
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / wɔrp / (AmE), / wɔːp / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/467b24e8-940a-4483-b987-21b7b4b3928d.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ wɔrp /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ wɔːp /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/467b24e8-940a-4483-b987-21b7b4b3928d.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in GPU computing) a fixed-size group of threads that execute together in lockstep on a graphics processing unit, for example the 32-thread warp in NVIDIA CUDA.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>A GPU <b>warp</b></blockquote><blockquote>The CUDA <b>warp</b> executes thirty-two threads in lockstep on each streaming multiprocessor.</blockquote><blockquote>When a branch diverges, some threads in the <b>warp</b> may be masked and run idle cycles.</blockquote><blockquote>Optimizing memory access patterns can improve how efficiently a GPU <b>warp</b> uses its bandwidth.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>In NVIDIA CUDA, a <b>warp</b> consists of 32 threads.</blockquote><blockquote>The <b>warp</b> executes instructions in lockstep.</blockquote><blockquote>Each <b>warp</b> can handle multiple tasks simultaneously.</blockquote><blockquote>Can you explain how a <b>warp</b> functions?</blockquote><blockquote>A <b>warp</b> allows for efficient processing in GPUs.</blockquote><blockquote>Do different GPUs have different <b>warps</b>?</blockquote><blockquote>The <b>warps</b> in the GPU optimize performance.</blockquote><blockquote>Each <b>warp</b> executes the same instruction at once.</blockquote><blockquote>How many threads are in a <b>warp</b>?</blockquote><blockquote>The concept of <b>warp</b> is crucial in parallel computing.</blockquote><blockquote>The <b>warp</b> size can affect performance metrics.</blockquote><blockquote>The threads in a <b>warp</b> execute simultaneously.</blockquote><blockquote>I learned about <b>warps</b> in my computer graphics class.</blockquote><blockquote>The GPU's <b>warp</b> scheduler manages thread execution.</blockquote><blockquote>When the <b>warp</b> is full, it can proceed with execution.</blockquote><blockquote>The <b>warp</b> sizes vary between different GPU architectures.</blockquote><blockquote>Is the <b>warp</b> concept applicable in other contexts?</blockquote><blockquote>The <b>warp</b> executes multiple threads efficiently.</blockquote><blockquote>What a powerful <b>warp</b> that is!</blockquote><blockquote>Look at that <b>warp</b> in action!</blockquote><blockquote>The <b>warp</b> in my GPU is impressive.</blockquote><blockquote>NVIDIA's <b>warp</b> technology is leading the industry.</blockquote><blockquote>AMD also uses <b>warps</b> in their GPUs.</blockquote><blockquote>The latest <b>warp</b> model from Intel is efficient.</blockquote>
       </div>
     
     
@@ -182,7 +221,7 @@
           </table>
           
           <div style='margin-top: 1rem; padding: 12px; background-color: #f8f9fa; border-radius: 4px;'>
-            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (3.92 per million)</div>
+            <div style='font-weight: bold; margin-bottom: 8px;'>UI Frequency (16.54 per million)</div>
             <div style='margin-left: 1rem;'>
               
               
@@ -191,9 +230,9 @@
               
               
               
-              <div><strong>Per year:</strong> 71.6 occurrences</div>
-              <div><strong>Per month:</strong> 5.9 occurrences</div>
-              <div><strong>Per week:</strong> 1.4 occurrences</div>
+              <div><strong>Per year:</strong> 301.8 occurrences</div>
+              <div><strong>Per month:</strong> 24.8 occurrences</div>
+              <div><strong>Per week:</strong> 5.8 occurrences</div>
             </div>
           </div>
         </div>

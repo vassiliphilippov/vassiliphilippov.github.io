@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/hola.html'>&larr; Back to hola</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/hola.html'>&larr; Back to hola</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>hola</h1>
   <div class='part-of-speech non-italic'>x</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>Spanish greeting</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / ˈoʊlɑ / (AmE), / ˈəʊlɑ / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/eac97d3f-9ea8-4de6-b796-d310d542fa2c.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ ˈoʊlɑ /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ ˈəʊlɑ /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/eac97d3f-9ea8-4de6-b796-d310d542fa2c.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">a Spanish word used as a friendly greeting meaning &#39;hello&#39;</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Spanish <b>hola</b> greeting</blockquote><blockquote>She smiled and greeted everyone with a cheerful <b>hola</b> as she entered the room.</blockquote><blockquote>When traveling in Spain, it is common to say <b>hola</b> to people you meet.</blockquote><blockquote>He answered the phone with a friendly <b>hola</b>, surprising his Spanish-speaking friend.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>She smiled and said, '<b>hola</b>!'</blockquote><blockquote>When I met Juan, he greeted me with a warm '<b>hola</b>'.</blockquote><blockquote>You can just say '<b>hola</b>' to start a conversation.</blockquote><blockquote>In Spain, people often say '<b>hola</b>' when they meet.</blockquote><blockquote>Can you teach me how to say '<b>hola</b>' in Spanish?</blockquote><blockquote>Is it common to say '<b>hola</b>' in Latin America?</blockquote><blockquote>He waved and shouted, '<b>hola</b>!' to his friends.</blockquote><blockquote>I always say '<b>hola</b>' when entering a room.</blockquote><blockquote>Maria greeted us with a cheerful '<b>hola</b>' when we arrived.</blockquote><blockquote>Don't forget to say '<b>hola</b>' when you meet someone new!</blockquote><blockquote>I heard her say '<b>hola</b>' to the children.</blockquote><blockquote>They shouted '<b>hola</b>' across the street.</blockquote><blockquote>Give a friendly '<b>hola</b>' to our guests!</blockquote><blockquote>He always says '<b>hola</b>' with a smile.</blockquote><blockquote>I love to hear people say '<b>hola</b>' in different accents.</blockquote><blockquote>Did you hear him say '<b>hola</b>' to everyone?</blockquote><blockquote>He greeted everyone with a friendly <b>hola</b>.</blockquote>
       </div>
     
     
@@ -81,7 +120,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
       
       
-        <span class="freq-badge">0.00/m</span>
+        <span class="freq-badge">0.01/m</span>
       
     </div>
   </span>
@@ -104,7 +143,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
       
       
-        <span class="freq-badge">100/m</span>
+        <span class="freq-badge">300/m</span>
       
     </div>
   </span>
@@ -252,7 +291,7 @@
               
               
               
-              <div><strong>Per year:</strong> 0.1 occurrences</div>
+              <div><strong>Per year:</strong> 0.2 occurrences</div>
               <div><strong>Per month:</strong> 0.0 occurrences</div>
               <div><strong>Per week:</strong> 0.0 occurrences</div>
             </div>

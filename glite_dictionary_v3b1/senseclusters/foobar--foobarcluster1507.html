@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/foobar.html'>&larr; Back to foobar</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/foobar.html'>&larr; Back to foobar</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>foobar</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>total confusion or failure</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / ˈfuːbɑːr / (AmE), / ˈfuːbɑː / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/2ec705ed-a5be-448b-bd94-ff6e03bc3d6e.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ ˈfuːbɑːr /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ ˈfuːbɑː /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/2ec705ed-a5be-448b-bd94-ff6e03bc3d6e.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">a situation of complete disorder, failure, or confusion, often due to mistakes or errors (informal)</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>A total <b>foobar</b></blockquote><blockquote>The new software release turned into a complete <b>foobar</b> when none of the features worked.</blockquote><blockquote>After the miscommunication, the event planning became a <b>foobar</b> and had to be rescheduled.</blockquote><blockquote>If we do not fix these errors soon, the whole project will be a <b>foobar</b>.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The project ended in a complete <b>foobar</b>.</blockquote><blockquote>After the last update, everything turned into a <b>foobar</b>.</blockquote><blockquote>Can you believe the <b>foobar</b> that happened during the presentation?</blockquote><blockquote>The system crashed, creating a major <b>foobar</b> for the users.</blockquote><blockquote>What caused this <b>foobar</b> in the code?</blockquote><blockquote>The launch was a total <b>foobar</b> due to technical errors.</blockquote><blockquote>They experienced a <b>foobar</b> when the server crashed unexpectedly.</blockquote><blockquote>Is this the result of a <b>foobar</b> in the programming?</blockquote><blockquote>That meeting was a <b>foobar</b> with no clear agenda.</blockquote><blockquote>Don't let this <b>foobar</b> discourage you!</blockquote><blockquote>The software update created a <b>foobar</b> for many users.</blockquote><blockquote>Why did this <b>foobar</b> happen?</blockquote><blockquote>The event turned into a <b>foobar</b> with everyone confused.</blockquote><blockquote>She described the situation as a <b>foobar</b> of errors.</blockquote><blockquote>The team faced a <b>foobar</b> during the project.</blockquote><blockquote>I think this is a <b>foobar</b> in our approach.</blockquote><blockquote>The presentation was a total <b>foobar</b> without the right materials.</blockquote><blockquote>This <b>foobar</b> reminds me of the time we lost the data.</blockquote><blockquote>John's project was a complete <b>foobar</b> last week!</blockquote><blockquote>I can't believe this <b>foobar</b> happened to Alice!</blockquote>
       </div>
     
     
@@ -85,7 +124,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">1.0</span>
       
       
-        <span class="freq-badge">30/m</span>
+        <span class="freq-badge">50/m</span>
       
     </div>
   </span>
@@ -108,7 +147,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">5.1</span>
       
       
-        <span class="freq-badge">0.2/m</span>
+        <span class="freq-badge">0.4/m</span>
       
     </div>
   </span>
@@ -154,7 +193,7 @@
         <span class="diff-pill" style="--diff-color: #ef4444">8.5</span>
       
       
-        <span class="freq-badge">5/m</span>
+        <span class="freq-badge">3/m</span>
       
     </div>
   </span>
@@ -177,7 +216,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">3.7</span>
       
       
-        <span class="freq-badge">0.01/m</span>
+        <span class="freq-badge">0.02/m</span>
       
     </div>
   </span>

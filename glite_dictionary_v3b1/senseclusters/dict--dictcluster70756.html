@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/dict.html'>&larr; Back to dict</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/dict.html'>&larr; Back to dict</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>dict</h1>
   <div class='part-of-speech non-italic'>noun</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>computing data structure</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / dɪkt / (AmE), / dɪkt / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/a8e28ad3-c144-4220-ab2c-af2642536a15.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ dɪkt /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ dɪkt /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/a8e28ad3-c144-4220-ab2c-af2642536a15.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">a data structure in computing, short for &#39;dictionary&#39;, that stores key–value pairs for fast lookup by key</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>Python <b>dict</b> object</blockquote><blockquote>In Python, a <b>dict</b> allows you to store and retrieve values using unique keys.</blockquote><blockquote>The configuration settings were saved in a <b>dict</b> for easy access during the program's execution.</blockquote><blockquote>She converted the list of tuples into a <b>dict</b> to improve lookup speed.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>dict</b> stores user preferences.</blockquote><blockquote>You can access the <b>dict</b> using its key.</blockquote><blockquote>How do you create a <b>dict</b> in Python?</blockquote><blockquote>The <b>dict</b> in this program is very efficient.</blockquote><blockquote>Can you show me how to use a <b>dict</b>?</blockquote><blockquote>This <b>dict</b> contains all the necessary data.</blockquote><blockquote>A <b>dict</b> can hold various data types.</blockquote><blockquote>The program uses a <b>dict</b> to store results.</blockquote><blockquote>Have you ever modified a <b>dict</b> in your code?</blockquote><blockquote>The <b>dicts</b> in this application are optimized for speed.</blockquote><blockquote>I love using a <b>dict</b> for quick lookups.</blockquote><blockquote>Why is the <b>dict</b> structure so popular?</blockquote><blockquote>The <b>dict</b> allows for fast data retrieval.</blockquote><blockquote>My favorite feature of a <b>dict</b> is its flexibility.</blockquote><blockquote>The <b>dict</b> is essential for this application!</blockquote><blockquote>I can't believe how useful a <b>dict</b> is!</blockquote><blockquote>The <b>dict</b> has many keys and values.</blockquote><blockquote>Is using a <b>dict</b> in JavaScript common?</blockquote><blockquote>The <b>dict</b> is not just for strings.</blockquote><blockquote>This <b>dict</b> holds user data efficiently.</blockquote><blockquote>It's easy to update a <b>dict</b> in Python.</blockquote><blockquote>I often use <b>dicts</b> for configuration settings.</blockquote>
       </div>
     
     
@@ -81,7 +120,7 @@
         <span class="diff-pill" style="--diff-color: #f59e0b">4.3</span>
       
       
-        <span class="freq-badge">0.7/m</span>
+        <span class="freq-badge">0.2/m</span>
       
     </div>
   </span>

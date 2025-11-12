@@ -11,9 +11,10 @@
 <body>
   <div class="container">
 <header>
-  
-    <p class='small'><a href='../headwords/starred.html'>&larr; Back to starred</a></p>
-  
+  <p class='small'>
+     <a href='../headwords/starred.html'>&larr; Back to starred</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+  </p>
   <h1>starred</h1>
   <div class='part-of-speech non-italic'>adjective</div>
   <div class='headword-subtitle' style='font-size: 1.3em; margin-top: 0.5rem;'>saved/favourited online</div>
@@ -36,11 +37,49 @@
     </div>
   </div>
     
-    <div class='headword-pronunciation'>Pronunciation: / stɑrd / (AmE), / stɑːd / (BrE)</div>
+    
+      <div class='headword-pronunciation'>
+        
+          <span>US</span>
+          
+            <span class="audio-icon" onclick="playAudio('https://cdn.glite.ai/pa/f9db3a13-9006-4318-9b30-5f964c6a3c1b.mp3')" style="cursor: pointer; margin-left: 4px; margin-right: 4px;">🔈</span>
+          
+          
+            <span >/ stɑrd /</span>
+          
+          <br>
+        
+          <span>UK</span>
+          
+          
+            <span >/ stɑːd /</span>
+          
+          
+        
+      </div>
+      
+        <audio id="pronunciation-audio" preload="none">
+          <source src="https://cdn.glite.ai/pa/f9db3a13-9006-4318-9b30-5f964c6a3c1b.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          function playAudio(url) {
+            const audio = document.getElementById('pronunciation-audio');
+            if (audio) {
+              audio.play();
+            }
+          }
+        </script>
+      
+    
     <div class="definition">(in online contexts) marked, saved, or favored by a user, typically by clicking a star icon to highlight or bookmark an item.</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Starred</b> messages online</blockquote><blockquote>The project was <b>starred</b> by thousands of developers on GitHub.</blockquote><blockquote>She moved the important message to her <b>starred</b> folder to read later.</blockquote><blockquote>He <b>starred</b> the recipe on the cooking site so he could find it quickly.</blockquote>
+      </div>
+    
+    
+      <div class="concept-extractor-examples"><h3>Additional Examples</h3>
+        <blockquote>The <b>starred</b> posts are easy to find.</blockquote><blockquote>The <b>starred</b> items in my list are my favorites.</blockquote><blockquote>The <b>starred</b> photos are displayed at the top.</blockquote><blockquote>Did you see the <b>starred</b> section in the app?</blockquote><blockquote>You can easily find your <b>starred</b> items in the menu.</blockquote><blockquote>The <b>starred</b> contacts are my closest friends.</blockquote><blockquote>What do you think about the <b>starred</b> items in my list?</blockquote>
       </div>
     
     
@@ -81,7 +120,7 @@
         <span class="diff-pill" style="--diff-color: #22c55e">2.7</span>
       
       
-        <span class="freq-badge">1/m</span>
+        <span class="freq-badge">0.9/m</span>
       
     </div>
   </span>
