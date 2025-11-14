@@ -13,7 +13,7 @@
 <header>
   <p class='small'>
      <a href='../headwords/int.html'>&larr; Back to int</a>
-    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a> | <a href='../random.html'>Random</a>
   </p>
   <h1>int</h1>
   <div class='part-of-speech non-italic'>noun</div>
@@ -71,7 +71,7 @@
         </script>
       
     
-    <div class="definition">an assembly-language instruction that triggers a software interrupt to request services from the operating system</div>
+    <div class="definition">An instruction in assembly code that asks the operating system for help</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Int</b> instruction call</blockquote><blockquote>The programmer used the <b>int</b> instruction to access system-level functions in the operating system.</blockquote><blockquote>In x86 assembly, <b>int</b> 21h is commonly used for DOS system calls.</blockquote><blockquote>Debuggers often monitor the <b>int</b> instruction to catch software interrupts during program execution.</blockquote>
@@ -107,7 +107,11 @@
   </span>
                 
               </div>
-              <div class='synonym-difference muted'>a supervisor call instruction is a machine command that transfers control to the system supervisor for OS services, while int is the assembly name that triggers that software interrupt.</div>
+              <div class='synonym-difference'>Interrupts a running program to hand control to privileged system code for services</div>
+              <div class='synonym-comparison'>
+                <span class='vs-tag'>vs</span>
+                <span class='comparison-text'>int: a machine instruction that interrupts the currently executing program and transfers control to the system supervisor, often used to request operating system services</span>
+              </div>
             </li>
           
         </ul>

@@ -13,7 +13,7 @@
 <header>
   <p class='small'>
      <a href='../headwords/private.html'>&larr; Back to private</a>
-    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a> | <a href='../random.html'>Random</a>
   </p>
   <h1>private</h1>
   <div class='part-of-speech non-italic'>adjective</div>
@@ -71,7 +71,7 @@
         </script>
       
     
-    <div class="definition">(in computing) restricted so that a program element (for example a variable, method, or member) is accessible only within a specified class, object, or module and not from external code.</div>
+    <div class="definition">In programming, only code inside the same class can use it</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Private</b> variable</blockquote><blockquote>To hide the data, declare the member as <b>private</b> so it is inaccessible outside the class.</blockquote><blockquote>The developer changed the method to <b>private</b> after discovering it should not be part of the API.</blockquote><blockquote>Many languages enforce <b>private</b> visibility so unit tests cannot call internal helper functions directly.</blockquote>
@@ -126,7 +126,11 @@
   </span>
                 
               </div>
-              <div class='synonym-difference muted'>internal applies only inside the same module or library and can cover several classes, while private restricts access to a single class or object.</div>
+              <div class='synonym-difference'>Limits use to the same module, library, or assembly, excluding the public interface</div>
+              <div class='synonym-comparison'>
+                <span class='vs-tag'>vs</span>
+                <span class='comparison-text'>private: (in software development) intended for use only within the same module, library, or assembly; not part of the public interface available to external code or users.</span>
+              </div>
             </li>
           
         </ul>

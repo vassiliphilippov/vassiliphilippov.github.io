@@ -286,3 +286,76 @@ ul.results li:last-child { border-bottom: none; }
   font-size: 0.85em;
   overflow-x: auto;
 }
+
+/* Synonym styles */
+.synonym-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.synonym-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.synonym-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.synonym-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.synonym-headword {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1a56db;
+  text-decoration: none;
+}
+
+.synonym-headword:hover {
+  text-decoration: underline;
+}
+
+.synonym-difficulty {
+  margin-left: auto;
+}
+
+.synonym-difference {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #000;
+}
+
+.synonym-comparison {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.vs-tag {
+  display: inline-block;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  flex-shrink: 0;
+}
+
+.comparison-text {
+  line-height: 1.5;
+  color: #6b7280;
+}

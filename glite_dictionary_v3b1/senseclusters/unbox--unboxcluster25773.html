@@ -13,7 +13,7 @@
 <header>
   <p class='small'>
      <a href='../headwords/unbox.html'>&larr; Back to unbox</a>
-    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a> | <a href='../random.html'>Random</a>
   </p>
   <h1>unbox</h1>
   <div class='part-of-speech non-italic'>verb</div>
@@ -71,7 +71,7 @@
         </script>
       
     
-    <div class="definition">(in computing) to convert a boxed or wrapper object to its underlying primitive value, often automatically performed by a programming language (for example, converting an Integer to an int).</div>
+    <div class="definition">Change a wrapped number or value into the simple form the program can use</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote>To <b>unbox</b> a value</blockquote><blockquote>In Java, the compiler will <b>unbox</b> an Integer automatically when performing arithmetic with ints.</blockquote><blockquote>She <b>unboxed</b> the Long object to a long before passing it to the math function.</blockquote><blockquote>Modern languages often avoid errors by <b>unboxing</b> wrapper values safely during assignment.</blockquote>
@@ -107,7 +107,11 @@
   </span>
                 
               </div>
-              <div class='synonym-difference muted'>unwrap extracts the inner value from a container and can produce an error if empty, while unbox converts a boxed object to a primitive automatically.</div>
+              <div class='synonym-difference'>Extract the inner value from an optional-style container, failing if no value present</div>
+              <div class='synonym-comparison'>
+                <span class='vs-tag'>vs</span>
+                <span class='comparison-text'>unbox: (in computing) to obtain or extract the value contained inside a wrapped data type (for example Option/Maybe/Result), usually removing the container and producing the inner value or an error if no value is present.</span>
+              </div>
             </li>
           
         </ul>

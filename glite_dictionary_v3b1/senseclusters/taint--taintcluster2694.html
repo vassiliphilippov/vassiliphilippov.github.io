@@ -13,7 +13,7 @@
 <header>
   <p class='small'>
      <a href='../headwords/taint.html'>&larr; Back to taint</a>
-    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a>
+    | <a href='../index.html'>Home</a> | <a href='../search.html'>Search</a> | <a href='../random.html'>Random</a>
   </p>
   <h1>taint</h1>
   <div class='part-of-speech non-italic'>noun</div>
@@ -71,7 +71,7 @@
         </script>
       
     
-    <div class="definition">(computing, especially security) the state of a piece of data or a value that has been identified as originating from an untrusted or potentially unsafe source and therefore requiring validation or sanitization before use.</div>
+    <div class="definition">Data that comes from a source you do not trust and must be checked before use</div>
     
       <div class="examples"><h3>Examples</h3>
         <blockquote><b>Taint</b> in data</blockquote><blockquote>The static analyzer flagged the user input as <b>taint</b> before it reached the database layer.</blockquote><blockquote>During testing they tracked <b>taint</b> through the application to find paths leading to injection bugs.</blockquote><blockquote>The security team documented every <b>taint</b> source and required sanitization before using any input values.</blockquote>
@@ -126,7 +126,11 @@
   </span>
                 
               </div>
-              <div class='synonym-difference muted'>contamination means bad or biased data mixed into a dataset and spoils results, while taint marks single values needing validation before use.</div>
+              <div class='synonym-difference'>Describes corrupt, biased, or duplicated entries introduced into datasets that skew evaluation results</div>
+              <div class='synonym-comparison'>
+                <span class='vs-tag'>vs</span>
+                <span class='comparison-text'>taint: (in data science, research, and machine learning) the introduction of corrupted, biased, duplicated, or non-independent data into a dataset or evaluation set, producing misleading, invalid, or artificially improved results.</span>
+              </div>
             </li>
           
         </ul>

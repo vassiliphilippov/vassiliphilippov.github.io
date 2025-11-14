@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Random · Glite Dictionary</title>
+</head>
+<body>
+  <div class="container">
+<header>
+  <p class='small'>
+    <a href='index.html'>Home</a> | <a href='search.html'>Search</a>
+  </p>
+  <h1>Random Exploration</h1>
+  <p class="muted">Discover random entries from the dictionary. Refresh the page for new selections!</p>
+</header>
+<main>
+  <div id="loading" style="text-align: center; padding: 2rem; color: #999;">
+    <p>Loading dictionary index...</p>
+  </div>
+  <div id="content" style="display: none;">
+    <div style="text-align: right; margin-bottom: 1rem;">
+      <button onclick="regenerateAll()" style="padding: 8px 16px; cursor: pointer; font-size: 1rem;">
+        🔄 Regenerate All
+      </button>
+    </div>
+
+    <section class="cluster-card">
+      <h2>Random Concepts (20)</h2>
+      <ul id="list-concepts" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Headwords (20)</h2>
+      <ul id="list-headwords" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Words - Single Token (20)</h2>
+      <ul id="list-words" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Multi-Word Expressions (20)</h2>
+      <ul id="list-mwe" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Nouns (20)</h2>
+      <ul id="list-nouns" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Verbs (20)</h2>
+      <ul id="list-verbs" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Adjectives (20)</h2>
+      <ul id="list-adjectives" class="results compact"></ul>
+    </section>
+
+    <section class="cluster-card">
+      <h2>Random Other POS (20)</h2>
+      <ul id="list-other" class="results compact"></ul>
+    </section>
+  </div>
+</main>
+
+<script id="search-config" type="application/json">{"index":"search_index_v93_20251114T145800Z.jsonl","index_js":"search_index_v93_20251114T145800Z.js"}</script>
+
+<style>
+ul.results.compact {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+ul.results.compact li {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+ul.results.compact li:hover {
+  background-color: #f0f6ff;
+  border-color: #c8e1ff;
+}
+ul.results.compact li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.result-text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.result-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+</style>
+
+<script>
+
+(function(){
+  var INDEX_HREF = 'search_index.jsonl';
+  try {
+    var cfg = document.getElementById('search-config');
+    if (cfg && cfg.textContent) {
+      var obj = JSON.parse(cfg.textContent);
+      if (obj && typeof obj.index === 'string' && obj.index.length > 0) {
+        INDEX_HREF = obj.index;
+      }
+      if (obj && typeof obj.index_js === 'string' && obj.index_js.length > 0) {
+        window.__INDEX_JS__ = obj.index_js;
+      }
+    }
+  } catch (e) {}
+  if (!window.__INDEX_JS__ && typeof INDEX_HREF === 'string' && /\.jsonl$/i.test(INDEX_HREF)) {
+    window.__INDEX_JS__ = INDEX_HREF.replace(/\.jsonl$/i, '.js');
+  }
+
+  /** @type {{h:string,u:string,p?:string[],m?:number,c?:string,cl?:string}[]} */
+  let INDEX = [];
+
+  const POS_MAP = {
+    'NOUN': 'noun', 'PROPN': 'proper noun',
+    'ADJ': 'adjective',
+    'ADV': 'adverb',
+    'VERB': 'verb', 'AUX': 'auxiliary verb',
+    'PRON': 'pronoun',
+    'ADP': 'preposition',
+    'CCONJ': 'conjunction', 'SCONJ': 'conjunction',
+    'PART': 'particle', 'DET': 'determiner',
+    'NUM': 'numeral', 'INTJ': 'interjection'
+  };
+
+  function friendlyPOS(pos){
+    const t = (pos || '').trim().toUpperCase();
+    return POS_MAP[t] || t.toLowerCase().replace(/_/g, ' ');
+  }
+
+  function posSummary(posList){
+    if (!posList || !posList.length) return '';
+    const uniq = Array.from(new Set(posList.map(friendlyPOS)));
+    return uniq.join(' • ');
+  }
+
+  function isMWE(text){
+    // Multi-word expression if contains space
+    return text.includes(' ');
+  }
+
+  function hasPOS(item, posTag){
+    if (!item.p || !Array.isArray(item.p)) return false;
+    return item.p.some(p => p.toUpperCase() === posTag.toUpperCase());
+  }
+
+  function randomSample(arr, count){
+    if (!arr || arr.length === 0) return [];
+    const shuffled = [...arr].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, Math.min(count, shuffled.length));
+  }
+
+  function renderItem(item){
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = item.u;
+    
+    const text = document.createElement('div');
+    text.className = 'result-text';
+    text.textContent = item.h;
+    
+    const meta = document.createElement('div');
+    meta.className = 'result-meta';
+    const parts = [];
+    if (item.p && item.p.length > 0) {
+      parts.push(posSummary(item.p));
+    }
+    if (item.m && item.m > 1) {
+      parts.push(`${item.m} meanings`);
+    }
+    if (parts.length > 0) {
+      meta.textContent = parts.join(' · ');
+    }
+    
+    a.appendChild(text);
+    if (meta.textContent) {
+      a.appendChild(meta);
+    }
+    li.appendChild(a);
+    return li;
+  }
+
+  function renderList(listId, items){
+    const list = document.getElementById(listId);
+    if (!list) return;
+    list.innerHTML = '';
+    if (items.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = 'No items available';
+      li.style.cursor = 'default';
+      li.style.borderColor = '#f3f4f6';
+      li.style.color = '#9ca3af';
+      list.appendChild(li);
+      return;
+    }
+    for (const item of items) {
+      list.appendChild(renderItem(item));
+    }
+  }
+
+  function generateRandomLists(){
+    // Filter by category
+    const concepts = INDEX.filter(item => item.c && item.c.length > 0);
+    const headwords = INDEX; // All items are headwords in headword index
+    const words = INDEX.filter(item => !isMWE(item.h));
+    const mwe = INDEX.filter(item => isMWE(item.h));
+    const nouns = INDEX.filter(item => hasPOS(item, 'NOUN') || hasPOS(item, 'PROPN'));
+    const verbs = INDEX.filter(item => hasPOS(item, 'VERB') || hasPOS(item, 'AUX'));
+    const adjectives = INDEX.filter(item => hasPOS(item, 'ADJ'));
+    // Other POS: anything not noun/verb/adj
+    const other = INDEX.filter(item => {
+      if (!item.p || item.p.length === 0) return false;
+      return !hasPOS(item, 'NOUN') && !hasPOS(item, 'PROPN') && 
+             !hasPOS(item, 'VERB') && !hasPOS(item, 'AUX') && 
+             !hasPOS(item, 'ADJ');
+    });
+
+    // Sample 20 from each
+    renderList('list-concepts', randomSample(concepts, 20));
+    renderList('list-headwords', randomSample(headwords, 20));
+    renderList('list-words', randomSample(words, 20));
+    renderList('list-mwe', randomSample(mwe, 20));
+    renderList('list-nouns', randomSample(nouns, 20));
+    renderList('list-verbs', randomSample(verbs, 20));
+    renderList('list-adjectives', randomSample(adjectives, 20));
+    renderList('list-other', randomSample(other, 20));
+  }
+
+  window.regenerateAll = generateRandomLists;
+
+  async function loadIndex(){
+    if (Array.isArray(window.SEARCH_INDEX)) {
+      return window.SEARCH_INDEX;
+    }
+    // Try to load NDJSON file
+    try {
+      const res = await fetch(INDEX_HREF, {cache: 'no-store'});
+      if (res.ok){
+        const text = await res.text();
+        const lines = text.split(/\r?\n/);
+        const arr = [];
+        for (const line of lines){
+          const t = line.trim();
+          if (t.length === 0) continue;
+          try { arr.push(JSON.parse(t)); } catch {}
+        }
+        return arr;
+      }
+    } catch (e) {}
+    // Fallback: embedded script for file:// usage
+    try {
+      if (window.__INDEX_JS__) {
+        await new Promise((resolve) => {
+          var s = document.createElement('script');
+          s.src = window.__INDEX_JS__;
+          s.onload = resolve; s.onerror = resolve;
+          document.head.appendChild(s);
+        });
+        if (Array.isArray(window.SEARCH_INDEX)) return window.SEARCH_INDEX;
+      }
+    } catch (e) {}
+    return [];
+  }
+
+  // Load and initialize
+  loadIndex().then(arr => {
+    if (Array.isArray(arr) && arr.length > 0) {
+      INDEX = arr;
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      generateRandomLists();
+      
+      console.log(`[Random Page] Loaded ${INDEX.length} entries from search index`);
+    } else {
+      document.getElementById('loading').innerHTML = '<p style="color: red;">Failed to load search index</p>';
+    }
+  });
+})();
+
+</script>
+
+  </div>
+</body>
+</html>
+
