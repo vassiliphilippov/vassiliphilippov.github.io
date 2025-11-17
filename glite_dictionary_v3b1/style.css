@@ -413,6 +413,99 @@ ul.results li:last-child { border-bottom: none; }
   color: #6b7280;
 }
 
+/* Antonym styles */
+.antonym-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.antonym-item {
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.antonym-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.antonym-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.antonym-headword {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1a56db;
+  text-decoration: none;
+}
+
+.antonym-headword:hover {
+  text-decoration: underline;
+}
+
+.antonym-metrics {
+  margin-left: auto;
+}
+
+.antonyms-toggle {
+  margin-top: 8px;
+  border: 1px solid #cbd5f5;
+  background: #eef2ff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.antonyms-toggle:hover {
+  background: #e0e7ff;
+}
+
+.antonym-hidden {
+  display: none;
+}
+
+/* Pronunciation styles (in technical details) */
+.pronunciation-group {
+  margin-bottom: 1rem;
+}
+
+.pronunciation-group:last-child {
+  margin-bottom: 0;
+}
+
+.pronunciation-accent {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.pronunciation-variants {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pronunciation-variant {
+  padding-left: 1rem;
+}
+
+.pronunciation-variant .ipa-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: #111;
+}
+
 /* Power Grades styles */
 .power-grade-layout {
   display: flex;
