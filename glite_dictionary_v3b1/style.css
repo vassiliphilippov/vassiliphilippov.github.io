@@ -563,3 +563,34 @@ ul.results li:last-child { border-bottom: none; }
   min-width: 120px;
   text-align: right;
 }
+
+/* Video clips section */
+.video-clips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.video-clip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.video-clip-player {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+  /* vertical video aspect ratio 9:16 */
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  max-height: 400px; 
+}
+
+.video-clip-phrase {
+  font-size: 0.9rem;
+  color: #374151;
+  font-style: italic;
+  line-height: 1.4;
+}
